@@ -4,8 +4,7 @@ date: 2025-04-06T12:00:00.000
 author: Child Welfare Playbook Team
 ---
 
-
-> "The biggest thing to make families show up to stuff is let them plan it, because they are so excited about the planning process. They tell their neighbors, they tell their other friends, and **we max out and we can’t even get any more people in the door because so many people are showing up**.” 
+> The biggest thing to make families show up to stuff is let them plan it, because they are so excited about the planning process. They tell their neighbors, they tell their other friends, and **we max out and we can’t even get any more people in the door because so many people are showing up**. 
 
 —Family Resource Center on the importance of co-designing with families
 
@@ -47,7 +46,8 @@ Organizations go in-person to find service users, and provide services and mater
 
 A licensed mental health provider we spoke to provides support to first responders, who often experience shame and embarrassment in seeking mental health support, and often only get help when they are in a state of crisis. They provide traditional therapy and created early-intervention training to help prevent people from entering crisis or burnout. This mental health provider posted fliers in bathroom stalls in bars during the winter holidays with QR codes to self-led and anonymous 5 minute mental health trainings. Though only 2-3 bars agreed to put it up, they received 50 scans. By acknowledging the need for privacy in the help-seeking behaviors of first responders, she used this approach to meet them where they are.
 
-Work in partnership with trusted organizations   
+## Work in partnership with trusted organizations
+
 Strong partnerships allow organizations to expand their reach. This includes showing up to community events, sharing information, and planning programs with advisory boards or councils.
 
 ### Practical example: tabling at oath ceremonies  
@@ -64,11 +64,8 @@ A Family Resource Center, open for 2 years in a rural area, has been working to 
 
 We’ll continue our research on preventing child welfare involvement, so check back for future blog posts. 
 
-We’d love to hear from you\! Send us a message at [prevention@bloomworks.digital](mailto:prevention@bloomworks.digital) with any thoughts or questions.
+We’d love to hear from you! Send us a message at [prevention@bloomworks.digital](mailto:prevention@bloomworks.digital) with any thoughts or questions.
 
-<div class="doris-day">
-  <div class="doris-day-logo">
-    <img src="/images/doris-duke.svg" alt="Logo for the Doris Duke Foundation" />
-  </div>
-  <p>The Prevention section is generously supported by the Doris Duke Foundation as part of the <a href="https://www.ddf-opt-in.org/">OPT-In for Families Initiative</a>.</p>
-</div>
+![Logo for the Doris Duke Foundation](/images/doris-duke.svg)
+
+The Prevention section is generously supported by the Doris Duke Foundation as part of the [OPT-In for Families Initiative](https://www.ddf-opt-in.org/).
