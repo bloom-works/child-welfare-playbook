@@ -5,6 +5,8 @@ pagination:
   size: 1
   alias: recommendation
 permalink: "/recommendations/{{ recommendation.title }}/"
+eleventyComputed:
+    title: '{{ recommendation.heading }}'
 ---
 
 <div class="flex items-end bg-white bg-no-repeat bg-right">

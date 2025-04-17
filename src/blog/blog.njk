@@ -5,6 +5,8 @@ pagination:
   size: 1
   alias: blog_post
 permalink: "/blog/{{ blog_post.fileSlug }}/"
+eleventyComputed:
+  title: '{{ blog_post.title }}'
 ---
 
 
