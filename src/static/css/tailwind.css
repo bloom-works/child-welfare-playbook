@@ -43,3 +43,7 @@
 .doris-day a {
     font-weight: bold;
 }
+
+.blockquote p:empty {
+    display: none;
+}
