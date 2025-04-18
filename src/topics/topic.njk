@@ -5,6 +5,8 @@ pagination:
   size: 1
   alias: topic
 permalink: "/topics/{{ topic.title }}/"
+eleventyComputed:
+  title: '{{ topic.hero.title }}'
 ---
 
 <div class="flex items-end bg-gray-900 bg-no-repeat bg-right" style="background-image: url({{ topic.hero.image | replace(r/^\/?src/, '') }});">
