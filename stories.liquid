@@ -1,0 +1,43 @@
+---
+layout: "layouts/content.njk"
+title: Stories
+description: Stories show how agencies are putting plays into action, solving common challenges in child welfare, and developing new strategies. Browse case studies, research reports, and other posts that provide more detail about our work.
+---
+
+
+
+<div class="l-stack-basic story-list-wrapper">
+{% for story in collections.stories %}
+{% if story.data.featured %}
+<div class="story-card" data-featured style="--bg-image: url('/images/stories/{{ story.data.image }}')">
+  <span class="story-card-type">{{ story.data.type }}</span>
+  <h3><a href="{{ story.url }}">{{ story.data.title }}</a></h3>
+  <p>{{ story.data.description }}</p>
+  <div class="story-card-meta">
+    <span>{{ story.data.author }}</span>
+    <span>{{ story.data.date }}</span>
+  </div>
+</div>
+{% endif %}
+{% endfor %}
+
+{% for story in collections.stories %}
+{% if story.data.featured != true %}
+<div class="story-card">
+  <div class="story-card-image">
+    <img src="/images/stories/{{ story.data.image }}" alt="" />
+    <span class="story-card-badge">{{ story.data.type }}</span>
+  </div>
+
+  <div class="story-card-content">
+    <h3><a href="{{ story.url }}">{{ story.data.title }}</a></h3>
+    <p>{{ story.data.description }}</p>
+    <div class="story-card-meta">
+      <span>{{ story.data.author }}</span>
+      <span>{{ story.data.date }}</span>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endfor %}
+</div>

@@ -11,6 +11,8 @@
     --c-orange: rgb(254 102 89);
     --c-brown: #522a10;
 
+    --story-gradient: linear-gradient(to bottom, rgb(88 39 7 / 0.45) 30%, rgb(88 39 7 / 0.9) 80%);
+
     --c-prose: #374151;
     --c-prose-headings: #111827;
     --c-prose-links: #111827;

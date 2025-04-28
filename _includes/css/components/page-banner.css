@@ -5,12 +5,18 @@
     background-repeat: no-repeat;
     background-position: right center;
     padding-block: calc(var(--font-base-leading) * 3);
+    background-size: cover;
 }
 
 .page-banner h1 {
     text-align: left;
     color: var(--c-base);
     max-inline-size: 38ch;
+}
+
+.page-banner[data-type="story"] {
+  background-image: var(--story-gradient),
+                    var(--bg-image);
 }
 
 .page-banner[data-bg-image] h1 {
@@ -25,7 +31,8 @@
     background-color: var(--c-gray-300);
 }
 
-.page-banner[data-bg-color="dark"] h1 {
+.page-banner[data-bg-color="dark"] *,
+.page-banner[data-type="story"] * {
     color: #fff;
 }
 

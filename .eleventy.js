@@ -62,4 +62,8 @@ export default async function(eleventyConfig) {
       return collectionsApi.getFilteredByTag(`${topicList[topic]}`).sort(alphaSort);
     });
   }
+
+  eleventyConfig.addCollection("stories", (collection) =>
+    collection.getFilteredByGlob("stories/*.md")
+  );
 }
