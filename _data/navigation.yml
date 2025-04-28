@@ -1,0 +1,10 @@
+---
+items:
+- text: Plays
+  url: "/plays/"
+- text: Stories
+  url: "/stories/"
+- text: Dashboards
+  url: "/dashboards/"
+- text: Search
+  url: "/search/"
