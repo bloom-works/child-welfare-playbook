@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "eleventy-auto-cache-buster": "^0.8.1",
-    "eleventy-plugin-svg-sprite": "^2.4.3"
+    "eleventy-plugin-svg-sprite": "^2.4.3",
+    "luxon": "^3.6.1"
   }
 }

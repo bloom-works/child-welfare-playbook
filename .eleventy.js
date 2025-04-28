@@ -3,12 +3,18 @@ import markdownIt from "markdown-it";
 import markdownLibrary from "./markdown.js";
 import svgSprite from "eleventy-plugin-svg-sprite";
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
+import dateFilters from './filters/dateFilters.js'
+
 
 const alphaSort = (a, b) => {
-  if (a.data.title < b.data.title) return -1;
-  else if (a.data.title > b.data.title) return 1;
-  else return 0;
-}
+  if (a.data.title < b.data.title) {
+    return -1;
+  } else if (a.data.title > b.data.title) {
+    return 1;
+  } else {
+    return 0;
+  }
+};
 
 const topicList = [
   "background-checks",
@@ -51,6 +57,12 @@ export default async function(eleventyConfig) {
     svgShortcode: "icon"
   });
 
+  // Human-readable dates
+
+  Object.keys(dateFilters).forEach(filterName => {
+      eleventyConfig.addFilter(filterName, dateFilters[filterName])
+  })
+
   // All plays sorted alphabetically
 
   eleventyConfig.addCollection("playsAlpha", (collection) =>
@@ -62,6 +74,9 @@ export default async function(eleventyConfig) {
       return collectionsApi.getFilteredByTag(`${topicList[topic]}`).sort(alphaSort);
     });
   }
+
+
+  // Stories
 
   eleventyConfig.addCollection("stories", (collection) =>
     collection.getFilteredByGlob("stories/*.md")
