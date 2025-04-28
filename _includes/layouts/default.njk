@@ -10,8 +10,6 @@
     {% if description %}
       <meta name="description" content="{{description}}"/>
     {% endif %}
-    {% block head %}{% endblock %}
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Petrona:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -19,21 +17,19 @@
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/favicon-180.png">
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/theme.css"/>
   </head>
   <body{% if class %} class="{{ class }}"{% endif %}>
-    {% include "./partials/navbar.html" %}
+    {% include "partials/navbar.njk" %}
+    <div class="content">
+      {{ content | md | safe }}
+    </div>
+    {% include "partials/footer.njk" %}
 
-    {{ content | safe }}
-
-    {% include "./partials/footer.html" %}
-
-    <script src="/static/js/alpine.js"></script>
-
-    {% if path == "home" %}
-      <!-- Netlify Identity Widget -->
-      <!-- Needed only if you are using Netlify Identity feature -->
+    {% if class == "home" %}
       <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     {% endif %}
+
+    {% svgsprite %}
   </body>
 </html>
