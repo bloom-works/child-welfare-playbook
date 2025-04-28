@@ -21,7 +21,7 @@
     <link rel="apple-touch-icon" href="/favicon-180.png">
     <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
   </head>
-  <body class="text-base font-sans">
+  <body{% if class %} class="{{ class }}"{% endif %}>
     {% include "./partials/navbar.html" %}
 
     {{ content | safe }}

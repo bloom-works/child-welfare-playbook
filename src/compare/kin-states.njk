@@ -4,317 +4,326 @@ title: Kin Finding
 ---
 
 
-<div class="flex items-end bg-gray-900 bg-no-repeat bg-right" style="background-image: url({{ topic.hero.image | replace('/src', '') }});">
-    <div class="mx-auto w-full">
-        <div class="py-24 px-[5%]">
-            <h1 class="font-serif text-5xl font-[900]">{{ title }}</h1>
-        </div>
-    </div>
+<div class="page-banner" data-bg-color="light">
+  <div class="page-banner-inner">
+    <h1>{{ title }}</h1>
+  </div>
 </div>
-<div class="hidden md:block mx-auto px-8 md:px-[5%]">
-    <nav class="flex py-8" aria-label="Breadcrumb">
-        <ol class="inline-flex items-center space-x-1 md:space-x-3">
-            <li class="inline-flex items-center">
-                <a href="/" class="font-medium text-navy hover:underline">Home</a>
-            </li>
-            <li aria-current="page">
-                <div class="flex items-center gap-2">
-                    <span>/</span>
-                    <strong class="text-navy hover:underline font-bold">{{ title }}</strong>
-                </div>
-            </li>
-        </ol>
-    </nav>
+
+<div class="breadcrumb-wrapper">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li aria-current="page">
+        <span>/</span>
+        <strong>{{ title }}</strong>
+      </li>
+    </ol>
+  </nav>
 </div>
+
 <div class="flex">
-    <div class="mx-auto w-full">
-        <div class="mx-auto max-w-screen-lg mb-24">
-            <div x-data="progressChartData()" x-init="init">
-                <div class="prose prose-xl w-full mb-24 max-w-[unset]">
-                    <div><p>The best thing for a child in foster care is living with an adult they already know and trust ("kin"). The vast majority of children entering care have kin available to care for them, but most systems fail to find these adults for most children.</p><p>When systems adopt more effective kin-finding practices, they can achieve initial kinship placement rates in excess of 80%.</p><p>While the playbook has 21 recommended practices for kin-finding, this progress dashboard focuses on the Top 7. As states adopt them, we will focus the dashboard on other practices.</p></div><p>Our goal is for every child welfare system to adopt these 7 promising practices for Kin Finding: dedicated kin-finding responsibility, <a href="/recommendations/Use-expansive-legal-definition-of-kin/">expansive legal definition of kin</a>, <a href="/recommendations/use-a-variety-of-contact-methods/">use a variety of contact methods</a>, <a href="/recommendations/senior-staff-sign-off-for-non-relative-placements/">require senior staff sign-off for non-kin placements</a>, <a href="/recommendations/use-social-media/">use social media to find kin</a>, <a href="/recommendations/ask-about-supportive-adults/">ask youth about their kin</a>, and <a href="/recommendations/maintain-a-shared-list-of-kin/">maintain a shared list of kin</a>.</p><p>Want to report an update or error? Please email updates@childwelfareplaybook.com</p>
-                </div>
+  <div class="mx-auto w-full">
+    <div class="mx-auto max-w-screen-lg mb-24">
+      <div x-data="progressChartData()" x-init="init">
+        <div class="prose prose-xl w-full mb-24 max-w-[unset]">
+          <div>
+            <p>The best thing for a child in foster care is living with an adult they already know and trust ("kin"). The vast majority of children entering care have kin available to care for them, but most systems fail to find these adults for most children.</p>
 
-                <h2 class="border-b-4 border-[#fe6659] font-serif font-[900] text-4xl mb-12">State by State Comparison</h2>
+            <p>When systems adopt more effective kin-finding practices, they can achieve initial kinship placement rates in excess of 80%.</p>
 
-                <div class="mb-12">
-                    <div class="flex flex-col md:flex-row gap-4 mb-6">
-                        <div>
-                            <label for="administration" class="block mb-2 font-bold font-serif">Administration</label>
-                            <select id="administration" class="border rounded-sm p-2 w-full lg:min-w-[200px] bg-white" x-model="filterAdministration">
-                                <option value="ALL">Either</option>
-                                <option value="STATE">State</option>
-                                <option value="COUNTY">County</option>
-                            </select>
-                        </div>
+            <p>While the playbook has 21 recommended practices for kin-finding, this progress dashboard focuses on the Top 7. As states adopt them, we will focus the dashboard on other practices.</p>
+          </div>
 
-                        <div>
-                            <label for="population" class="block mb-2 font-bold font-serif">Population</label>
-                            <select id="population" class="border rounded-sm p-2 w-full lg:min-w-[200px] bg-white" x-model="filterPopulation">
-                                <option value="ALL">Any</option>
-                                <option value="SMALL">Less than 2.5 million</option>
-                                <option value="MEDIUM">2.5 million - 7.5 million</option>
-                                <option value="LARGE">More than 7.5 million</option>
-                            </select>
-                        </div>
+          <p>Our goal is for every child welfare system to adopt these 7 promising practices for Kin Finding: dedicated kin-finding responsibility, <a href="/recommendations/Use-expansive-legal-definition-of-kin/">expansive legal definition of kin</a>, <a href="/recommendations/use-a-variety-of-contact-methods/">use a variety of contact methods</a>, <a href="/recommendations/senior-staff-sign-off-for-non-relative-placements/">require senior staff sign-off for non-kin placements</a>, <a href="/recommendations/use-social-media/">use social media to find kin</a>, <a href="/recommendations/ask-about-supportive-adults/">ask youth about their kin</a>, and <a href="/recommendations/maintain-a-shared-list-of-kin/">maintain a shared list of kin</a>.</p>
 
-                        <div x-show="filteredStates && filteredStates[0]">
-                            <label for="recommendations" class="block mb-2 font-bold font-serif">Recommendations</label>
-                            <select id="recommendations" class="border rounded-sm p-2 w-full lg:min-w-[200px] bg-white" x-model="filterRecommendation">
-                                <option value="ALL">All</option>
-                                <template x-for="comparison in getComparisonsByState(filteredStates[0].code)" :key="comparison.name">
-                                    <option :value="comparison.name" x-text="comparison.name"></option>
-                                </template>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="flex flex-col md:flex-row gap-4">
-                        <div class="w-full lg:w-1/2 flex flex-wrap items-center gap-4">
-                            <span class="flex items-center gap-2">
-                                <span class="h-4 w-4 rounded-full border block" :style="{ backgroundColor: IMPLEMENTED_FILL }"></span>
-                                <span>Fully Implemented</span>
-                            </span>
-                            <span class="flex items-center gap-2">
-                                <span class="h-4 w-4 rounded-full border block" :style="{ backgroundColor: IN_PROGRESS_FILL }"></span>
-                                <span>Partially Implemented</span>
-                            </span>
-                            <span class="flex items-center gap-2">
-                                <span class="h-4 w-4 rounded-full border block" :style="{ backgroundColor: NOT_IMPLEMENTED_FILL }"></span>
-                                <span>Not Implemented</span>
-                            </span>
-                            <span class="flex items-center gap-2">
-                                <span class="h-4 w-4 rounded-full border block"></span>
-                                <span>No Data</span>
-                            </span>
-                        </div>
-                        <div class="w-full lg:w-1/2">
-                            <div class="flex items-center flex-wrap gap-4 ml-auto w-full">
-                                <strong class="font-serif text-xl">Implemented Recommendations</strong>
-                                <button @click="showAll = !showAll" class="rounded-sm text-underline text-blue-500">
-                                    <span x-text="showAll ? 'Hide All' : 'Show All'"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <template x-if="filteredStates.length > 0">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <template x-for="state in filteredStates" :key="state.code">
-                            <div class="border rounded-sm p-4 flex flex-col">
-                                <div x-text="state.name" class="text-2xl font-serif font-bold text-center mb-4"></div>
-
-                                <div class="mb-4 flex items-center justify-center">
-                                    <canvas
-                                        :id="`canvas-${state.code}`"
-                                        height="130"
-                                        width="130"
-                                        :title="`${getImplementedCount(state)} out of ${getTotalSegments(state)}`"
-                                    ></canvas>
-                                </div>
-
-                                <ul x-show="showAll">
-                                    <template x-for="comparison in getComparisonsByState(state.code)" :key="comparison.name">
-                                        <li x-show="comparison.name" class="flex flex-col gap-4">
-                                            <a href="" class="flex gap-2">
-                                                <span class="inline-block" style="padding-top: 4px">
-                                                    <span class="h-4 w-4 rounded-full border block" :title="comparison.value" :style="{ backgroundColor: comparison.value === 'Fully Implemented' ? IMPLEMENTED_FILL : comparison.value === 'Partially Implemented' ? IN_PROGRESS_FILL : comparison.value === 'Not Implemented' ? NOT_IMPLEMENTED_FILL : '' }"></span>
-                                                </span>
-                                                <span x-text="comparison.name"></span>
-                                            </a>
-                                        </li>
-                                    </template>
-                                </ul>
-                            </div>
-                        </template>
-                    </div>
-                </template>
-            </div>
+          <p>Want to report an update or error? Please email updates@childwelfareplaybook.com</p>
         </div>
+
+        <h2 class="border-b-4 border-[#fe6659] font-serif font-[900] text-4xl mb-12">State by State Comparison</h2>
+
+        <div class="mb-12">
+          <div class="flex flex-col md:flex-row gap-4 mb-6">
+            <div>
+              <label for="administration" class="block mb-2 font-bold font-serif">Administration</label>
+                <select id="administration" class="border rounded-sm p-2 w-full lg:min-w-[200px] bg-white" x-model="filterAdministration">
+                  <option value="ALL">Either</option>
+                  <option value="STATE">State</option>
+                  <option value="COUNTY">County</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="population" class="block mb-2 font-bold font-serif">Population</label>
+                  <select id="population" class="border rounded-sm p-2 w-full lg:min-w-[200px] bg-white" x-model="filterPopulation">
+                    <option value="ALL">Any</option>
+                    <option value="SMALL">Less than 2.5 million</option>
+                    <option value="MEDIUM">2.5 million - 7.5 million</option>
+                    <option value="LARGE">More than 7.5 million</option>
+                </select>
+              </div>
+
+              <div x-show="filteredStates && filteredStates[0]">
+                <label for="recommendations" class="block mb-2 font-bold font-serif">Recommendations</label>
+                <select id="recommendations" class="border rounded-sm p-2 w-full lg:min-w-[200px] bg-white" x-model="filterRecommendation">
+                  <option value="ALL">All</option>
+                  <template x-for="comparison in getComparisonsByState(filteredStates[0].code)" :key="comparison.name">
+                    <option :value="comparison.name" x-text="comparison.name"></option>
+                  </template>
+                </select>
+              </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-4">
+              <div class="w-full lg:w-1/2 flex flex-wrap items-center gap-4">
+                <span class="flex items-center gap-2">
+                  <span class="h-4 w-4 rounded-full border block" :style="{ backgroundColor: IMPLEMENTED_FILL }"></span>
+                  <span>Fully Implemented</span>
+                </span>
+                <span class="flex items-center gap-2">
+                  <span class="h-4 w-4 rounded-full border block" :style="{ backgroundColor: IN_PROGRESS_FILL }"></span>
+                  <span>Partially Implemented</span>
+                </span>
+                <span class="flex items-center gap-2">
+                  <span class="h-4 w-4 rounded-full border block" :style="{ backgroundColor: NOT_IMPLEMENTED_FILL }"></span>
+                  <span>Not Implemented</span>
+                </span>
+                <span class="flex items-center gap-2">
+                  <span class="h-4 w-4 rounded-full border block"></span>
+                  <span>No Data</span>
+                </span>
+              </div>
+            <div class="w-full lg:w-1/2">
+              <div class="flex items-center flex-wrap gap-4 ml-auto w-full">
+                <strong class="font-serif text-xl">Implemented Recommendations</strong>
+                <button @click="showAll = !showAll" class="rounded-sm text-underline text-blue-500">
+                  <span x-text="showAll ? 'Hide All' : 'Show All'"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <template x-if="filteredStates.length > 0">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <template x-for="state in filteredStates" :key="state.code">
+            <div class="border rounded-sm p-4 flex flex-col">
+              <div x-text="state.name" class="text-2xl font-serif font-bold text-center mb-4"></div>
+
+              <div class="mb-4 flex items-center justify-center">
+                <canvas
+                :id="`canvas-${state.code}`"
+                height="130"
+                width="130"
+                :title="`${getImplementedCount(state)} out of ${getTotalSegments(state)}`"
+                ></canvas>
+              </div>
+
+              <ul x-show="showAll">
+                <template x-for="comparison in getComparisonsByState(state.code)" :key="comparison.name">
+                  <li x-show="comparison.name" class="flex flex-col gap-4">
+                    <a href="" class="flex gap-2">
+                      <span class="inline-block" style="padding-top: 4px">
+                        <span class="h-4 w-4 rounded-full border block" :title="comparison.value" :style="{ backgroundColor: comparison.value === 'Fully Implemented' ? IMPLEMENTED_FILL : comparison.value === 'Partially Implemented' ? IN_PROGRESS_FILL : comparison.value === 'Not Implemented' ? NOT_IMPLEMENTED_FILL : '' }"></span>
+                      </span>
+                      <span x-text="comparison.name"></span>
+                    </a>
+                  </li>
+                </template>
+              </ul>
+            </div>
+          </template>
+        </div>
+      </template>
     </div>
+  </div>
+</div>
 </div>
 
 <script>
-    const NOT_IMPLEMENTED_FILL = '#d9d9d9';
-    const IN_PROGRESS_FILL = '#fae4ba';
-    const DONT_KNOW_FILL = '#ffffff';
-    const IMPLEMENTED_FILL = '#f2b039';
+const NOT_IMPLEMENTED_FILL = '#d9d9d9';
+const IN_PROGRESS_FILL = '#fae4ba';
+const DONT_KNOW_FILL = '#ffffff';
+const IMPLEMENTED_FILL = '#f2b039';
 
-    let COMPARE_TOPIC = 'Kin Finding';
-    let COMPARE_DATA = {{ compare['Practices'] | dump | safe }};
-    let STATE_DATA = {{ compare['States'] | dump | safe }};
+let COMPARE_TOPIC = 'Kin Finding';
+let COMPARE_DATA = {{ compare['Practices'] | dump | safe }};
+let STATE_DATA = {{ compare['States'] | dump | safe }};
 
-    document.addEventListener('alpine:init', () => {
-        Alpine.data('progressChartData', () => ({
-            states: [],
-            filteredStates: [],
-            comparisons: [],
+document.addEventListener('alpine:init', () => {
+  Alpine.data('progressChartData', () => ({
+    states: [],
+    filteredStates: [],
+    comparisons: [],
 
-            showAll: true,
-            
-            filterAdministration: 'ALL',
-            filterPopulation: 'ALL',
-            filterRecommendation: 'ALL',
+    showAll: true,
 
-            init() {
-                console.log('STATE_DATA:', STATE_DATA);
-                console.log('COMPARE_DATA:', COMPARE_DATA);
+    filterAdministration: 'ALL',
+    filterPopulation: 'ALL',
+    filterRecommendation: 'ALL',
 
-                this.states = structuredClone(STATE_DATA);
+    init() {
+      console.log('STATE_DATA:', STATE_DATA);
+      console.log('COMPARE_DATA:', COMPARE_DATA);
 
-                this.comparisons = COMPARE_DATA.filter(comparison => {
-                    return comparison['Topic'] === COMPARE_TOPIC;
-                });
+      this.states = structuredClone(STATE_DATA);
+
+      this.comparisons = COMPARE_DATA.filter(comparison => {
+        return comparison['Topic'] === COMPARE_TOPIC;
+      });
 
                 // Watch for changes to filters
-                this.$watch('filterAdministration', () => {
-                    this.sortStates();
-                });
-                this.$watch('filterPopulation', () => {
-                    this.sortStates();
-                });
-                this.$watch('filterRecommendation', () => {
-                    this.sortStates();
-                });
+      this.$watch('filterAdministration', () => {
+        this.sortStates();
+      });
+      this.$watch('filterPopulation', () => {
+        this.sortStates();
+      });
+      this.$watch('filterRecommendation', () => {
+        this.sortStates();
+      });
 
                 // Draw charts after the DOM is fully rendered
-                this.$nextTick(() => {
-                    this.states.forEach(state => {
-                        this.drawProgressChart(state);
-                    });
-                });
+      this.$nextTick(() => {
+        this.states.forEach(state => {
+          this.drawProgressChart(state);
+        });
+      });
 
-                this.sortStates();
-            },
+      this.sortStates();
+    },
 
-            getComparisonsByState(stateCode) {
-                const comparisonData = [];
-                console.log("comparisons", this.comparisons);
-                this.comparisons.forEach(comparison => {
-                    comparisonData.push({
-                        name: comparison.Name,
-                        value: comparison[stateCode]
-                    });
-                });
+    getComparisonsByState(stateCode) {
+      const comparisonData = [];
+      console.log("comparisons", this.comparisons);
+      this.comparisons.forEach(comparison => {
+        comparisonData.push({
+          name: comparison.Name,
+          value: comparison[stateCode]
+        });
+      });
 
-                comparisonData.sort((a, b) => a.name.localeCompare(b.name));
-                console.log("comparisonData", comparisonData);
-                return comparisonData;
-            },
+      comparisonData.sort((a, b) => a.name.localeCompare(b.name));
+      console.log("comparisonData", comparisonData);
+      return comparisonData;
+    },
 
-            getTotalSegments(state) {
-                let totalSegments = this.getComparisonsByState(state.code).length;
-                return totalSegments;
-            },
+    getTotalSegments(state) {
+      let totalSegments = this.getComparisonsByState(state.code).length;
+      return totalSegments;
+    },
 
-            getImplementedCount(state) {
-                let stateComparison = this.getComparisonsByState(state.code);
-                let implementedCount = stateComparison.filter(c => c.value === 'Fully Implemented').length;
-                return implementedCount;
-            },
+    getImplementedCount(state) {
+      let stateComparison = this.getComparisonsByState(state.code);
+      let implementedCount = stateComparison.filter(c => c.value === 'Fully Implemented').length;
+      return implementedCount;
+    },
 
-            drawProgressChart(state) {
-                const canvas = document.getElementById(`canvas-${state.code}`);
+    drawProgressChart(state) {
+      const canvas = document.getElementById(`canvas-${state.code}`);
 
-                if (canvas) {
-                    const context = canvas.getContext('2d');
-                    if (context) {
-                        const comparisons = this.getComparisonsByState(state.code);
-                        this.drawSegments(
-                            context,
-                            comparisons.length,
-                            this.getImplementedCount(state),
-                            comparisons.filter(c => c.value === 'Partially Implemented').length,
-                            comparisons.filter(c => c.value === 'NA').length
-                        );
-                    }
-                }
-            },
+      if (canvas) {
+        const context = canvas.getContext('2d');
+        if (context) {
+          const comparisons = this.getComparisonsByState(state.code);
+          this.drawSegments(
+            context,
+            comparisons.length,
+            this.getImplementedCount(state),
+            comparisons.filter(c => c.value === 'Partially Implemented').length,
+            comparisons.filter(c => c.value === 'NA').length
+            );
+        }
+      }
+    },
 
-            drawSegments(context, numberOfSegments, implementedCount, inProgressCount, dontKnowCount) {
-                const BORDER_WIDTH = 2;
-                const SEGMENT_LENGTH = 60;
-                const CENTER_OFFSET = 65;
+    drawSegments(context, numberOfSegments, implementedCount, inProgressCount, dontKnowCount) {
+      const BORDER_WIDTH = 2;
+      const SEGMENT_LENGTH = 60;
+      const CENTER_OFFSET = 65;
 
-                const implementedTerminalIndex = implementedCount;
-                const inProgressTerminalIndex = implementedTerminalIndex + inProgressCount;
-                const dontKnowTerminalIndex = inProgressTerminalIndex + dontKnowCount;
+      const implementedTerminalIndex = implementedCount;
+      const inProgressTerminalIndex = implementedTerminalIndex + inProgressCount;
+      const dontKnowTerminalIndex = inProgressTerminalIndex + dontKnowCount;
 
-                let endAngle = Math.PI * 1.5;
-                let beginAngle, offsetX, offsetY, medianAngle;
+      let endAngle = Math.PI * 1.5;
+      let beginAngle, offsetX, offsetY, medianAngle;
 
                 // Clear canvas before drawing
-                context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+      context.clearRect(0, 0, context.canvas.width, context.canvas.height);
 
-                for (let i = 0; i < numberOfSegments; i++) {
-                    beginAngle = endAngle;
-                    endAngle = endAngle + Math.PI * (2 / numberOfSegments);
-                    medianAngle = (endAngle + beginAngle) / 2;
-                    offsetX = Math.cos(medianAngle) * BORDER_WIDTH;
-                    offsetY = Math.sin(medianAngle) * BORDER_WIDTH;
-                    context.beginPath();
-                    context.fillStyle =
-                        i < implementedTerminalIndex
-                            ? IMPLEMENTED_FILL
-                            : i < inProgressTerminalIndex
-                            ? IN_PROGRESS_FILL
-                            : i < dontKnowTerminalIndex
-                            ? DONT_KNOW_FILL
-                            : NOT_IMPLEMENTED_FILL;
+      for (let i = 0; i < numberOfSegments; i++) {
+        beginAngle = endAngle;
+        endAngle = endAngle + Math.PI * (2 / numberOfSegments);
+        medianAngle = (endAngle + beginAngle) / 2;
+        offsetX = Math.cos(medianAngle) * BORDER_WIDTH;
+        offsetY = Math.sin(medianAngle) * BORDER_WIDTH;
+        context.beginPath();
+        context.fillStyle =
+        i < implementedTerminalIndex
+        ? IMPLEMENTED_FILL
+        : i < inProgressTerminalIndex
+        ? IN_PROGRESS_FILL
+        : i < dontKnowTerminalIndex
+        ? DONT_KNOW_FILL
+        : NOT_IMPLEMENTED_FILL;
 
-                    context.moveTo(CENTER_OFFSET + offsetX, CENTER_OFFSET + offsetY);
-                    context.arc(
-                        CENTER_OFFSET + offsetX,
-                        CENTER_OFFSET + offsetY,
-                        SEGMENT_LENGTH,
-                        beginAngle,
-                        endAngle
-                    );
-                    context.lineTo(CENTER_OFFSET + offsetX, CENTER_OFFSET + offsetY);
-                    context.fill();
+        context.moveTo(CENTER_OFFSET + offsetX, CENTER_OFFSET + offsetY);
+        context.arc(
+          CENTER_OFFSET + offsetX,
+          CENTER_OFFSET + offsetY,
+          SEGMENT_LENGTH,
+          beginAngle,
+          endAngle
+          );
+        context.lineTo(CENTER_OFFSET + offsetX, CENTER_OFFSET + offsetY);
+        context.fill();
 
-                    if (i < dontKnowTerminalIndex && i >= inProgressTerminalIndex) {
-                        context.strokeStyle = NOT_IMPLEMENTED_FILL;
-                        context.lineWidth = 1;
-                        context.stroke();
-                    }
-                }
-            },
+        if (i < dontKnowTerminalIndex && i >= inProgressTerminalIndex) {
+          context.strokeStyle = NOT_IMPLEMENTED_FILL;
+          context.lineWidth = 1;
+          context.stroke();
+        }
+      }
+    },
 
-            sortStates() {
-                const filteredStates = this.states.filter((state) => {
-                    if (this.filterAdministration !== 'ALL') {
-                        return this.filterAdministration.toLowerCase() === state.admin.toLowerCase();
-                    }
-                    return true;
-                }).filter((state) => {
-                    if (this.filterPopulation !== 'ALL') {
-                        if (this.filterPopulation === 'SMALL') {
-                            return state.population < 2500000;
-                        } else if (this.filterPopulation === 'MEDIUM') {
-                            return state.population >= 2500000 && state.population <= 7500000;
-                        } else if (this.filterPopulation === 'LARGE') {
-                            return state.population > 7500000;
-                        }
-                        return false;
-                    }
-                    return true;
-                }).filter((state) => {
-                    if (this.filterRecommendation !== 'ALL') {
-                        const comparisons = this.getComparisonsByState(state.code);
-                        return comparisons.some(comparison => comparison.name === this.filterRecommendation && comparison.value.toUpperCase() === 'FULLY IMPLEMENTED');
-                    }
-                    return true;
-                });
+    sortStates() {
+      const filteredStates = this.states.filter((state) => {
+        if (this.filterAdministration !== 'ALL') {
+          return this.filterAdministration.toLowerCase() === state.admin.toLowerCase();
+        }
+        return true;
+      }).filter((state) => {
+        if (this.filterPopulation !== 'ALL') {
+          if (this.filterPopulation === 'SMALL') {
+            return state.population < 2500000;
+          } else if (this.filterPopulation === 'MEDIUM') {
+            return state.population >= 2500000 && state.population <= 7500000;
+          } else if (this.filterPopulation === 'LARGE') {
+            return state.population > 7500000;
+          }
+          return false;
+        }
+        return true;
+      }).filter((state) => {
+        if (this.filterRecommendation !== 'ALL') {
+          const comparisons = this.getComparisonsByState(state.code);
+          return comparisons.some(comparison => comparison.name === this.filterRecommendation && comparison.value.toUpperCase() === 'FULLY IMPLEMENTED');
+        }
+        return true;
+      });
 
-                this.filteredStates = filteredStates.sort((a, b) => a.name.localeCompare(b.name));
+      this.filteredStates = filteredStates.sort((a, b) => a.name.localeCompare(b.name));
 
                 // Redraw charts after sorting
-                this.$nextTick(() => {
-                    this.filteredStates.forEach(state => {
-                        this.drawProgressChart(state);
-                    });
-                });
-            }
-        }));
-    });
+      this.$nextTick(() => {
+        this.filteredStates.forEach(state => {
+          this.drawProgressChart(state);
+        });
+      });
+    }
+  }));
+});
 </script>

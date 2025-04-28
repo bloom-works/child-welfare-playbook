@@ -1,6 +1,8 @@
 ---
 layout: default
+title: Child welfare playbook
 path: home
+class: home
 ---
 
 {% set hero = home.home.hero %}
@@ -9,78 +11,54 @@ path: home
 {% set mission = home.home.mission %}
 
 
-<div class="bg-no-repeat bg-yellow bg-right-bottom flex flex-col md:flex-row items-center">
-    <div class="order-1 md:order-2 w-full md:w-1/2 flex items-end">
-        <img src="{{ hero.image | replace('/src', '') }}" role="presentation" class="w-full h-full object-cover" />
+<div class="home-banner">
+    <div class="home-banner-image">
+        <img src="{{ hero.image | replace('/src', '') }}" role="presentation" />
     </div>
-    <div class="order-2 md:order-1 p-8 md:px-[5%]">
-        <div class="max-w-xl">
-            <h1 class="text-5xl font-serif font-black mb-8">{{ hero.title }}</h1>
-            <div class="text-xl mb-8">{{ hero.content }}</div>
-            <form action="/search" method="GET" class="flex">
-                <input class="font-sans placeholder-base text-base w-full p-4 rounded-l-lg" type="text" name="q" id="q" placeholder="Search the playbook" />
-                <input type="submit" class="cursor-pointer font-sans bg-salmon text-base font-bold px-12 border-2 border-white hover:text-base hover:underline rounded-r-lg" value="Search" />
-            </form>
-        </div>
+    <div class="home-banner-content">
+        <h1>{{ hero.title }}</h1>
+        <p>{{ hero.content }}</p>
+        <form action="/search" method="GET" class="home-search">
+            <input type="text" name="q" id="q" placeholder="Search the playbook" />
+            <input type="submit" value="Search" />
+        </form>
     </div>
 </div>
 
-<div class="bg-[#EFEFEE]">
-    <div class="mx-auto px-8 md:px-[5%]">
-        <div class="py-24">
-            <h2 class="text-4xl mb-12 mt-0">
-                <span class="border-b-[4px] border-orange pb-2 font-serif font-black">{{ features.whatsNew }}</span>
-            </h2>
-            <div class="bg-[#522a10] px-8 py-12 rounded-lg text-white bg-no-repeat bg-right mb-6" style="background-image: url({{ features.largeFeature.image | replace('/src', '') }})">
-                <div class="md:max-w-[60%]">
-                    <h3 class="font-serif font-black text-[28px] leading-tight mb-4">{{ features.largeFeature.title }}</h3>
-                    <div class="text-[21px] mb-8 w-3/4">{{ features.largeFeature.content }}</div>
-                    <div>
-                        <a href="{{ features.largeFeature.link }}" class="rounded-lg bg-orange text-white font-bold min-w-[150px] inline-block px-6 py-4 text-center hover:bg-white hover:text-orange">{{ features.largeFeature.linkText }}</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="home-whats-new-wrapper">
+    <h2>{{ features.whatsNew }}</h2>
+    <div class="home-whats-new" style="background-image: url({{ features.largeFeature.image | replace('/src', '') }})">
+        <h3>{{ features.largeFeature.title }}</h3>
+        <p>{{ features.largeFeature.content }}</p>
+        <a href="{{ features.largeFeature.link }}" class="button">{{ features.largeFeature.linkText }}</a>
     </div>
 </div>
 
-<div class="bg-[#FFFFFF]">
-    <div class="mx-auto px-8 md:px-[5%]">
-        <div class="py-24">
-            <h2 class="text-4xl font-bold mb-12 mt-0">
-                <span class="border-b-[4px] border-orange pb-2 font-serif font-black">Popular Topics</span>
-            </h2>
-            <div class="lg:col-span-2 w-full grid xl:grid-cols-5 lg:grid-cols-3 grid-cols-1 gap-4">
-                {% for topic in topicSection.topics %}
-                    {% for candidateTopic in topics.topics %}
-                        {% if topic === candidateTopic.title %}
-                            <a class="rounded-lg overflow-hidden bg-gray-200 group text-[21px] text-navy hover:bg-yellow hover:underline w-full bg-[#F4B413] block text-center font-bold flex flex-col" href="/topics/{{ candidateTopic.title }}">
-                                <div class="h-[120px] flex items-center justify-center">
-                                    <img src="{{ candidateTopic.image | replace('/src', '') }}" role="presentation" />
-                                </div>
-                                <div class="rounded-b-lg flex-1 p-8 bg-yellow">{{ candidateTopic.hero.title }}</div>
-                            </a>
-                        {% endif %}
-                    {% endfor %}
-                {% endfor %}
-            </div>
-        </div>
+<div class="home-topic">
+    <h2 class="page-h2">Popular Topics</h2>
+    <div class="card-grid">
+        {% for topic in topicSection.topics %}
+            {% for candidateTopic in topics.topics %}
+                {% if topic === candidateTopic.title %}
+                    <a class="card" href="/topics/{{ candidateTopic.title }}">
+                        <div class="card-icon">
+                            <img src="{{ candidateTopic.image | replace('/src', '') }}" role="presentation" />
+                        </div>
+                        <div class="card-title">{{ candidateTopic.hero.title }}</div>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
     </div>
 </div>
 
-<div class="bg-gray-200">
-    <div class="mx-auto">
-        <div class="flex gap-2">
-            <div class="aspect-w-1 aspect-h-1">
-                <img src="{{ mission.image | replace('/src', '') }}" alt="{{ mission.title }}" class="w-full h-full object-cover hidden md:block" />
-            </div>
-            <div class="md:p-12 w-3/4 p-8">
-                <h2 class="text-4xl font-bold mb-8 mt-0">
-                    <span class="border-b-[4px] border-orange pb-2 font-serif font-black">{{ mission.title }}</span>
-                </h2>
-                <div class="prose prose-xl">{{ mission.content | markdown | safe }}</div>
-            </div>
-        </div>
+<div class="home-mission">
+    <div>
+        <img src="{{ mission.image | replace('/src', '') }}" alt="{{ mission.title }}" />
     </div>
-</div>
+    <div class="home-mission-content">
+        <h2>{{ mission.title }}</h2>
+        <div class="page-content-prose l-stack-basic">{{ mission.content | markdown | safe }}</div>
+    </div>
 
+</div>
