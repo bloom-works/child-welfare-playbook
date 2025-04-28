@@ -1,9 +1,0 @@
-.social svg {
-    height: 50px;
-    width: 50px;
-    object-fit: cover;
-}
-
-.social svg:hover path {
-    fill: rgb(181, 14, 26);
-}
