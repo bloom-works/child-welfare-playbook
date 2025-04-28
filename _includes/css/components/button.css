@@ -3,9 +3,8 @@
     background: var(--c-orange);
     color: #fff;
     font-weight: var(--font-bold);
-    min-inline-size: 150px;
     display: inline-block;
-    padding: 1rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     text-align: center;
 }
 
@@ -13,4 +12,10 @@
 .button:focus {
     background-color: #fff;
     color: var(--c-orange);
+}
+
+.button[data-type="secondary"] {
+  background: #fff;
+  border: 0.25rem solid var(--c-orange);
+  color: var(--base);
 }

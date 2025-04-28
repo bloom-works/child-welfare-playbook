@@ -1,0 +1,90 @@
+.play-card {
+  list-style: none;
+  padding: 1rem 2rem;
+  border: 0.25rem solid var(--c-orange);
+  border-radius: var(--radius-lg);
+  position: relative;
+  font-weight: var(--font-bold);
+}
+
+.play-card a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.card-new {
+  --border-width: 0.1875rem;
+  --inner-radius: calc(var(--radius-lg) - var(--border-width));
+  border-radius: var(--radius-lg);
+  border: var(--border-width) solid var(--c-brown);
+  color: var(--c-brown);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.card-new svg {
+  inline-size: 1.5em;
+  block-size: 1.5em;
+}
+
+.card-new-header svg {
+  inline-size: 1.5em;
+  block-size: 1.5em;
+}
+
+.card-new > * {
+  padding: 0.5rem 1rem;
+}
+
+.card-new-header,
+.card-new-cta {
+  display: flex;
+  gap: 0.5rem;
+  font-weight: var(--font-bold);
+}
+
+[data-type="topic"] .card-new-header {
+  background: var(--c-yellow);
+}
+
+[data-type="topic"] .card-new-cta {
+  background: #fcf5e8;
+}
+
+[data-type="resource"] .card-new-header {
+  background: var(--c-brown);
+  color: #fff;
+}
+
+[data-type="resource"] .card-new-cta {
+  background: #f1e3db;
+}
+
+.card-new-header {
+  border-start-start-radius: var(--inner-radius);
+  border-start-end-radius: var(--inner-radius);
+}
+
+.card-new-body,
+.card-new-cta {
+  font-size: var(--font-sm-size);
+  line-height: var(--font-sm-leading);
+}
+
+.card-new-body {
+  background: #fff;
+  font-weight: var(--font-normal);
+  text-align: left;
+  flex: 1;
+  padding-block: 0.75rem;
+}
+
+.card-new-cta {
+  padding-block: 0.5rem;
+  border-end-start-radius: var(--inner-radius);
+  border-end-end-radius: var(--inner-radius);
+  color: var(--c-brown);
+}

@@ -4,13 +4,7 @@
     align-items: flex-end;
     background-repeat: no-repeat;
     background-position: right center;
-}
-
-.page-banner-inner {
-    margin-inline: auto;
-    inline-size: 100%;
-    padding-block: 6rem;
-    padding-inline: 5%;
+    padding-block: calc(var(--font-base-leading) * 3);
 }
 
 .page-banner h1 {
@@ -35,8 +29,7 @@
     color: #fff;
 }
 
-.page-banner-topic h1,
-.page-banner-white h1 {
+.page-banner-topic h1 {
     color: var(--t-base);
 }
 

@@ -4,18 +4,30 @@
 }
 
 .footer-inner {
-    margin-inline: auto;
     display: flex;
     align-items: center;
     gap: 3rem;
-    padding: 2rem;
+    padding-block: 2rem;
 }
 
 .footer ul {
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 3rem;
     max-inline-size: unset;
+    margin: 0;
+    padding: 0;
+    mix-blend-mode: multiply;
+    align-items: center;
+}
+
+.footer img {
+  block-size: 1.5rem;
+}
+
+.footer li {
+  padding: 0;
 }
 
 .footer h3 {
@@ -42,10 +54,6 @@
 }
 
 @media (min-width: 768px) {
-    .footer-inner {
-        padding-inline: 5%;
-    }
-
     .footer ul {
         flex-wrap: nowrap;
         inline-size: max-content;

@@ -24,7 +24,7 @@
 }
 
 .search-bar button {
-    font-family: var(--font-sans);
+    font-family: var(--font-primary);
     background: var(--c-gray-900);
     font-weight: var(--font-bold);
     font-size: var(--font-base-size);
