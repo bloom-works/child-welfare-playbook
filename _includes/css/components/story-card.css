@@ -41,6 +41,8 @@
 
 .story-card-meta {
   font-size: var(--font-sm-size);
+  display: flex;
+  gap: 1.5rem;
 }
 
 /* Featured stories */

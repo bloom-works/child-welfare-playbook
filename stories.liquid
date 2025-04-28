@@ -9,35 +9,28 @@ description: Stories show how agencies are putting plays into action, solving co
 <div class="l-stack-basic story-list-wrapper">
 {% for story in collections.stories %}
 {% if story.data.featured %}
-<div class="story-card" data-featured style="--bg-image: url('/images/stories/{{ story.data.image }}')">
-  <span class="story-card-type">{{ story.data.type }}</span>
-  <h3><a href="{{ story.url }}">{{ story.data.title }}</a></h3>
-  <p>{{ story.data.description }}</p>
-  <div class="story-card-meta">
-    <span>{{ story.data.author }}</span>
-    <span>{{ story.data.date }}</span>
-  </div>
-</div>
+  {%- include "components/story-card.liquid",
+    image: story.data.image,
+    type: story.data.type,
+    title: story.data.title,
+    description: story.data.description,
+    author: story.data.author,
+    date: story.date,
+    featured: story.data.featured
+  -%}
 {% endif %}
 {% endfor %}
 
 {% for story in collections.stories %}
 {% if story.data.featured != true %}
-<div class="story-card">
-  <div class="story-card-image">
-    <img src="/images/stories/{{ story.data.image }}" alt="" />
-    <span class="story-card-badge">{{ story.data.type }}</span>
-  </div>
-
-  <div class="story-card-content">
-    <h3><a href="{{ story.url }}">{{ story.data.title }}</a></h3>
-    <p>{{ story.data.description }}</p>
-    <div class="story-card-meta">
-      <span>{{ story.data.author }}</span>
-      <span>{{ story.data.date }}</span>
-    </div>
-  </div>
-</div>
+  {%- include "components/story-card.liquid",
+    image: story.data.image,
+    type: story.data.type,
+    title: story.data.title,
+    description: story.data.description,
+    author: story.data.author,
+    date: story.date
+  -%}
 {% endif %}
 {% endfor %}
 </div>
