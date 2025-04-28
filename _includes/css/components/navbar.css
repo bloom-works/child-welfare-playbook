@@ -33,11 +33,30 @@
   margin-inline-end: 0.75rem;
 }
 
+[data-nav-open] {
+  display: none;
+}
+
+.nav:has([aria-hidden]) [data-nav-closed] {
+  display: none;
+}
+
+.nav:has([aria-hidden]) [data-nav-open] {
+  display: block;
+}
+
 .nav-hamburger {
   display: flex;
   align-items: center;
   padding: 0.5rem;
   margin-block-start: 0.25rem;
+  background: transparent;
+  border-radius: var(--radius-lg);
+  display: inline-flex;
+  align-items: center;
+  color: var(--c-base);
+  font-size: var(--font-sm-size);
+  line-height: var(--font-sm-leading);
 }
 
 .nav-hamburger svg {
@@ -45,21 +64,16 @@
   block-size: 1.5rem;
 }
 
-.nav-hamburger button {
-  border-radius: var(--radius-lg);
-  display: inline-flex;
-  align-items: center;
-  color: #fff;
-  font-size: var(--font-sm-size);
-  line-height: var(--font-sm-leading);
+.nav-hamburger {
+
 }
 
-.nav-hamburger button:hover {
+.nav-hamburger:hover {
   background: #fff;
   color: var(--c-primary);
 }
 
-.nav-hamburger button:focus {
+.nav-hamburger:focus {
   box-shadow: 0 0 0 2px #fff;
 }
 
