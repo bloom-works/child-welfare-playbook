@@ -1,0 +1,13 @@
+{% assign cardIcon = icon %}
+
+<div class="card-new" data-type="{{ type }}">
+  <div class="card-new-header">{% if cardIcon %}{% icon cardIcon %}{% endif %}{{ header }}</div>
+  <div class="card-new-body">{{ description }}</div>
+  <div class="card-new-cta">
+    {%- if type == 'resource' -%}
+      {% icon 'download-simple' %} Download
+    {%- else -%}
+      Browse plays {% icon 'arrow-right' %}
+    {%- endif -%}
+  </div>
+</div>
