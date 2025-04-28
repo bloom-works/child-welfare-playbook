@@ -1,0 +1,32 @@
+h1 {
+    font-family: var(--font-serif);
+    font-weight: var(--font-bold);
+    font-size: var(--font-5xl-size);
+    line-height: var(--font-5xl-leading);
+}
+
+h2 {
+    font-family: var(--font-serif);
+    font-weight: var(--font-bold);
+    font-size: var(--font-4xl-size);
+    line-height: var(--font-4xl-leading);
+    text-decoration: underline;
+    text-decoration-color: var(--c-orange);
+    text-underline-offset: 1rem;
+    text-decoration-thickness: 4px;
+}
+
+body {
+    font-size: var(--font-base-size);
+    line-height: var(--font-base);
+    color: var(--c-base);
+    font-family: var(--font-sans);
+}
+
+.page-h2 {
+    margin-block-end: 2rem;
+}
+
+:is(p, ul, ol) + .page-h2 {
+    margin-block-start: 3rem;
+}
