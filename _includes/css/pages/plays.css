@@ -25,3 +25,9 @@
 .plays-list ul {
   padding: 0;
 }
+
+/* Play detail page */
+
+.play-wrapper {
+  position: relative;
+}

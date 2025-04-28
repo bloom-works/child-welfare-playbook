@@ -105,12 +105,15 @@ h1, .h1 {
 h2, .h2 {
   font-size: var(--font-4xl-size);
   line-height: var(--font-4xl-leading);
-  margin-block-end: calc(var(--t-paragraph) * 3);
   text-decoration: underline;
   text-decoration-color: var(--c-orange);
   text-underline-offset: 1rem;
   text-decoration-thickness: 4px;
-  --l-stack-gap: calc(var(--t-paragraph) * 2.5);
+  --l-stack-gap: calc(var(--t-paragraph) * 3);
+}
+
+:is(h2, .h2) + * {
+  --l-stack-gap: calc(var(--t-paragraph) * 2);
 }
 
 h3, .h3 {
