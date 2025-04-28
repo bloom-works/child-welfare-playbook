@@ -2,7 +2,7 @@
   "name": "child-welfare-playbook",
   "version": "2.0.0",
   "scripts": {
-    "start": "npx @11ty/eleventy --serve --input=src --output=dist --formats=html,njk,liquid,md,gif,png,jpg,webp,css,js"
+    "start": "npx @11ty/eleventy --serve --watch --output=_site"
   },
   "keywords": [],
   "author": "",
