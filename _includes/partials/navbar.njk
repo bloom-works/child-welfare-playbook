@@ -7,14 +7,14 @@
       <button class="nav-hamburger" aria-expanded="false" id="nav-button" aria-controls="mobile-menu">
         <span class="sr-only">Open main menu</span>
         <span data-nav-closed>
-          {% icon 'x' %}
-        </span>
+  {% icon 'x' %}
+</span>
 
-        <span data-nav-open>
-          {% icon 'hamburger' %}
-        </span>
+<span data-nav-open>
+  {% icon 'hamburger' %}
+</span>
       </button>
-      <div class="nav-mobile-menu" aria-hidden="true" hidden id="mobile-menu">
+      <div class="nav-mobile-menu" aria-hidden="true" id="mobile-menu">
         <ul>
           {% for link in navigation.items %}
           <li>
