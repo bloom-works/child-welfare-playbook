@@ -1,0 +1,45 @@
+/* Banner with image on main section pages (e.g. "All Topics") */
+.page-banner {
+    display: flex;
+    align-items: flex-end;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.page-banner-inner {
+    margin-inline: auto;
+    inline-size: 100%;
+    padding-block: 6rem;
+    padding-inline: 5%;
+}
+
+.page-banner h1 {
+    text-align: left;
+    color: var(--c-base);
+    max-inline-size: 38ch;
+}
+
+.page-banner[data-bg-image] h1 {
+    max-inline-size: 48rem;
+}
+
+.page-banner[data-bg-color="light"] {
+    background-color: var(--c-gray-900);
+}
+
+.page-banner[data-bg-color="dark"] {
+    background-color: var(--c-gray-300);
+}
+
+.page-banner[data-bg-color="dark"] h1 {
+    color: #fff;
+}
+
+.page-banner-topic h1,
+.page-banner-white h1 {
+    color: var(--t-base);
+}
+
+.page-banner-subhead {
+    margin-block-start: 0.5rem;
+}

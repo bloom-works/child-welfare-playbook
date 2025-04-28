@@ -1,0 +1,16 @@
+.button {
+    border-radius: var(--radius-lg);
+    background: var(--c-orange);
+    color: #fff;
+    font-weight: var(--font-bold);
+    min-inline-size: 150px;
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    text-align: center;
+}
+
+.button:hover,
+.button:focus {
+    background-color: #fff;
+    color: var(--c-orange);
+}
