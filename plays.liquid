@@ -1,0 +1,25 @@
+---
+layout: "layouts/content.njk"
+title: Plays
+---
+
+<div class="plays-list-wrapper l-stack-basic">
+{% for section in topics.topics %}
+
+<div class="plays-list">
+  <div class="play-list-meta">
+    {% if topics[section].icon %} {% icon topics[section].icon %}{% endif %}
+
+    <h2>{{ topics[section].title }}</h2>
+
+    <p>{{ topics[section].description }}</p>
+  </div>
+
+{% for play in collections[section + '-plays'] %}
+- [{{ play.data.title }}]({{ play.url }}) {.play-card}
+{% endfor %}
+{.l-stack}
+</div>
+
+{% endfor %}
+</div>
