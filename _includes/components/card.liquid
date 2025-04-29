@@ -13,9 +13,13 @@
   <p class="card-body">{{ description }}</p>
   <p class="card-cta">
     {%- if type == 'resource' -%}
-      {% icon 'download-simple' %} Download
+      <span class="card-download">
+        {% icon 'download-simple-arrow', 'card-download-arrow' %}
+        {% icon 'download-simple-box' %}
+      </span>
+      Download
     {%- else -%}
-      Browse plays {% icon 'arrow-right' %}
+      Browse plays {% icon 'arrow-right', 'card-topic-arrow' %}
     {%- endif -%}
   </p>
 </a>
