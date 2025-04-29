@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "scripts": {
     "start": "npx @11ty/eleventy --serve --watch --output=_site",
-    "build": "npx -y pagefind --site public && npx @11ty/eleventy --output=_site"
+    "build": "npx @11ty/eleventy --output=_site && npx -y pagefind --site public"
   },
   "keywords": [],
   "author": "",
