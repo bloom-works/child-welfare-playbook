@@ -2,6 +2,12 @@
 layout: "layouts/content.njk"
 title: Search
 description: TK
+search: true
 ---
 
-<p>Placeholder</p>
+<div id="search"></div>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: true });
+    });
+</script>

@@ -69,7 +69,22 @@
 
     --section-padding: var(--font-base-leading);
     --section-margin: var(--t-paragraph);
-}
+
+    /* Theming variables for Pagefind (site search) */
+
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary: var(--c-base);
+    --pagefind-ui-text: var(--c-base);
+    --pagefind-ui-background: #ffffff;
+    --pagefind-ui-border: var(--c-orange);
+    --pagefind-ui-tag: #eeeeee;
+    --pagefind-ui-border-width: 0.25rem;
+    --pagefind-ui-border-radius: var(--radius-lg);
+    --pagefind-ui-image-border-radius: var(--radius-lg);
+    --pagefind-ui-image-box-ratio: 0 / 0;
+    --pagefind-ui-font: var(--font-primary);
+
+  }
 
 *,
 ::before,
