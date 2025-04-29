@@ -7,7 +7,7 @@
   font-weight: var(--font-bold);
 }
 
-.card-new {
+.card {
   --border-width: 0.1875rem;
   --inner-radius: calc(var(--radius-lg) - var(--border-width));
   border-radius: var(--radius-lg);
@@ -19,17 +19,17 @@
   text-decoration: none;
 }
 
-.card-new svg {
+.card svg {
   inline-size: 1.5em;
   block-size: 1.5em;
 }
 
-.card-new-header svg {
+.card-header svg {
   inline-size: 1.5em;
   block-size: 1.5em;
 }
 
-.card-new > * {
+.card > * {
   padding: 0.5rem 1rem;
   inline-size: 100%;
   margin: 0;
@@ -41,43 +41,43 @@
   block-size: 100%;
 }
 
-.card-new-header,
-.card-new-cta {
+.card-header,
+.card-cta {
   display: flex;
   gap: 0.5rem;
   font-weight: var(--font-bold);
   align-items: center;
 }
 
-[data-type="topic"] .card-new-header {
+[data-type="topic"] .card-header {
   background: var(--c-yellow);
 }
 
-[data-type="topic"] .card-new-cta {
+[data-type="topic"] .card-cta {
   background: #fcf5e8;
 }
 
-[data-type="resource"] .card-new-header {
+[data-type="resource"] .card-header {
   background: var(--c-brown);
   color: #fff;
 }
 
-[data-type="resource"] .card-new-cta {
+[data-type="resource"] .card-cta {
   background: #f1e3db;
 }
 
-.card-new-header {
+.card-header {
   border-start-start-radius: var(--inner-radius);
   border-start-end-radius: var(--inner-radius);
 }
 
-.card-new-body,
-.card-new-cta {
+.card-body,
+.card-cta {
   font-size: var(--font-sm-size);
   line-height: var(--font-sm-leading);
 }
 
-.card-new-body {
+.card-body {
   background: #fff;
   font-weight: var(--font-normal);
   text-align: left;
@@ -85,7 +85,7 @@
   padding-block: 0.75rem;
 }
 
-.card-new-cta {
+.card-cta {
   padding-block: 0.5rem;
   border-end-start-radius: var(--inner-radius);
   border-end-end-radius: var(--inner-radius);

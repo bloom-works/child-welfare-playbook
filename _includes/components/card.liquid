@@ -8,10 +8,10 @@
   {% endif %}
 {% endif %}
 
-<a href="{{ url }}" class="card-new" data-type="{{ type }}">
-  <h3 class="card-new-header h5">{% if cardIcon %}{% icon cardIcon %}{% endif %}{{ title }}</h3>
-  <p class="card-new-body">{{ description }}</p>
-  <p class="card-new-cta">
+<a href="{{ url }}" class="card" data-type="{{ type }}">
+  <h3 class="card-header h5">{% if cardIcon %}{% icon cardIcon %}{% endif %}{{ title }}</h3>
+  <p class="card-body">{{ description }}</p>
+  <p class="card-cta">
     {%- if type == 'resource' -%}
       {% icon 'download-simple' %} Download
     {%- else -%}
