@@ -21,20 +21,23 @@ class: home
       {% include "components/card.liquid",
         type: "topic",
         icon: topics.extended-foster-care.icon,
-        header: topics.extended-foster-care.title,
-        description: topics.extended-foster-care.description
+        title: topics.extended-foster-care.title,
+        description: topics.extended-foster-care.description,
+        url: "/plays#extended-foster-care"
       %}
       {% include "components/card.liquid",
         type: "topic",
         icon: topics.licensing.icon,
-        header: topics.licensing.title,
-        description: topics.licensing.description
+        title: topics.licensing.title,
+        description: topics.licensing.description,
+        url: "/plays#licensing"
       %}
       {% include "components/card.liquid",
         type: "topic",
         icon: topics.sibling-connections.icon,
-        header: topics.sibling-connections.title,
-        description: topics.sibling-connections.description
+        title: topics.sibling-connections.title,
+        description: topics.sibling-connections.description,
+        url: "/plays#sibling-connections"
       %}
     </div>
   </div>
@@ -49,21 +52,24 @@ class: home
     <div class="l-grid">
       {% include "components/card.liquid",
         type: "resource",
-        icon: "file-pdf",
-        header: "Heart map template",
-        description: "A visual tool to help youth identify and document important relationships in their lives"
+        filetype: resources.heart-map.filetype,
+        title: resources.heart-map.title,
+        description: resources.heart-map.description,
+        url: resources.heart-map.url
       %}
       {% include "components/card.liquid",
         type: "resource",
-        icon: "file-pdf",
-        header: "Michigan's relative notification form",
-        description: "A form that asks kin to commit to staying in touch with youth even if they can’t provide placement"
+        filetype: resources.michigan-relative-notification.filetype,
+        title: resources.michigan-relative-notification.title,
+        description: resources.michigan-relative-notification.description,
+        url: resources.michigan-relative-notification.url
       %}
       {% include "components/card.liquid",
         type: "resource",
-        icon: "file-doc",
-        header: "Social media policy for child welfare agencies",
-        description: "Washington DC's policy on using social media while protecting privacy."
+        filetype: resources.social-media-policy.filetype,
+        title: resources.social-media-policy.title,
+        description: resources.social-media-policy.description,
+        url: resources.social-media-policy.url
       %}
     </div>
   </div>

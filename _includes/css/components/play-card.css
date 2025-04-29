@@ -7,13 +7,6 @@
   font-weight: var(--font-bold);
 }
 
-.play-card a {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-}
-
 .card-new {
   --border-width: 0.1875rem;
   --inner-radius: calc(var(--radius-lg) - var(--border-width));
@@ -23,6 +16,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  text-decoration: none;
 }
 
 .card-new svg {
@@ -37,6 +31,14 @@
 
 .card-new > * {
   padding: 0.5rem 1rem;
+  inline-size: 100%;
+  margin: 0;
+}
+
+.card a {
+  display: inline-block;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .card-new-header,
@@ -44,6 +46,7 @@
   display: flex;
   gap: 0.5rem;
   font-weight: var(--font-bold);
+  align-items: center;
 }
 
 [data-type="topic"] .card-new-header {

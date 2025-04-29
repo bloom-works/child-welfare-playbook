@@ -8,7 +8,7 @@ description: The Child Welfare Playbook provides strategies (or “plays”) to 
 <div class="plays-list-wrapper l-stack-basic">
 {% for section in topics.topics %}
 
-<div class="plays-list">
+<div class="plays-list" id="{{ section }}">
   <div class="play-list-meta">
     {% if topics[section].icon %} {% icon topics[section].icon %}{% endif %}
 
