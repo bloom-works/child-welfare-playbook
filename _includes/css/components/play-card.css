@@ -8,16 +8,18 @@
   flex-direction: column;
   align-items: stretch;
   text-decoration: none;
-  transition: scale 0.1s ease-out;
   position: relative;
 }
 
-.card:focus,
-.card:hover {
+.card {
+  transition: scale 0.1s ease-out;
+}
+
+:is(.card, .play-card):is(:focus, :hover) {
   scale: 1.03;
 }
 
-.card:active {
+:is(.card, .play-card):active {
   scale: 1.01;
 }
 
@@ -144,11 +146,19 @@
 /* Play card */
 
 .play-card {
-  list-style: none;
   padding: 1rem 2rem;
+  display: block;
   border: 0.25rem solid var(--c-orange);
   border-radius: var(--radius-lg);
   position: relative;
   font-weight: var(--font-bold);
   text-decoration: none;
+  transition: scale 0.1s ease-out,
+              background 50ms ease-out,
+              color 50ms ease-out;
+}
+
+.play-card:is(:hover, :focus) {
+  background: var(--c-orange);
+  color: #fff;
 }
