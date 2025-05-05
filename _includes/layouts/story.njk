@@ -2,7 +2,7 @@
 layout: layouts/default.njk
 ---
 
-<div class="page-banner" data-type="story" style="--bg-image: url('/images/stories/{{ image }}')">
+<div class="page-banner" data-type="story" data-pagefind-filter="Page type:Story" style="--bg-image: url('/images/stories/{{ image }}')">
   <div class="l-wrapper">
     <h1>{{ title }}</h1>
   </div>
@@ -14,4 +14,8 @@ layout: layouts/default.njk
       {{ content | md | safe }}
 </div>
 </div>
+</div>
+
+<div hidden>
+  <span data-pagefind-meta="image">/images/stories/{{image}}</span>
 </div>

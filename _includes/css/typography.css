@@ -221,3 +221,10 @@ time {
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.02em;
 }
+
+mark {
+  background: var(--c-yellow);
+  color: var(--c-brown);
+  padding-inline: 0.25rem;
+  border-radius: 4px;
+}

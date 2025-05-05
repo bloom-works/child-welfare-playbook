@@ -18,14 +18,13 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/favicon-180.png">
     {% if search %}
-      <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
       <script src="/pagefind/pagefind-ui.js"></script>
     {% endif %}
     <link rel="stylesheet" type="text/css" href="/theme.css"/>
   </head>
   <body{% if class %} class="{{ class }}"{% endif %}>
     {% include "partials/navbar.njk" %}
-    <div class="content">
+    <div class="content" data-pagefind-body>
       {{ content | md | safe }}
     </div>
     {% include "partials/footer.njk" %}

@@ -7,10 +7,25 @@ layout: layouts/default.njk
     {% icon 'strategy' %}
   </div>
 
+{%- set pagefindMetaTags -%}
+  {%- for tag in tags -%}
+    {{ topics[tag].title }}
+    {%- if not loop.last -%}, {% endif -%}
+  {%- endfor -%}
+{%- endset -%}
+
 <div class="l-section">
-<div class="l-stack">
-      <h2>{{ title }}</h2>
+<div class="l-stack" data-pagefind-meta="topics:{{ pagefindMetaTags }}">
+      <h2 data-pagefind-meta="title">{{ title }}</h2>
       {{ content | md | safe }}
 </div>
 </div>
+</div>
+
+<div hidden>
+  {%- for tag in tags -%}
+    <span data-pagefind-filter="topics">{{ topics[tag].title }}</span>
+  {%- endfor -%}
+  <span data-pagefind-filter="Page type">Play</span>
+  <span data-pagefind-meta="image">/images/play.svg</span>
 </div>
