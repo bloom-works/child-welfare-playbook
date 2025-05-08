@@ -70,21 +70,8 @@
     --section-padding: var(--font-base-leading);
     --section-margin: var(--t-paragraph);
 
-    /* Theming variables for Pagefind (site search) */
 
-    --pagefind-ui-scale: 1;
-    --pagefind-ui-primary: var(--c-base);
-    --pagefind-ui-text: var(--c-base);
-    --pagefind-ui-background: #ffffff;
-    --pagefind-ui-border: var(--c-gray-200);
-    --pagefind-ui-tag: #eeeeee;
-    --pagefind-ui-border-width: 0.25rem;
-    --pagefind-ui-border-radius: var(--radius-lg);
-    --pagefind-ui-image-border-radius: var(--radius-lg);
-    --pagefind-ui-image-box-ratio: 3 / 2;
-    --pagefind-ui-font: var(--font-primary);
-
-    --pagefind-search-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yMjkuNjYsMjE4LjM0bC01MC4wNy01MC4wNmE4OC4xMSw4OC4xMSwwLDEsMC0xMS4zMSwxMS4zMWw1MC4wNiw1MC4wN2E4LDgsMCwwLDAsMTEuMzItMTEuMzJaTTQwLDExMmE3Miw3MiwwLDEsMSw3Miw3MkE3Mi4wOCw3Mi4wOCwwLDAsMSw0MCwxMTJaIj48L3BhdGg+PC9zdmc+");
+    --search-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yMjkuNjYsMjE4LjM0bC01MC4wNy01MC4wNmE4OC4xMSw4OC4xMSwwLDEsMC0xMS4zMSwxMS4zMWw1MC4wNiw1MC4wN2E4LDgsMCwwLDAsMTEuMzItMTEuMzJaTTQwLDExMmE3Miw3MiwwLDEsMSw3Miw3MkE3Mi4wOCw3Mi4wOCwwLDAsMSw0MCwxMTJaIj48L3BhdGg+PC9zdmc+");
 
   }
 

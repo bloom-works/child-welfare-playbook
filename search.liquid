@@ -5,9 +5,59 @@ description: TK
 search: true
 ---
 
-<div id="search"></div>
-<script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-        new PagefindUI({ element: "#search", showSubResults: true, showEmptyFilters: false });
-    });
-</script>
+<form id="search" class="search-form">
+  <fieldset class="search-input-wrapper">
+    <input type="text" placeholder="Search" id="search-input" class="search-input" />
+    <input type="submit" id="search-button" class="button" value="Search" />
+  </fieldset>
+
+<fieldset class="search-tab-wrapper l-cluster" id="search-filters" role="tablist">
+  <label for="topic-plays" class="search-tab">
+    <input type="radio" name="topic-filter" id="topic-plays" data-type-filter="all" checked>
+    {% icon "list-checks" %} All results
+  </label>
+
+  <label for="topic-strategy" class="search-tab">
+    <input type="radio" name="topic-filter" id="topic-strategy" data-type-filter="Play">
+    {% icon 'strategy' %} Plays
+  </label>
+
+  <label for="topic-stories" class="search-tab">
+    <input type="radio" name="topic-filter" id="topic-stories" data-type-filter="Story">
+    {% icon "book-open" %} Stories
+  </label>
+
+  <label for="topic-resources" class="search-tab">
+    <input type="radio" name="topic-filter" id="topic-resources" data-type-filter="Resource">
+    {% icon "lightbulb-filament" %} Resources
+  </label>
+
+  <label for="topic-meetings" class="search-tab">
+    <input type="radio" name="topic-filter" id="topic-meetings" data-type-filter="Meeting">
+    {% icon "chats-circle" %} Working group meetings
+  </label>
+</fieldset>
+</form>
+
+<template id="search-no-results">
+  <li class="search-result search-result-blank">{% icon "empty" %}
+  <span>No results</span>
+  </li>
+</template>
+
+<div class="search-content">
+  <form id="search-topic-filters" class="search-topic-filters l-stack-basic">
+    <h4>Filter by topic</h4>
+    {%- for i in topics.topics -%}
+      <label for="{{ topics[i].title | slugify }}" class="topic-filter-label" hidden>
+        <input type="checkbox" id="{{ topics[i].title | slugify }}" data-topic-filter="{{ topics[i].title }}" name="topic-filter">
+          <strong>{{ topics[i].title }}</strong>
+          <span>0</span>
+      </label>
+    {%- endfor -%}
+  </form>
+  <div id="search-results">
+  </div>
+
+</div>
+<script type="module" src="/js/search.js"></script>

@@ -17,9 +17,6 @@
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/favicon-180.png">
-    {% if search %}
-      <script src="/pagefind/pagefind-ui.js"></script>
-    {% endif %}
     <link rel="stylesheet" type="text/css" href="/theme.css"/>
   </head>
   <body{% if class %} class="{{ class }}"{% endif %}>
@@ -34,6 +31,6 @@
     {% endif %}
 
     {% svgsprite %}
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
   </body>
 </html>
