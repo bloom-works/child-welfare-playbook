@@ -1,19 +1,8 @@
  window.addEventListener('DOMContentLoaded', async (e) => {
+
+  // Initialize Pagefind
   const pagefind = await import("/pagefind/pagefind.js");
-
   const filters = await pagefind.filters();
-
-  const searchResult = (title, excerpt, url) => {
-    return `
-      <li class="search-result">
-        <a href="${url}" class="l-stack-basic">
-          <h3>${title}</h3>
-          <p>${excerpt}</p>
-        </a>
-      </li>
-    `
-  };
-
   await pagefind.init();
 
   let activeFilters = {
@@ -27,19 +16,16 @@
   const topicFilters = topicFilterWrapper.querySelectorAll("input");
   const loadMoreButton = document.querySelector("#search-load-more");
 
-  const noResultsTemplate = document.querySelector("#search-no-results");
-
-
-  const pluralizeResults = length => length === 1 ? "result" : "results";
-
-
-  // Tabs let users filter by category
 
   // Handle the search
 
   const updateSearch = async (searchType) => {
 
-    let resultPane = '';
+    const noResultsTemplate = document.querySelector("#search-no-results");
+    const resultTemplate = document.querySelector("#search-result");
+
+    const pluralizeResults = length => length === 1 ? "result" : "results";
+    const resultPane = document.createElement("div");
 
     const currentQuery = document.querySelector("#search-input").value;
 
@@ -50,18 +36,29 @@
     );
 
     if (search.results.length < 1) {
-      resultPane = noResultsTemplate.innerHTML;
+      resultPane.innerHTML = noResultsTemplate.innerHTML;
     } else {
       // Populate the search page with markup
 
       const resultCount = search.results.length;
+      const resultHeader = document.createElement("h4");
+      resultHeader.innerHTML = `${resultCount} ${pluralizeResults(resultCount)}`;
 
-      resultPane += `<h4>${resultCount} ${pluralizeResults(resultCount)}</h4>`
+      resultPane.appendChild(resultHeader);
 
       for (const i in search.results) {
         const thisResult = await search.results[i].data();
 
-        resultPane += (searchResult(thisResult.meta.title, thisResult.excerpt, thisResult.url));
+        const resultClone = resultTemplate.content.cloneNode(true);
+        const resultLink = resultClone.querySelector("a");
+        const resultTitle = resultClone.querySelector("h3");
+        const resultExcerpt = resultClone.querySelector("p");
+
+        resultLink.href = thisResult.url;
+        resultTitle.innerHTML = thisResult.meta.title;
+        resultExcerpt.innerHTML = thisResult.excerpt;
+
+        resultPane.appendChild(resultClone);
       }
     }
 
@@ -80,7 +77,7 @@
       };
     }
 
-    resultsWrapper.innerHTML = resultPane;
+    resultsWrapper.innerHTML = resultPane.innerHTML;
   }
 
   searchButton.addEventListener('click', async (e) => {
