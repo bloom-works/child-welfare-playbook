@@ -1,0 +1,51 @@
+.toc {
+    background: var(--c-brown);
+    padding: 3rem 2rem;
+    position: sticky;
+}
+
+.toc-inner {
+    inline-size: 210px;
+}
+
+@media (min-width: 768px) {
+    .toc {
+        border-top-right-radius: var(--radius-lg);
+        border-bottom-right-radius: var(--radius-lg);
+        align-self: flex-start;
+        padding-left: 5%;
+    }
+}
+
+.toc h3 {
+    font-family: var(--font-serif);
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-weight: var(--font-bold);
+    font-size: var(--font-3xl-size);
+    line-height: var(--font-3xl-leading);
+}
+
+.toc hr {
+    margin-block: 1.5rem;
+    border: 0;
+    border-block-end: 4px solid var(--c-orange);
+    inline-size: 50%;
+}
+
+.toc ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.toc a {
+    color: #fff;
+    font-size: var(--font-lg-size);
+    line-height: var(--font-lg-leading);
+}
+
+.toc a:hover {
+    color: var(--c-orange);
+    text-decoration: underline;
+}

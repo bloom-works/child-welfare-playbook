@@ -1,0 +1,17 @@
+.page-icon {
+  --icon-size: 12vw;
+  color: var(--c-orange);
+  border: clamp(0.25rem, 0.1rem + 0.5vw, 1rem) solid;
+  padding: calc(var(--icon-size) / 4);
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: var(--font-base-leading);
+  rotate: -11deg;
+}
+
+.page-icon svg {
+  block-size: var(--icon-size);
+  inline-size: var(--icon-size);
+  display: inline-block;
+}

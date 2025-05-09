@@ -3,68 +3,56 @@ layout: default
 title: About
 ---
 
-<div class="flex items-end bg-no-repeat bg-right">
-  <div class="mx-auto w-full">
-    <div class="max-w-screen-lg py-24 pl-[5%]">
-      <h1 class="font-serif text-5xl font-bold">{{ about.hero.title }}</h1>
-    </div>
+<div class="page-banner">
+  <div class="page-banner-inner">
+      <h1>{{ about.hero.title }}</h1>
   </div>
 </div>
-<div class="hidden md:block mx-auto px-8 md:px-[5%]">
-  <div class="max-w-4xl">
-    <nav class="flex py-8" aria-label="Breadcrumb">
-        <ol class="inline-flex items-center space-x-1 md:space-x-3">
-            <li class="inline-flex items-center">
-                <a href="/" class="font-medium text-navy hover:underline">Home</a>
-            </li>
-            <li aria-current="page">
-                <div class="flex items-center gap-2">
-                    <span>/</span>
-                    <strong class="text-navy hover:underline font-bold">About</strong>
-                </div>
-            </li>
-        </ol>
-    </nav>
-  </div>
+<div class="breadcrumb-wrapper">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+          <li>
+              <a href="/">Home</a>
+          </li>
+          <li aria-current="page">
+              <span>/</span>
+              <strong>About</strong>
+          </li>
+      </ol>
+  </nav>
 </div>
-<div class="flex flex-col md:flex-row gap-12">
-  <div class="bg-[#522a10] p-8 md:pl-[5%] sticky md:self-start rounded-r-lg">
-    <div class="w-[210px]">
-      <div class="font-bold text-3xl text-white mb-2">On this page</div>
-      <hr class="border-b-[4px] border-orange my-6 w-1/2" />
-      <ul class="flex flex-col gap-2">
-        <li><a class="text-lg text-white hover:text-orange hover:underline" href="#about">About</a></li>
-        <li><a class="text-lg text-white hover:text-orange hover:underline" href="#membership">Membership</a></li>
-        <li><a class="text-lg text-white hover:text-orange hover:underline" href="#how">How it Works</a></li>
-        <li><a class="text-lg text-white hover:text-orange hover:underline" href="#benefits">Benefits of Membership</a></li>
-        <li><a class="text-lg text-white hover:text-orange hover:underline" href="#current">Current Members</a></li>
+<div class="page-content">
+  <div class="toc">
+    <div class="toc-inner">
+      <h3>On this page</h3>
+      <hr />
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#membership">Membership</a></li>
+        <li><a href="#how">How it Works</a></li>
+        <li><a href="#benefits">Benefits of Membership</a></li>
+        <li><a href="#current">Current Members</a></li>
       </ul>
     </div>
   </div>
-  <div class="px-8 prose prose-xl max-w-none">
-    <div class="max-w-4xl">
-      <h2 id="about" class="text-4xl font-bold mb-8 mt-0 font-serif mt-12">
-        <span class="border-b-[4px] border-orange pb-2">About</span>
-      </h2>
+  <div class="page-content-prose l-stack" data-padded>
+    <section>
+      <h2 class="page-h2" id="about">About</h2>
       {{ about.about | markdown | safe }}
-      <h2 id="membership" class="text-4xl font-bold mb-8 mt-0 font-serif mt-12">
-        <span class="border-b-[4px] border-orange pb-2">Membership</span>
-      </h2>
+    </section>
+    <section>
+      <h2 class="page-h2" id="membership">Membership</h2>
       {{ about.membership | markdown | safe }}
-      <h2 id="how" class="text-4xl font-bold mb-8 mt-0 font-serif mt-12">
-        <span class="border-b-[4px] border-orange pb-2">How it Works</span>
-      </h2>
+    </section>
+    <section>
+      <h2 class="page-h2" id="how">How it Works</h2>
       {{ about.howItWorks | markdown | safe }}
-      <h2 id="benefits" class="text-4xl font-bold mb-8 mt-0 font-serif mt-12">
-        <span class="border-b-[4px] border-orange pb-2">Benefits of Membership</span>
-      </h2>
+    </section>
+      <h2 class="page-h2" id="benefits">Benefits of Membership</h2>
       {{ about.benefitsOfMembership | markdown | safe }}
-      <h2 id="current" class="text-4xl font-bold mb-8 mt-0 font-serif mt-12">
-        <span class="border-b-[4px] border-orange pb-2">Current Members</span>
-      </h2>
+    <section>
+      <h2 class="page-h2" id="current">Current Members</h2>
       {{ about.currentMembers | markdown | safe }}
-    </div>
+    </section>
   </div>
 </div>
-
-
