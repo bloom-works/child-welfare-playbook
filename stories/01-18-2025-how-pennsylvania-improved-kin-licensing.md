@@ -7,6 +7,7 @@ type: Case study
 featured: true
 layout: "layouts/story"
 image: pennsylvania.png
+tags: ["licensing"]
 ---
 
 Content TK
