@@ -5,9 +5,7 @@
   const filters = await pagefind.filters();
   await pagefind.init();
 
-  let activeFilters = {
-
-  };
+  const activeFilters = {};
 
   const searchButton = document.querySelector("#search-button");
   const resultsWrapper = document.querySelector("#search-results");
@@ -16,7 +14,6 @@
   const topicFilters = topicFilterWrapper.querySelectorAll("input");
   const loadMoreButton = document.querySelector("#search-load-more");
 
-
   // Handle the search
 
   const updateSearch = async (searchType) => {
@@ -24,7 +21,6 @@
     const noResultsTemplate = document.querySelector("#search-no-results");
     const resultTemplate = document.querySelector("#search-result");
 
-    const pluralizeResults = length => length === 1 ? "result" : "results";
     const resultPane = document.createElement("div");
 
     const currentQuery = document.querySelector("#search-input").value;
@@ -35,16 +31,12 @@
       }
     );
 
-    if (search.results.length < 1) {
+    const resultCount = search.results.length;
+
+    if (resultCount < 1) {
       resultPane.innerHTML = noResultsTemplate.innerHTML;
     } else {
       // Populate the search page with markup
-
-      const resultCount = search.results.length;
-      const resultHeader = document.createElement("h4");
-      resultHeader.innerHTML = `${resultCount} ${pluralizeResults(resultCount)}`;
-
-      resultPane.appendChild(resultHeader);
 
       for (const i in search.results) {
         const thisResult = await search.results[i].data();
@@ -60,6 +52,18 @@
 
         resultPane.appendChild(resultClone);
       }
+    }
+
+    if (searchType === "query") {
+      searchTabs.forEach(tab => {
+        const counter = tab.querySelector("span");
+        const type = tab.querySelector("input").dataset.typeFilter;
+        if (type === "all") {
+          counter.innerHTML = resultCount;
+        } else {
+          counter.innerHTML = search.filters["Page type"][type] || "0";
+        }
+      })
     }
 
     if (searchType !== "topic") {

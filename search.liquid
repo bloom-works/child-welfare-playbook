@@ -15,26 +15,31 @@ search: true
   <label for="topic-plays" class="search-tab">
     <input type="radio" name="topic-filter" id="topic-plays" data-type-filter="all" checked>
     {% icon "list-checks" %} All results
+    <span class="search-counter"></span>
   </label>
 
   <label for="topic-strategy" class="search-tab">
     <input type="radio" name="topic-filter" id="topic-strategy" data-type-filter="Play">
     {% icon 'strategy' %} Plays
+    <span class="search-counter"></span>
   </label>
 
   <label for="topic-stories" class="search-tab">
     <input type="radio" name="topic-filter" id="topic-stories" data-type-filter="Story">
     {% icon "book-open" %} Stories
+    <span class="search-counter"></span>
   </label>
 
   <label for="topic-resources" class="search-tab">
     <input type="radio" name="topic-filter" id="topic-resources" data-type-filter="Resource">
     {% icon "lightbulb-filament" %} Resources
+    <span class="search-counter"></span>
   </label>
 
   <label for="topic-meetings" class="search-tab">
     <input type="radio" name="topic-filter" id="topic-meetings" data-type-filter="Meeting">
     {% icon "chats-circle" %} Working group meetings
+    <span class="search-counter"></span>
   </label>
 </fieldset>
 </form>
@@ -61,7 +66,7 @@ search: true
       <label for="{{ topics[i].title | slugify }}" class="topic-filter-label" hidden>
         <input type="checkbox" id="{{ topics[i].title | slugify }}" data-topic-filter="{{ topics[i].title }}" name="topic-filter">
           <strong>{{ topics[i].title }}</strong>
-          <span>0</span>
+          <span class="search-counter">0</span>
       </label>
     {%- endfor -%}
   </form>

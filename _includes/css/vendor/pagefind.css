@@ -181,13 +181,17 @@
   flex: 1;
 }
 
-.topic-filter-label span {
+.search-counter:empty {
+  display: none;
+}
+
+.search-counter {
   border-radius: var(--radius-lg);
   background: var(--c-gray-200);
   padding-inline: 0.5rem;
 }
 
-.topic-filter-label:has(:checked) span {
-  color: var(--c-brown);
-  background: var(--c-yellow);
+.topic-filter-label:has(:checked) .search-counter {
+  color: #fff;
+  background: var(--c-brown);
 }
