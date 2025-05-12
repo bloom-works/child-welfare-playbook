@@ -71,7 +71,7 @@ export default async function(eleventyConfig) {
 
   for (let topic in topicList) {
     eleventyConfig.addCollection(`${topicList[topic]}-plays`, function (collectionsApi) {
-      return collectionsApi.getFilteredByTag(`${topicList[topic]}`).sort(alphaSort);
+      return collectionsApi.getFilteredByTags('play', `${topicList[topic]}`).sort(alphaSort);
     });
   }
 
