@@ -1,0 +1,85 @@
+:root {
+    --c-base: rgb(51 50 64);
+
+    --c-primary: rgb(181 14 26);
+    --c-yellow: rgb(242 176 57);
+    --c-navy: rgb(0 44 89);
+    --c-blue-500: rgb(0 94 162);
+    --c-gray-200: rgb(229 231 235);
+    --c-gray-300: rgb(39 39 39);
+    --c-gray-900: rgb(217 217 217);
+    --c-orange: rgb(254 102 89);
+    --c-brown: #522a10;
+
+    --story-gradient: linear-gradient(to bottom, rgb(88 39 7 / 0.45) 30%, rgb(88 39 7 / 0.9) 80%);
+
+    --c-prose: #374151;
+    --c-prose-headings: #111827;
+    --c-prose-links: #111827;
+
+    --radius-lg: 0.5rem;
+
+    --font-primary: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    --font-secondary: Petrona, Georgia, serif;
+
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-bold: 700;
+    --font-black: 900;
+
+    --l-stack-gap: 1.25rem;
+    --t-paragraph: 1.25rem;
+
+    --font-sm-size: 0.875rem;
+    --font-sm-leading: 1.25rem;
+
+    --font-base-size: 1rem;
+    --font-base-leading: 1.5rem;
+
+    --font-lg-size: 1.125rem;
+    --font-lg-leading: 1.75rem;
+
+    --font-xl-size: 1.25rem;
+    --font-xl-leading: 1.75rem;
+
+    --font-prose-xl-size: 1.25rem;
+    --font-prose-xl-leading: 1.8;
+
+    --font-3xl-size: 1.875rem;
+    --font-3xl-leading: 2.25rem;
+
+    --font-4xl-size: 2.25rem;
+    --font-4xl-leading: 2.5rem;
+
+    --font-5xl-size: 3rem;
+    --font-5xl-leading: 3.5rem;
+
+    /* LAYOUT WIDTHS */
+
+    --t-measure: 60ch; /* Typographic measure */
+    --w-container: 90%;
+    --w-container-unitless: 90;
+    --w-content-max: 60rem;
+    --w-content-max-unitless: 60;
+    --w-max: 80rem;
+    --w-max-unitless: 80;
+    --g-column-gap: calc(var(--t-paragraph) * 2);
+
+    /* Padding between sections */
+
+    --section-padding: var(--font-base-leading);
+    --section-margin: var(--t-paragraph);
+
+
+    --search-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yMjkuNjYsMjE4LjM0bC01MC4wNy01MC4wNmE4OC4xMSw4OC4xMSwwLDEsMC0xMS4zMSwxMS4zMWw1MC4wNiw1MC4wN2E4LDgsMCwwLDAsMTEuMzItMTEuMzJaTTQwLDExMmE3Miw3MiwwLDEsMSw3Miw3MkE3Mi4wOCw3Mi4wOCwwLDAsMSw0MCwxMTJaIj48L3BhdGg+PC9zdmc+");
+
+  }
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}

@@ -1,0 +1,38 @@
+.posts-grid-wrapper {
+	margin-inline: auto;
+	padding-inline: 2rem;
+}
+
+.posts-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+.posts-grid li {
+	display: flex;
+}
+
+@media (min-width: 48rem) {
+	.posts-wrapper {
+		padding-inline: 5%;
+	}
+}
+
+@media (min-width: 64rem) {
+    .posts-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 80rem) {
+    .posts-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 96rem) {
+    .posts-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+}

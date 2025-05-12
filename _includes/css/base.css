@@ -1,0 +1,89 @@
+/*Universal styles*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+::selection {
+  background: var(--c-brown);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: var(--c-brown);
+  color: #fff;
+}
+
+/*Visually hidden content*/
+
+.sr-only:not(:focus):not(:active),
+#icon-sprite {
+  clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip-path: inset(100%);
+}
+
+#icon-sprite {
+  clip-path: inset(50%);
+}
+
+/*"Skip to content" button*/
+
+#content:focus {
+  outline:none;
+}
+
+.skip-link {
+  background: var(--c-accent);
+  color: var(--c-accent-text);
+  font-family: var(--font-secondary);
+  text-decoration: none;
+  font-size: 2em;
+  opacity: 0;
+  position: fixed;
+  transition: opacity 0.15s ease-in;
+  white-space: nowrap;
+  inset-inline: 1em;
+  inset-block-end: 1em;
+  padding: 1em;
+  text-align: center;
+  z-index: 999;
+}
+
+.skip-link:hover,
+.skip-link:active,
+.skip-link:focus {
+  background: var(--c-accent);
+  color: var(--c-accent-text);
+}
+
+.skip-link:focus {
+  outline: none;
+  opacity: 1;
+}
+
+/* Icon sprite sheet */
+#icon-sprite-sheet {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}

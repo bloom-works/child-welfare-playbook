@@ -5,200 +5,139 @@ pagination:
   size: 1
   alias: recommendation
 permalink: "/recommendations/{{ recommendation.title }}/"
-eleventyComputed:
-    title: '{{ recommendation.heading }}'
 ---
 
-<div class="flex items-end bg-white bg-no-repeat bg-right">
-    <div class="mx-auto w-full">
-        <div class="max-w-screen-md py-24 pl-[5%]">
-            <h1 class="font-serif text-5xl font-bold">{{ recommendation.heading }}</h1>
-        </div>
+<div class="page-banner">
+    <div class="page-banner-inner">
+        <h1>{{ recommendation.heading }}</h1>
     </div>
 </div>
-<div class="hidden md:block mx-auto px-8 md:px-[5%]">
-    <nav class="flex py-8" aria-label="Breadcrumb">
-        <ol class="inline-flex items-center space-x-1 md:space-x-3">
-            <li class="inline-flex items-center">
-                <a href="/" class="font-medium text-navy hover:underline">Home</a>
+<div class="breadcrumb-wrapper">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+            <li>
+                <a href="/">Home</a>
             </li>
             <li>
-                <div class="flex items-center gap-2">
-                    <span>/</span>
-                    <a href="/recommendations" class="font-medium text-navy hover:underline">Recommendations</a>
-                </div>
+                <span>/</span>
+                <a href="/recommendations">Plays</a>
             </li>
             <li aria-current="page">
-                <div class="flex items-center gap-2">
-                    <span>/</span>
-                    <strong class="text-navy hover:underline font-bold">{{ recommendation.heading }}</strong>
-                </div>
+                <span>/</span>
+                <strong>{{ recommendation.heading }}</strong>
             </li>
         </ol>
     </nav>
 </div>
-<div class="flex flex-col md:flex-row gap-12">
-    <div class="bg-[#522a10] py-12 px-8 md:pl-[5%] sticky md:self-start rounded-r-lg">
-        <div class="w-[210px]">
-            <div class="font-serif font-bold text-3xl text-white mb-2">On this page</div>
-            <hr class="border-[#fe6659] border-b-[4px] w-1/2 mb-4 mt-4" />
-            <ul class="flex flex-col gap-2">
+<div class="page-content">
+    <div class="toc">
+        <div class="toc-inner">
+            <h3>On this page</h3>
+            <hr />
+            <ul>
                 <li>
-                    <a class="text-lg hover:underline text-white hover:text-[#fe6659]" href="#about">
-                        {% if recommendation.aboutTitle %}
-                            {{ recommendation.aboutTitle }}
-                        {% else %}
-                            About this recommendation
-                        {% endif %}
+                    <a href="#about">
+                        {{ recommendation.aboutTitle or "About this recommendation" }}
                     </a>
                 </li>
                 <li>
-                    <a class="text-lg hover:underline text-white hover:text-[#fe6659]" href="#how">
-                        {% if recommendation.howTitle %}
-                            {{ recommendation.howTitle }}
-                        {% else %}
-                            How to do this
-                        {% endif %}
+                    <a href="#how">
+                        {{ recommendation.howTitle or "How to do this" }}
                     </a>
                 </li>
                 <li>
-                    <a class="text-lg hover:underline text-white hover:text-[#fe6659]" href="#cost">
-                        {% if recommendation.costTitle %}
-                            {{ recommendation.costTitle }}
-                        {% else %}
-                            Anticipated costs and benefits
-                        {% endif %}
+                    <a href="#cost">
+                        {{ recommendation.costTitle or "Anticipated costs and benefits" }}
                     </a>
                 </li>
                 <li>
-                    <a class="text-lg hover:underline text-white hover:text-[#fe6659]" href="#cost">
-                        {% if recommendation.outcomeTitle %}
-                            {{ recommendation.outcomeTitle }}
-                        {% else %}
-                            Outcome data
-                        {% endif %}
+                    <a href="#cost">
+                        {{ recommendation.outcomeTitle or "Outcome data" }}
                     </a>
                 </li>
                 <li>
-                    <a class="text-lg hover:underline text-white hover:text-[#fe6659]" href="#whos">
-                        {% if recommendation.whoTitle %}
-                            {{ recommendation.whoTitle }}
-                        {% else %}
-                            Who's doing this
-                        {% endif %}
+                    <a href="#whos">
+                        {{ recommendation.whoTitle or "Who's doing this" }}
                     </a>
                 </li>
             </ul>
         </div>
     </div>
-    <div class="w-full px-8">
-        <div class="md:pr-[10%] md:pl-0 prose prose-xl max-w-none">
-            {% if recommendation.about %}
-                <div class="mb-12">
-                    <h2 id="about" class="text-4xl font-bold mb-8 mt-0 font-serif">
-                        <span class="border-b-[4px] border-[#fe6659] pb-2">
-                            {% if recommendation.aboutTitle %}
-                                {{ recommendation.aboutTitle }}
-                            {% else %}
-                                About this recommendation
-                            {% endif %}
-                        </span>
-                    </h2>
-                    {{ recommendation.about | markdown | safe }}
-                </div>
-            {% endif %}
-            {% if recommendation.how %}
-                <div class="mb-12">
-                    <h2 id="how" class="text-4xl font-bold mb-8 mt-0 font-serif">
-                        <span class="border-b-[4px] border-[#fe6659] pb-2">
-                            {% if recommendation.howTitle %}
-                                {{ recommendation.howTitle }}
-                            {% else %}
-                                How to do this
-                            {% endif %}
-                        </span>
-                    </h2>
-                    {{ recommendation.how | markdown | safe }}
-                </div>
-            {% endif %}
-            {% if recommendation.costs %}
-                <div class="mb-12">
-                    <h2 id="cost" class="text-4xl font-bold mb-12 mt-0 font-serif">
-                        <span class="border-b-[4px] border-[#fe6659] pb-2">
-                            {% if recommendation.costTitle %}
-                                {{ recommendation.costTitle }}
-                            {% else %}
-                                Anticipated costs and benefits
-                            {% endif %}
-                        </span>
-                    </h2>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="w-1/2">
-                            <h3 class="mt-0 mb-4 pl-8">Costs</h3>
-                        </div>
-                        <div class="w-1/2">
-                            <h3 class="mt-0 mb-4 pl-8">Benefits</h3>
-                        </div>
+    <div class="page-content-prose l-stack" data-padded>
+        {% if recommendation.about %}
+            <section>
+                <h2 class="page-h2" id="about">
+                    {{ recommendation.aboutTitle or "About this recommendation" }}
+                </h2>
+                {{ recommendation.about | markdown | safe }}
+            </section>
+        {% endif %}
+        {% if recommendation.how %}
+            <section>
+                <h2 class="page-h2" id="how">
+                    {{ recommendation.howTitle or "How to do this" }}
+                </h2>
+                {{ recommendation.how | markdown | safe }}
+            </section>
+        {% endif %}
+        {% if recommendation.costs %}
+            <section>
+                <h2 class="page-h2" id="cost">
+                    {{ recommendation.costTitle or "Anticipated costs and benefits" }}
+                </h2>
+                <div class="cost-benefits-table" data-header>
+                    <div>
+                        <h3>Costs</h3>
                     </div>
-                    <hr class="not-prose mt-0 mb-0 border-b-[4px]" />
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="p-8">
-                            <ul class="not-prose">
-                                {% for cost in recommendation.costs %}
-                                    <li class="leading-tight mb-8">{{ cost }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <div class="border-l-[1px] p-8">
-                            <ul class="not-prose">
-                                {% for benefit in recommendation.benefits %}
-                                    <li class="leading-tight mb-8">{{ benefit }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
+                    <div>
+                        <h3>Benefits</h3>
                     </div>
                 </div>
-            {% endif %}
-            {% if recommendation.outcome %}
-                <div class="mb-12">
-                    <h2 id="outcome" class="text-4xl font-bold mb-8 mt-0 font-serif">
-                        <span class="border-b-[4px] border-[#fe6659] pb-2">
-                            {% if recommendation.outcomeTitle %}
-                                {{ recommendation.outcomeTitle }}
-                            {% else %}
-                                Outcome data
-                            {% endif %}
-                        </span>
-                    </h2>
-                    {{ recommendation.outcome | markdown | safe }}
+                <div class="cost-benefits-table" data-body>
+                    <div>
+                        <ul>
+                            {% for cost in recommendation.costs %}
+                                <li>{{ cost }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            {% for benefit in recommendation.benefits %}
+                                <li>{{ benefit }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
-            {% endif %}
-            {% if recommendation.who %}
-                <div class="mb-12">
-                    <h2 id="whos" class="text-4xl font-bold mb-8 mt-0 font-serif">
-                        <span class="border-b-[4px] border-[#fe6659] pb-2">
-                            {% if recommendation.whoTitle %}
-                                {{ recommendation.whoTitle }}
-                            {% else %}
-                                Who's doing this
-                            {% endif %}
-                        </span>
-                    </h2>
-                    {% if recommendation.who.number %}
-                        <p><strong>{{ recommendation.who.number }} of 54</strong> states and territories have implemented this
-                        recommendation.</p>
-                    {% endif %}
-                    {% if recommendation.who.image %}
-                        <img src="{{ recommendation.who.image }}" alt="" role="presentation" />
-                    {% endif %}
-                    {% if recommendation.who.what %}
-                        {{ recommendation.who.what | markdown | safe }}
-                    {% endif %}
-                </div>
-            {% endif %}
-            {% if recommendation.extraContent %}
-                {{ recommendation.extraContent | markdown | safe }}
-            {% endif %}
-        </div>
+            </section>
+        {% endif %}
+        {% if recommendation.outcome %}
+            <section>
+                <h2 class="page-h2" id="outcome">
+                    {{ recommendation.outcomeTitle or "Outcome data" }}
+                </h2>
+                {{ recommendation.outcome | markdown | safe }}
+            </section>
+        {% endif %}
+        {% if recommendation.who %}
+            <section>
+                <h2 class="page-h2" id="whos">
+                    {{ recommendation.whoTitle or "Who's doing this" }}
+                </h2>
+                {% if recommendation.who.number %}
+                    <p><strong>{{ recommendation.who.number }} of 54</strong> states and territories have implemented this
+                    recommendation.</p>
+                {% endif %}
+                {% if recommendation.who.image %}
+                    <img src="{{ recommendation.who.image }}" alt="" role="presentation" />
+                {% endif %}
+                {% if recommendation.who.what %}
+                    {{ recommendation.who.what | markdown | safe }}
+                {% endif %}
+            </section>
+        {% endif %}
+        {% if recommendation.extraContent %}
+            {{ recommendation.extraContent | markdown | safe }}
+        {% endif %}
     </div>
 </div>

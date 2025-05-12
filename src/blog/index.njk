@@ -5,40 +5,36 @@ title: Blog
 
 {% set blog_posts = collections.blog %}
 
-<div class="flex items-end bg-gray-300 bg-no-repeat bg-right">
-    <div class="mx-auto w-full">
-        <div class="max-w-screen-lg py-24 pl-[5%]">
-            <h1 class="font-serif text-5xl font-bold text-white">Blog</h1>
-        </div>
+<div class="page-banner" data-bg-color="dark">
+    <div class="page-banner-inner">
+        <h1>Blog</h1>
     </div>
 </div>
 
-<div class="hidden md:block mx-auto px-8 md:px-[5%]">
-    <nav class="flex py-8" aria-label="Breadcrumb">
-        <ol class="inline-flex items-center space-x-1 md:space-x-3">
-            <li class="inline-flex items-center">
-                <a href="/" class="font-medium text-navy hover:underline">Home</a>
+<div class="breadcrumb-wrapper">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+            <li>
+                <a href="/">Home</a>
             </li>
             <li aria-current="page">
-                <div class="flex items-center gap-2">
+                <div>
                     <span>/</span>
-                    <strong class="text-navy font-bold">Blog</strong>
+                    <strong>Blog</strong>
                 </div>
             </li>
         </ol>
     </nav>
 </div>
 
-<div class="md:block mx-auto px-8 md:px-[5%] mb-24">
+<div class="card-grid-wrapper">
     <div>
-        <ul class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xxl:grid-cols-5 gap-4">
+        <ul class="card-grid">
             {% for post in blog_posts %}
-                <li class="flex">
-                    <a class="rounded-lg overflow-hidden bg-gray-200 group text-[21px] text-navy hover:bg-yellow hover:underline w-full bg-[#F4B413] block font-bold flex flex-col" href="/blog/{{ post.fileSlug }}">
-                        <div class="rounded-b-lg flex-1 p-8">
-                            <div class="font-serif text-4xl">{{ post.title }}</div>
-                            <div class="font-normal text-lg no-underline">Posted on {{ post.date | readableDate }}</div>
-                        </div>
+                <li>
+                    <a class="card" data-type="post" href="/blog/{{ post.fileSlug }}">
+                        <h3>{{ post.title }}</h3>
+                        <p>Posted on {{ post.date | readableDate }}</p>
                     </a>
                 </li>
             {% endfor %}

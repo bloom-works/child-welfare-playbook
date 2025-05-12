@@ -1,0 +1,27 @@
+{% if featured %}
+<div class="story-card" data-featured style="--bg-image: url('/images/stories/{{ image }}')">
+  <span class="story-card-type">{{ type }}</span>
+  <h3><a href="{{ story.url }}">{{ title }}</a></h3>
+  <p>{{ description }}</p>
+  <div class="story-card-meta">
+    <span>{{ author }}</span>
+    <span>{{ date | humanDate }}</span>
+  </div>
+</div>
+{% else %}
+<div class="story-card">
+  <div class="story-card-image">
+    <img src="/images/stories/{{ image }}" alt="" />
+    <span class="story-card-badge">{{ type }}</span>
+  </div>
+
+  <div class="story-card-content">
+    <h3><a href="{{ story.url }}">{{ title }}</a></h3>
+    <p>{{ description }}</p>
+    <div class="story-card-meta">
+      <span>{{ author }}</span>
+      <span>{{ date | humanDate }}</span>
+    </div>
+  </div>
+</div>
+{% endif %}

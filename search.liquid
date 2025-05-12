@@ -1,0 +1,77 @@
+---
+layout: "layouts/content.njk"
+title: Search
+description: TK
+search: true
+---
+
+<form id="search" class="search-form">
+  <fieldset class="search-input-wrapper">
+    <input type="text" placeholder="Search" id="search-input" class="search-input" />
+    <input type="submit" id="search-button" class="button" value="Search" />
+  </fieldset>
+
+<fieldset class="search-tab-wrapper l-cluster" id="search-filters" role="tablist">
+  <label for="topic-plays" class="search-tab">
+    <input type="radio" name="topic-filter" id="topic-plays" data-type-filter="all" checked>
+    {% icon "list-checks" %} All results
+    <span class="search-counter"></span>
+  </label>
+
+  <label for="topic-strategy" class="search-tab">
+    <input type="radio" name="topic-filter" id="topic-strategy" data-type-filter="Play">
+    {% icon 'strategy' %} Plays
+    <span class="search-counter"></span>
+  </label>
+
+  <label for="topic-stories" class="search-tab">
+    <input type="radio" name="topic-filter" id="topic-stories" data-type-filter="Story">
+    {% icon "book-open" %} Stories
+    <span class="search-counter"></span>
+  </label>
+
+  <label for="topic-resources" class="search-tab">
+    <input type="radio" name="topic-filter" id="topic-resources" data-type-filter="Resource">
+    {% icon "lightbulb-filament" %} Resources
+    <span class="search-counter"></span>
+  </label>
+
+  <label for="topic-meetings" class="search-tab">
+    <input type="radio" name="topic-filter" id="topic-meetings" data-type-filter="Meeting">
+    {% icon "chats-circle" %} Working group meetings
+    <span class="search-counter"></span>
+  </label>
+</fieldset>
+</form>
+
+<template id="search-no-results">
+  <li class="search-result search-result-blank">{% icon "empty" %}
+  <span>No results</span>
+  </li>
+</template>
+
+<template id="search-result">
+  <li class="search-result">
+    <a href="#" class="l-stack-basic">
+      <h3></h3>
+      <p></p>
+    </a>
+  </li>
+</template>
+
+<div class="search-content">
+  <form id="search-topic-filters" class="search-topic-filters l-stack-basic">
+    <h4>Filter by topic</h4>
+    {%- for i in topics.topics -%}
+      <label for="{{ topics[i].title | slugify }}" class="topic-filter-label" hidden>
+        <input type="checkbox" id="{{ topics[i].title | slugify }}" data-topic-filter="{{ topics[i].title }}" name="topic-filter">
+          <strong>{{ topics[i].title }}</strong>
+          <span class="search-counter">0</span>
+      </label>
+    {%- endfor -%}
+  </form>
+  <div id="search-results">
+  </div>
+
+</div>
+<script type="module" src="/js/search.js"></script>
