@@ -1,3 +1,48 @@
+local_backend: true
 backend:
-  name: git-gateway
-  branch: 2025-rewrite
+  name: 'github'
+  repo: 'bloom-works/child-welfare-playbook'
+  branch: '2025-rewrite'
+publish_mode: 'editorial_workflow'
+
+media_folder: 'images'
+
+collections:
+  - name: "plays"
+    label: "Strategies"
+    folder: "plays"
+    create: true
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/play.njk" }
+      - { label: "Template Engine", name: "templateEngineOverride", widget: "hidden", default: "md,njk" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "select", multiple: true, options: ["background-checks", "emergency-placements", "extended-foster-care", "finding-kin", "inquiry-management", "licensing", "prevention", "recruitment", "relative-licensing-exceptions", "retention", "sibling-connections", "social-media", "supportive-adult-connections", "play", "resource", "story"], default: ["play"], hint: "Add your topics here"}
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "stories"
+    label: "Stories"
+    folder: "stories"
+    create: true
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/story.njk" }
+      - { label: "Template Engine", name: "templateEngineOverride", widget: "hidden", default: "md,njk" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "One-sentence summary", name: "description", widget: "text", hint: "For post thumbnails and social media previews." }
+      - { label: "Author", name: "author", widget: "string"}
+      - { label: "date", name: "date", widget: "datetime", default: "{{now}}", date_format: "MM-DD-YYYY"}
+      - { label: "Story type", name: "type", widget: "select", options: ["Blog post", "Case study", "Research report"], default: ["Blog post"]}
+      - { label: "Header image", name: "image", widget: "image", allow_multiple: false}
+      - { label: "Tags", name: "tags", widget: "select", multiple: true, options: ["background-checks", "emergency-placements", "extended-foster-care", "finding-kin", "inquiry-management", "licensing", "prevention", "recruitment", "relative-licensing-exceptions", "retention", "sibling-connections", "social-media", "supportive-adult-connections", "play", "resource", "story"], default: ["story"], hint: "Add your topics here"}
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "resources"
+    label: "Resources"
+    folder: "resources"
+    create: true
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/resource.njk" }
+      - { label: "Template Engine", name: "templateEngineOverride", widget: "hidden", default: "md,njk" }
+      - { label: "Name of resource", name: "title", widget: "string" }
+      - { label: "File type", name: "filetype", widget: "select", options: ["pdf", "doc", "link"] }
+      - { label: "Link to resource", name: "url", widget: "string" }
+      - { label: "Upload resource", name: "file", widget: "file"}
+      - { label: "Tags", name: "tags", widget: "select", multiple: true, options: ["background-checks", "emergency-placements", "extended-foster-care", "finding-kin", "inquiry-management", "licensing", "prevention", "recruitment", "relative-licensing-exceptions", "retention", "sibling-connections", "social-media", "supportive-adult-connections", "play", "resource", "story"], default: ["resource"], hint: "Add your topics here"}
+      - { label: "Body", name: "body", widget: "markdown" }
