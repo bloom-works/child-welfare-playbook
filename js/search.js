@@ -23,6 +23,20 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
     const currentQuery = document.querySelector("#search-input").value;
 
+    // If the user has already filtered their search,
+    // store the filters so we can re-apply them once the
+    // search is done
+
+    const currentTopicFilter = activeFilters.topics;
+    const currentTypeFilter = activeFilters["Page type"];
+
+
+    // For accurate result count numbers,
+    // always retrieve unfiltered results for new search terms
+    if (searchType === "query") {
+      activeFilters.topics = undefined;
+      activeFilters["Page type"] = undefined;
+    }
 
     // Conduct search
     const search = await pagefind.search(
@@ -67,7 +81,18 @@ window.addEventListener('DOMContentLoaded', async (e) => {
         } else {
           counter.innerHTML = search.filters["Page type"][type] || "0";
         }
-      })
+      }
+
+      if (currentTopicFilter) {
+        activeFilters.topics = currentTopicFilter;
+      }
+
+      if (currentTypeFilter) {
+        activeFilters["Page type"] = currentTypeFilter;
+      }
+
+      // Bug to fix
+      updateSearch("type");
     }
 
     // Populate the number of results next to each topic filter
