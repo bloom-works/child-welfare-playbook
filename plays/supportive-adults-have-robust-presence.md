@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Make sure supportive adults have a robust presence at planning meetings
-tags: supportive-adult-connections
+tags: ["supportive-adult-connections", "play"]
 ---
 
 Most youth leave foster care with fewer connections than they entered with. However, most supportive adults want to be more involved in supporting the youth in their lives. Keeping these adults engaged and involved in case planning can help keep youth from exiting care without connections. Invite at least three times as many supportive adults as paid staff members to planning meetings to maximize the benefits of this support network.{.t-large}

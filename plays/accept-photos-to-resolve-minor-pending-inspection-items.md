@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Accept photos to resolve minor pending inspection items
-tags: licensing
+tags: ["licensing", "play"]
 ---
 
 Safety inspections often identify minor items that need to be fixed before passing inspection, such as repairing a window or purchasing a newer crib. These minor items need to be validated by an inspector and require a return visit.{.t-large}

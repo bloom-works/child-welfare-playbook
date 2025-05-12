@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Establish a dedicated family-finding responsibility
-tags: finding-kin
+tags: ["finding-kin", "play"]
 ---
 
 The old adage that “when it’s everybody’s job, it’s nobody’s job” rings especially true in kin-finding. While every team member can play a valuable role in identifying, reaching out to, and maintaining kin connections, it also needs to be somebody’s formal responsibility at the end of the day.{.t-large}

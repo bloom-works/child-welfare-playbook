@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Offer online foster parent training
-tags: licensing
+tags: ["licensing", "play"]
 ---
 
 Many agencies have paused their resource family training and licensing efforts during the pandemic. However, the need for safe placement options for foster children can’t afford to wait.{.t-large}

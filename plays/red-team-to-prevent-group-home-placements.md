@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Use a red team to prevent placements in group homes
-tags: ["finding-kin", "emergency-placements"]
+tags: ["finding-kin", "emergency-placements", "play"]
 ---
 
 Fewer youth will enter group homes if there is a team dedicated to finding alternative placements. A red team should be a diverse group of agency staff, who conduct kin research, construct a genogram, and ask youth directly about possible placements. The team should be empowered to rapidly brainstorm, make decisions, and pursue alternatives to group home placements.{.t-large}

@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Email license renewal requirements
-tags: ["licensing", "retention"]
+tags: ["licensing", "retention", "play"]
 ---
 
 Foster families are often overwhelmed with responsibilities and let licensing renewal requirements like training and paperwork fall by the wayside. Mailed reminders can be easily lost in the volume of other mailings received from a foster care agency (especially if your agency does not distinguish important mail). Most systems do not have an electronic portal for families to check their renewal status on their own, leaving families dependent on manual communications.{.t-large}

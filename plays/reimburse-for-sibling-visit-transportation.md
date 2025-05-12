@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Reimburse resource parents for providing transportation to sibling visits
-tags: sibling-connections
+tags: ["sibling-connections", "play"]
 ---
 
 Incentivizing, or at least reimbursing, resource parents for transporting children to visits with their siblings can{.t-large}

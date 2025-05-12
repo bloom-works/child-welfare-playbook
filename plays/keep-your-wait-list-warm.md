@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Keep Your Wait List Warm
-tags: prevention
+tags: ["prevention", "play"]
 ---
 
 Sometimes, the list of people who may benefit from prevention services exceeds the resources and/or staff time you have available, creating a waiting list. Assign someone to keep in regular touch with people waiting on this list so they are ready to engage when resources come available.{.t-large}

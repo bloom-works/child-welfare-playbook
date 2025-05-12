@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Placement Stability Bonuses
-tags: retention
+tags: ["retention", "play"]
 ---
 
 Placement stability is good for youth. Providing financial bonuses to some families for maintaining placement stability incentives this.{.t-large}

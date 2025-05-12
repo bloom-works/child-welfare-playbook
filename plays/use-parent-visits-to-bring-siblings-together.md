@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Use parent visits as another opportunity for bringing siblings together
-tags: sibling-connections
+tags: ["sibling-connections", "play"]
 ---
 
 Court-ordered visits for parents are another opportunity to bring separated sibling groups together.{.t-large}

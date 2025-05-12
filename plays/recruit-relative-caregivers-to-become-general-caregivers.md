@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Recruit relative caregivers to become general caregivers
-tags: ["recruitment", "relative-licensing-exceptions"]
+tags: ["recruitment", "relative-licensing-exceptions", "play"]
 ---
 
 Every child welfare system is looking for more families. Kinship caregivers are often already full licensed (or have only minor steps remaining to become fully licensed), are familiar with the system, and may have fewer negative preconceived notions about foster children. Not every relative caregiver may be a good match for or even interested in taking in children who they do not know. But even converting a small percentage of relative caregivers to general licensed homes can make a big difference in the available pool of placement options.{.t-large}

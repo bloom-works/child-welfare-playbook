@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Measure retention carefully
-tags: retention
+tags: ["retention", "play"]
 ---
 
 The percentage of families that your system retains as resource parents can be a misleading number if not tracked carefully. There are plenty of good, or at least neutral, reasons for a family closing its beds, such as adopting their current placement, moving out of state, or perhaps reaching a certain age. There are also some families for whom fostering is just not a good fit, and it's best for them and for children in care that they part ways with your agency. Retention goals should focus on families willing and able to meet the needs of children in care, but who drop out due to frustration or burnout—and this starts by being able to measure and differentiate how you're performing with those families.{.t-large}

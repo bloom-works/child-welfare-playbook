@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Pay to Keep Homes Open
-tags: retention
+tags: ["retention", "play"]
 ---
 
 When children experience a disruption, such as running away or requiring an inpatient treatment, their foster home bed is generally "closed." Paying the home to not only keep their bed open, but remain involved (e.g., visiting the hospital daily) can reduce placement disruption.{.t-large}

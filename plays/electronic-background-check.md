@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Accept background check electronically
-tags: background-checks
+tags: ["background-checks", "play"]
 ---
 
 To speed up the process and reduce application costs, offer ways for

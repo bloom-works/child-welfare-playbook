@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Never stop looking for kin
-tags: finding-kin
+tags: ["finding-kin", "play"]
 ---
 
 The beginning of foster care is a difficult and emotional time for children and their families. Both children and adults may be too stressed or afraid to share a complete list of connections during an initial meeting.{.t-large}

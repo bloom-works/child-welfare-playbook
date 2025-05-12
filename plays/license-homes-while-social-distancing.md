@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: License homes while social distancing
-tags: licensing
+tags: ["licensing", "play"]
 ---
 
 Some child welfare systems have paused licensing for some or all new families in order to limit in-person contact, even though federal regulations do not require the licensing process to be conducted in person. Delays caused by stopping licensing can mean losing homes, especially relative placements, in a time when placement options are already severely limited.{.t-large}

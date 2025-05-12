@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Provide childcare at resource family events and trainings
-tags: ["recruitment", "retention"]
+tags: ["recruitment", "retention", "play"]
 ---
 
 

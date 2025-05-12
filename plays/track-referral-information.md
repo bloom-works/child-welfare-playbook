@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Track detailed referral information for new inquiries
-tags: ["recruitment", "inquiry-management"]
+tags: ["recruitment", "inquiry-management", "play"]
 ---
 
 When filling out a foster family inquiry form, most people default to saying they heard about fostering “from the website” or “online.” However, further questioning reveals they were really exposed through an event at their church, a family connection, a radio commercial, or other experience.{.t-large}

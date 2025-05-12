@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Encourage resource parents of separated siblings to connect directly
-tags: sibling-connections
+tags: ["sibling-connections", "play"]
 ---
 
 Sibling connection is about much more than a monthly in-person visit. It can be invites to school events, birthday calls and cards, and regular everyday connections like playing in the park on a nice day. Resource parents of separated sibling groups should collaborate to help keep them connected in large and small ways; this is not a responsibility of the system or social worker alone.{.t-large}

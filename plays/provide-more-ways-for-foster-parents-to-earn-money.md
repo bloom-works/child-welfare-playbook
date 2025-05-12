@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Provide More Ways for Foster Parents to Earn Money
-tags: retention
+tags: ["retention", "play"]
 ---
 
 

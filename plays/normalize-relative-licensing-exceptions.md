@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Normalize making licensing exceptions for relatives
-tags: relative-licensing-exceptions
+tags: ["relative-licensing-exceptions", "play"]
 ---
 
 Exceptions to licensing requirements for relatives don't have to be entirely separate forms or processes. Many systems incorporate this mitigation and decision making within the standard process, such as the home study template. In systems that allow relative nonsafety exceptions, these exceptions happen _more often than not_ — so instead of treating it as an exceptional circumstance, treat it as a routine one.{.t-large}

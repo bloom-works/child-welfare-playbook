@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Use specific language about the end of foster care
-tags: extended-foster-care
+tags: ["extended-foster-care", "play"]
 ---
 
 Youth often misunderstand when their foster care ends, sometimes by an entire year. In a multi-state learning sprint with older foster youth, [Think of Us](https://www.thinkof-us.org/){target=_blank} found that when youth hear that foster care goes “until 21,” they believe that means “until their 22nd birthday,” when really it means that it ends on their 21st birthday.{.t-large}

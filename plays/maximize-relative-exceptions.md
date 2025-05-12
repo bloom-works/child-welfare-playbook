@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Maximize use of relative licensing exceptions
-tags: relative-licensing-exceptions
+tags: ["relative-licensing-exceptions", "play"]
 ---
 
 Title IV-E of the Social Security Act, which governs foster care maintenance payments and licensing, specifically says that states can make exceptions to any "non-safety" licensing requirements for relatives. Most states have artificially limited their flexibility around exceptions — but you can fix this by following in the footsteps of states that have maximum flexibility.{.t-large}

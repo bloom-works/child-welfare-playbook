@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Use youth data to drive foster family recruitment
-tags: recruitment
+tags: ["recruitment", "play"]
 ---
 
 Foster children do best with families who can most meet their needs. When a kinship caregiver isn’t available, the next best thing is a family that can keep youth in their school, community, and culture. Use data on the characteristics of youth when they enter foster care (such as language spoken, religion, and school district) to drive recruitment efforts.{.t-large}

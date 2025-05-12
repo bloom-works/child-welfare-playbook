@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Don’t license homes that are only interested in adopting infants
-tags: ["licensing", "recruitment"]
+tags: ["licensing", "recruitment", "play"]
 ---
 
 At a glance, many states have literally hundreds of open foster home beds that are not open at all, because they are only willing to accept legally-free infants. These homes require resources to license and maintain, although they are highly unlikely to ever receive a call.{.t-large}

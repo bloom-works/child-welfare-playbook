@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Identify natural supports for caregivers
-tags: retention
+tags: ["retention", "play"]
 ---
 
 

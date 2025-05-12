@@ -6,7 +6,8 @@ date: 2024-12-05
 type: Case study
 layout: "layouts/story"
 image: sibling-connections.png
-tags: ["sibling-connections"]
+tags: ["sibling-connections", "story"]
+eleventyExcludeFromCollections: ["sibling-connections-plays"]
 ---
 
 Content TK

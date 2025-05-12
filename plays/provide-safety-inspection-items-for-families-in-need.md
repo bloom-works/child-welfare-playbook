@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Provide safety inspection items for families in need
-tags: licensing
+tags: ["licensing", "play"]
 ---
 
 Whether due to time, money or transportation constraints, some families cannot acquire needed safety inspection items (such as rope ladders or oven locks). By providing these items to families in need, you can ensure that anyone who needs safety items can get them.{.t-large}

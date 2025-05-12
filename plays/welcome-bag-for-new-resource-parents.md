@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Give new resource parents a welcome bag
-tags: retention
+tags: ["retention", "play"]
 ---
 
 Retention starts at the start! Drop off a welcome bag to new resource parents with a note that welcomes them to fostering and includes a combination of useful items and fun treats for the whole family.{.t-large}

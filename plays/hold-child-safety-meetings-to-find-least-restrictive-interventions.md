@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Hold Child Safety Meetings to Find the Least Restrictive Interventions
-tags: prevention
+tags: ["prevention", "play"]
 ---
 
 When safety concerns arise in a child welfare case, removal does not always have to be the outcome. A Child Safety Meeting that includes the parent, the child (if they’re old enough), their supports, and skilled child welfare staff can sometimes identify an alternate intervention.{.t-large}

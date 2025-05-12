@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Pay for Respite
-tags: retention
+tags: ["retention", "play"]
 ---
 
 Respite care gives foster parents a break, whether for date night or a trip out of state where a child is not allowed to tag along. Paying for respite, whether by providing funds or a respite provider, helps foster parents to avoid burnout and potentially support youth with higher levels of need.{.t-large}

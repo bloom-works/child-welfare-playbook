@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Maintain a shared list of kin
-tags: finding-kin
+tags: ["finding-kin", "play"]
 ---
 
 Kin are often lost in case notes or handwritten paperwork. To ensure children in care have access to all their kin, and that those kin are kept in the loop if placement or other needs shift, it’s critical to have kin names and contact information in a shared electronic format.{.t-large}

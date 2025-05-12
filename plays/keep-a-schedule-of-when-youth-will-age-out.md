@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Keep a schedule of when youth will age out
-tags: extended-foster-care
+tags: ["extended-foster-care", "play"]
 ---
 
 Staff often do not have an easy way to track which of their youth are nearing the date that they will age out. This makes it difficult to plan and communicate effectively.{.t-large}

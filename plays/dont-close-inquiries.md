@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Don’t close inquiries
-tags: ["inquiry-management", "recruitment"]
+tags: ["inquiry-management", "recruitment", "play"]
 ---
 
 Just because a family is not ready to foster today does not mean that they couldn’t be a strong placement option in the future. New data shows that it can take some families years between when they first take an interest in fostering and when they start an application. When systems delete or close out inquiries to meet short-term metrics like conversion rates, they also potentially lose out on a number of families who would have completed applications in the future.{.t-large}

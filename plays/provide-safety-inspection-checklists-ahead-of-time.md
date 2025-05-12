@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Provide safety inspection checklists ahead of time
-tags: licensing
+tags: ["licensing", "play"]
 ---
 
 Some families do not pass the inspection on the first try because they are missing one or more safety items that they didn’t know they needed to have (like a first aid kit or rope ladder). This can cause delays in the licensing process, as the inspector must go back a second time.{.t-large}

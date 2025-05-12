@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Empower licensing workers to approve relative licensing exceptions
-tags: relative-licensing-exceptions
+tags: ["relative-licensing-exceptions", "play"]
 ---
 
 When the licensing workers who interact with and really know a family get to make decisions about how to approve or mitigaten non-safety exceptions for relatives, everyone benefits. A supervisor or area administrator who has never met a family is often not the best person to make a judgement call, and that can lead to denials that lack nuance — which ultimately means fewer kids in kinship care. Localized decision making means faster and higher licensing rates for relatives.{.t-large}

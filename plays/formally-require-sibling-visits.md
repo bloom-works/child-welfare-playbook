@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Have a formal policy requiring regular sibling contact
-tags: sibling-connections
+tags: ["sibling-connections", "play"]
 ---
 
 Sibling connections are invaluable. If siblings end up separated despite all efforts to keep them together, systems should have policies in place that require regular visits and other communication, and ongoing efforts to reunite the siblings.{.t-large}

@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Designate certain families to be on call after hours
-tags: emergency-placements
+tags: ["emergency-placements", "play"]
 ---
 
 There's a difference between the number of available beds the placement desk can see in its database, and the number of placements who answer the phone — especially during off-hours. Having specific "shifts" during which current foster families know they might receive an emergency placement call can help ensure every child has options at every hour.{.t-large}

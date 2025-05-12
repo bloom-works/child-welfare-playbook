@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Give families a dedicated licensor
-tags: licensing
+tags: ["licensing", "play"]
 ---
 
 Each part of the licensing process is often managed by different case workers. This has several negative effects, such as lengthening the process, increasing the likelihood of errors, and leaving each case worker with different pieces of information.{.t-large}

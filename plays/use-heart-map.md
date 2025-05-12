@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Use a Heart Map to identify a youth’s important relationships
-tags: ["finding-kin", "supportive-adult-connections"]
+tags: ["finding-kin", "supportive-adult-connections", "play"]
 ---
 
 Many foster youth enter care with more connections than they leave with. If a supportive adult is not an immediate placement option, they are usually not tracked meaningfully by the system. But even if a contact does not serve as a placement option, they can still be an important part of a youth’s supportive network.{.t-large}

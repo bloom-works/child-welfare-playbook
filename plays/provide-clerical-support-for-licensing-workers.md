@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Provide clerical support for licensing workers
-tags: licensing
+tags: ["licensing", "play"]
 ---
 
 Case workers spend a significant amount of time on licensing paperwork, which is time they could otherwise spend directly with families or on evaluations. By providing clerical support for case workers, you can reduce the amount of paperwork that case workers are responsible for.{.t-large}

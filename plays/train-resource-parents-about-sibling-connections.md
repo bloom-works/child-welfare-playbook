@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Include the importance of sibling connections in resource parent training
-tags: ["sibling-connections", "licensing"]
+tags: ["sibling-connections", "licensing", "play"]
 ---
 
 It's important to make it clear to potential and new resource parents that if they take placement of a child who is separated from their siblings, it's expected that they help keep the children in their care connected to those siblings. A new resource parent may not even think to ask about a child's siblings or may not feel empowered to organize calls and visits. Training is a great place to set the expectation and cultural norms that sibling connections are important and maintaining them is part of a resource parent's responsibility.{.t-large}

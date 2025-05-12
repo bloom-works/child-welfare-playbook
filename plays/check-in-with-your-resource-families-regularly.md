@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Check in with your resource families on a regular basis
-tags: retention
+tags: ["retention", "play"]
 ---
 
 There is so much to do and there are so many emergencies to handle that it can be easy to assume that no news is good news in the case of your existing resource families, but this is not alway the case. Regular check-ins can surface issues of all sizes proactively, so you have enough time to fix individual or systemic issues before they cause you to lose families altogether.{.t-large}

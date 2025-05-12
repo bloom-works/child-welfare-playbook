@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Provide transportation to visits with supportive adults
-tags: supportive-adult-connections
+tags: ["supportive-adult-connections", "play"]
 ---
 
 Making a plan to keep youth connected with their entire network of supportive adults is critical, but generally requires reliable transportation to work. Case workers and resource parents can sometimes provide this transportation, but your system should make sure a robust array of transportation options are available for youth.{.t-large}

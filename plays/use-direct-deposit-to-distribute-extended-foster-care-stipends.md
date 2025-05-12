@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Use direct deposit to distribute extended foster care stipends
-tags: extended-foster-care
+tags: ["extended-foster-care", "play"]
 ---
 
 In some places, youth in Extended Foster Care must travel to an in-person meeting each month to physically receive their EFC stipend. This can be very burdensome for youth who are also working or in college, and who may not have access to reliable transportation. During the pandemic, this left many youth without access to their stipends.{.t-large}

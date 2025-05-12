@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Self-service portal
-tags: extended-foster-care
+tags: ["extended-foster-care", "play"]
 ---
 
 A self-service portal for web and mobile devices allows foster youth (aged 14-17) and recently aged-out youth to confirm and update their contact information (including email, phone number, and address) for direct communication with Oklahoma’s Department of Human Services (OKDHS) and the Oklahoma Successful Adulthood (OKSA) program.{.t-large}

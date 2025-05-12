@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Include pending families in placement searches
-tags: recruitment
+tags: ["recruitment", "play"]
 ---
 
 Foster children often have to move schools or live with strangers who do not share their language or culture. Sometimes, a matching family is available for a child who otherwise does not have a strong match, but the placement team cannot see that family because they have not yet completed the application process.{.t-large}

@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Focus recruitment on fostering, not adoption
-tags: recruitment
+tags: ["recruitment", "play"]
 ---
 
 Many child welfare systems license hundreds of families that are only interested in adopting infants. These homes are not always needed and can take up valuable staff time and financial resources to license and maintain.{.t-large}

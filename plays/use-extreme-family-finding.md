@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Use Extreme Family Finding methods when necessary
-tags: finding-kin
+tags: ["finding-kin", "play"]
 ---
 
 Child welfare systems have limited resources for family finding, and family may be unwilling to talk to government officials like Department staff. Extreme Family Finding puts a private investigator on the case of finding a child’s full family tree, some of whom may be more willing to talk to a detective.{.t-large}

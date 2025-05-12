@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Provide financial bonuses to foster families for recruitment referrals
-tags: ["recruitment", "retention"]
+tags: ["recruitment", "retention", "play"]
 ---
 
 Providing financial bonuses to current foster families who recruit more families is an additional way to financially support current families. This also incentivizes successful recruitment activities.{.t-large}

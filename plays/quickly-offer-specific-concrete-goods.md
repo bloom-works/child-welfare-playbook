@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Quickly Offer Specific Concrete Goods in Initial Engagements
-tags: prevention
+tags: ["prevention", "play"]
 ---
 
 Jurisdictions report that offering examples of specific services, instead of vaguely referring to _services,_ helps to engage more people.{.t-large}

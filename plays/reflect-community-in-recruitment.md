@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Reflect your community in recruitment materials
-tags: recruitment
+tags: ["recruitment", "play"]
 ---
 
 People often look for themselves in marketing materials. Diverse representation helps more people see themselves as potential and valuable resource caregivers.{.t-large}

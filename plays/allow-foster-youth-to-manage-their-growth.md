@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Allow foster youth to proactively manage their growth into adulthood
-tags: extended-foster-care
+tags: ["extended-foster-care", "play"]
 ---
 
 Allow foster youth to manage their growth into adulthood directly, enabling them to define their goals and collaborate with their support team to achieve them. Accomplish this by replacing traditional paper-based milestone planning with a web app.{.t-large}

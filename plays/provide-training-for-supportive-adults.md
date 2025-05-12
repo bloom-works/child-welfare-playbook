@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Provide training for supportive adults
-tags: supportive-adult-connections
+tags: ["supportive-adult-connections", "play"]
 ---
 
 Adults who care about children in care want to be helpful, but they may not know how. Offering training and supports to supportive adults (who do not have placement) can help them be a more active and supportive presence in the lives of our children.{.t-large}

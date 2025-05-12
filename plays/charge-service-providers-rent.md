@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Raise Funds by Charging Service Providers Rent in a Community-Based Location
-tags: prevention
+tags: ["prevention", "play"]
 ---
 
 Most families have complex needs that require navigating multiple government services — and that usually means traveling to multiple government buildings, finding transportation to far-away locations, navigating intimidating security procedures, and waiting for long hours in uncomfortable waiting rooms. Not to mention needing the time off work and childcare to accomplish all this!{.t-large}

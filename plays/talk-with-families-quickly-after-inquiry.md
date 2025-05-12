@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Talk with families as soon as possible when they submit an inquiry
-tags: ["recruitment", "inquiry-management"]
+tags: ["recruitment", "inquiry-management", "play"]
 ---
 
 Becoming a foster parent is a big step, and many potential foster parents need more human interaction to reassure them through the process. Call or meet with potential foster families when they submit an inquiry, instead of relying on automated emails and mailings. Speaking with potential families can help clarify expectations and get potential caregivers comfortable with moving to the next step.{.t-large}

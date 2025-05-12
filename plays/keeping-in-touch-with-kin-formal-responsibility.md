@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Make keeping in touch with kin a formal foster family responsibility
-tags: ["finding-kin", "supportive-adult-connections"]
+tags: ["finding-kin", "supportive-adult-connections", "play"]
 ---
 
 Foster parents may not be aware of their foster child’s previous connections. Set the expectation with potential and current foster parents that part of their formal responsibility is to help the youth in their care keep in touch with the supportive connections in their lives.{.t-large}

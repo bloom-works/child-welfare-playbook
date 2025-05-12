@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Host events and camps to bring together separated siblings
-tags: sibling-connections
+tags: ["sibling-connections", "play"]
 ---
 
 Create regular events and camps where separated siblings can come together and have fun.{.t-large}

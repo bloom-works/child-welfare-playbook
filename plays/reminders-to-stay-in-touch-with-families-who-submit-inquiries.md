@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Set reminders to stay in touch with families who submit inquiries
-tags: ["recruitment", "inquiry-management"]
+tags: ["recruitment", "inquiry-management", "play"]
 ---
 
 By finding ways to stay connected with families who have shown an interest in becoming foster parents, you can help some become licensed caregivers, while still getting meaningful support from others through donation drives, CASA volunteering, or mentoring.{.t-large}

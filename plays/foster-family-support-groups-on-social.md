@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Encourage foster family support groups on social media
-tags: ["retention", "social-media"]
+tags: ["retention", "social-media", "play"]
 ---
 
 Support groups exist on social media for every topic you can think of, including foster care. Families in your system should have access to a social media based support group.{.t-large}

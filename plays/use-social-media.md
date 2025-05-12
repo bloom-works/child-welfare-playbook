@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Use social media to find family members
-tags: ["social-media", "finding-kin"]
+tags: ["social-media", "finding-kin", "play"]
 ---
 
 Social media is widely used across cultural, geographic, and economic groups. This makes social media a powerful and unique tool for finding family members of youth in foster care.{.t-large}

@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Use inquiry data to identify recruitment gaps
-tags: recruitment
+tags: ["recruitment", "play"]
 ---
 
 Examining inquiry data is one way you can help focus your recruitment efforts on the communities or neighborhoods where you most need homes but are receiving the fewest inquiries. Compare your inquiry data against any data you have about the characteristics of foster homes you need the most (e.g. zip codes where children most often experience removal). You can then clearly identify gaps where recruitment efforts can be focused.{.t-large}

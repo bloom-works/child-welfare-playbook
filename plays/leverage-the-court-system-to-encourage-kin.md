@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Leverage the court system to encourage kin
-tags: finding-kin
+tags: ["finding-kin", "play"]
 ---
 
 The court system, from initial hearings to ongoing check-ins, can provide a powerful checkpoint to ensure that kin-finding activities are thorough and ongoing. Courts can also increase flexibility around establishing paternity to unlock access to more paternal kin.{.t-large}

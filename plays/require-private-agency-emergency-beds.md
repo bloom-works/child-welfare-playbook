@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Require private agency capacity for emergency placements
-tags: emergency-placements
+tags: ["emergency-placements", "play"]
 ---
 
 Systems that contract beds from private agencies can ensure some emergency capacity by requiring some percentage of emergency beds in these contracts.{.t-large}

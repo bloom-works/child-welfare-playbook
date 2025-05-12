@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Make a plan to keep youth connected to their supportive adults
-tags: supportive-adult-connections
+tags: ["supportive-adult-connections", "play"]
 ---
 
 Most youth enter foster care with more connections than they leave with. Often, if a connection cannot serve as a placement resource, child welfare systems will not actively work to maintain that connection.{.t-large}

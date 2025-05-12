@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Set a Time Limit on Voluntary Safety Plans
-tags: prevention
+tags: ["prevention", "play"]
 ---
 
 Sometimes, a family or community can come together to safely support keeping a family together, even when safety concerns have been alleged or even confirmed. If a child welfare agency helps a family make a safety plan that keeps the child from coming into care, the plan should have a time limit, at which point the team comes back together.{.t-large}

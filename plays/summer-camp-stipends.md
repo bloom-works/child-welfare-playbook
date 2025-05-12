@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Summer Camp Stipends
-tags: retention
+tags: ["retention", "play"]
 ---
 
 Foster youth may miss out on the childhood experience of summer camp because their foster parents can't afford it. While some camps specialize in foster youth and/or in bringing separated foster siblings together, kids in care deserve to attend camp with their peers, too.{.t-large}

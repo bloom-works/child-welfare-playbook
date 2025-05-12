@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Use digital marketing campaigns for foster family recruitment
-tags: recruitment
+tags: ["recruitment", "play"]
 ---
 
 We use online marketing to sell shoes and houses, but very few child welfare systems are taking advantage of this avenue for recruiting new foster homes. Unlike radio ads or billboards that must appeal to a wide audience, online ads can be highly customized to focus on caregivers who meet the certain characteristics your foster children most need, such as caregivers who speak particular languages or work in a specific profession.{.t-large}

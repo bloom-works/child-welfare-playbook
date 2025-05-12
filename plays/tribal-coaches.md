@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Tribal Family Coaches
-tags: prevention
+tags: ["prevention", "play"]
 ---
 
 A tribal family coach works closely and culturally with Native American and Alaska Native families who may need support to safely avoid child welfare involvement. This is similar to a family coaching program, with cultural identity/needs coming to the forefront of all our interactions.{.t-large}

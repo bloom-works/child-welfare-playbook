@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Use bilingual staff members instead of interpreters
-tags: ["licensing", "recruitment"]
+tags: ["licensing", "recruitment", "play"]
 ---
 
 Interpreters are highly skilled but they may not have child welfare specific knowledge. This can make it difficult to translate important content (especially on the fly) during foster parent orientation and training or in ongoing interactions.{.t-large}

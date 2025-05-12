@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Example Co-Designed Engagement Scripts
-tags: prevention
+tags: ["prevention", "play"]
 ---
 
 This page contains example scripts for engaging individuals in voluntary services.{.t-large}

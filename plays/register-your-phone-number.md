@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Register your phone number so it does not display as unknown
-tags: prevention
+tags: ["prevention", "play"]
 ---
 
 When you call or text a (potential) client to offer them services, what name comes up? What information comes up if they search your phone number? Ensuring this information is accurate and friendly can increase your engagement rates by helping prove you’re not a spammer.{.t-large}

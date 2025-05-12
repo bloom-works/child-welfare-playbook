@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Never stop looking for a placement that can take an entire separated sibling group
-tags: sibling-connections
+tags: ["sibling-connections", "play"]
 ---
 
 While almost every state officially keeps looking for placements that can reunite separated sibling groups, this practice can easily fall by the wayside over time. Systems need to put measures in place to continue this search. Note that if a sibling group is separated but all siblings are with kin, it is likely not necessary to continue searching for a placement, unless specific circumstances warrant it.{.t-large}

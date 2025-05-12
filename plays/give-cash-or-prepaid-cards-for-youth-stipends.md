@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Give cash or prepaid cards for youth stipends
-tags: extended-foster-care
+tags: ["extended-foster-care", "play"]
 ---
 
 Older youth often rely on their stipends to cover food and basic necessities. Giving cash or prepaid cards, instead of store-specific gift cards, is more useful and will go farther for youth purchasing groceries and other necessities.{.t-large}

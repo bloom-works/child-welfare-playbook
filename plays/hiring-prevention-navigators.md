@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Hiring Prevention Navigators
-tags: prevention
+tags: ["prevention", "play"]
 ---
 
 Someone who can help families navigate and engage in prevention services can be a unique and relatively new role to child welfare. This play includes suggestions from multiple jurisdictions who currently employ prevention navigators.{.t-large}

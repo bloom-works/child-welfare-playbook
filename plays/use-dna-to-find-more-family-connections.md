@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Use DNA to find more family connections
-tags: finding-kin
+tags: ["finding-kin", "play"]
 ---
 
 This idea is more controversial, and it's important to consider a youth's privacy and wishes. However, ancestry DNA tools that can uncover more family members can be a useful tool for children in care with no or limited kinship placement options or supportive adults.{.t-large}

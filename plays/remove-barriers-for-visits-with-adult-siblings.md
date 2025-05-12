@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Remove barriers for contact with familiar adult siblings
-tags: sibling-connections
+tags: ["sibling-connections", "play"]
 ---
 
 Adult siblings (who have existing relationships with their younger siblings) should not have to jump through hoops for visits. This is especially true for siblings who are only just now aging out of foster care themselves.{.t-large}

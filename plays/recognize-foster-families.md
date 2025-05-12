@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Find opportunities to recognize foster families
-tags: retention
+tags: ["retention", "play"]
 ---
 
 Every child welfare system needs more ways to support and retain their best foster families. Find opportunities to formally recognize your current foster families, through awards, events, or gifts. These recognition opportunities create positive word of mouth from current foster families that attract more families to sign up to foster.{.t-large}

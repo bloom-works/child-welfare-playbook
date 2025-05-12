@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Provide transportation for sibling visits
-tags: sibling-connections
+tags: ["sibling-connections", "play"]
 ---
 
 Transportation can often be the biggest barrier to sibling visits. Providing options, especially for younger children who can't navigate cabs or public transit on their own, can mean more and easier sibling visits.{.t-large}

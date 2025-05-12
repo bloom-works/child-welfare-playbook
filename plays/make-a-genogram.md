@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Make a genogram
-tags: ["finding-kin", "supportive-adult-connections"]
+tags: ["finding-kin", "supportive-adult-connections", "play"]
 ---
 
 Keeping track of a youth’s connections can get complicated, and a genogram offers a helpful, visual solution. By organizing existing contacts using a genogram, you can see key relationships easily and start identifying possible additions.{.t-large}

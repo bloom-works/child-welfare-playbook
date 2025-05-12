@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Increase foster family retention with renewal check-ins
-tags: ["retention", "licensing"]
+tags: ["retention", "licensing", "play"]
 ---
 
 Use renewal as an opportunity to touch base with families about their current needs and goals. Families that are feeling overwhelmed might benefit from respite or taking lower-need children for a time, while families that are gaining experience may be ready to take on higher-need placement.{.t-large}

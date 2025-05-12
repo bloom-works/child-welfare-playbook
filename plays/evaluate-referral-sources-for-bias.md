@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Evaluate Referral Sources for Bias
-tags: prevention
+tags: ["prevention", "play"]
 ---
 
 Some referral sources are biased, whether that means over-referring Black and Brown families, or referring a large percentage of families for reasons that do not warrant child welfare involvement. Evaluating your referral sources can help you to provide targeted training and feedback.{.t-large}

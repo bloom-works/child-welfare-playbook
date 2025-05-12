@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Find alternatives to physical mail for sharing documents with youth
-tags: extended-foster-care
+tags: ["extended-foster-care", "play"]
 ---
 
 Many foster youth do not have reliable physical addresses, making it difficult for them to receive physical mail. In a multi-state discovery sprint with older foster youth, [Think of Us](https://thinkof-us.org/){target=_blank} found as many as 30% of mailed calendars were returned to sender. This means that as many as 30% of youth never learn about programs being offered.{.t-large}

@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: License undocumented family members
-tags: ["relative-licensing-exceptions", "licensing"]
+tags: ["relative-licensing-exceptions", "licensing", "play"]
 ---
 
 

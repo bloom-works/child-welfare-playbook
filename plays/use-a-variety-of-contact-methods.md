@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Use a variety of contact methods
-tags: finding-kin
+tags: ["finding-kin", "play"]
 ---
 
 Personal preferences, technology literacy, and mobility all impact which communication channels kin can use. If you are only using one method to reach kin, such as mailing physical letters, you are not reaching everyone you need to find.{.t-large}

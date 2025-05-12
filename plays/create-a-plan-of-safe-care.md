@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Create a Plan of Safe Care to Support New Parents and Their Infants
-tags: prevention
+tags: ["prevention", "play"]
 ---
 
 A structured and consistent Plan of Safe Care can strengthen protective factors, promote healthy development, and prevent child welfare involvement or out-of-home placement through connections to parenting education, safety guidance, early intervention, and wraparound resources and services.{.t-large}

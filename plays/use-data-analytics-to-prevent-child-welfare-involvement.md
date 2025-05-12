@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Use Data / Analytics to Prevent Child Welfare Involvement
-tags: prevention
+tags: ["prevention", "play"]
 ---
 
 When resources, including staff time and funds, are limited, data can help to target communities, criteria, and specific services that can have the greatest positive impact for particular populations.{.t-large}

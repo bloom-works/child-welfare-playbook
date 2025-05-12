@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Check in frequently on first placements
-tags: retention
+tags: ["retention", "play"]
 ---
 
 No matter how many hours of training they've had, it's a different experience once a child is placed in your home. This is particularly the case for kinship caregivers who may have had no notice their life was about to change. A little extra support during this transition period can go a long way towards making a placement successful and retaining foster homes for the long term.{.t-large}

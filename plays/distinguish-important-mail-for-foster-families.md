@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Distinguish important mail for foster families
-tags: retention
+tags: ["retention", "play"]
 ---
 
 Foster families report feeling inundated with mail, from policies and forms and to announcements and new trainings. This mail may stack up in a pile, risking that time-sensitive mail goes unopened.{.t-large}

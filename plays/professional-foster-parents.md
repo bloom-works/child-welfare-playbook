@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Professional (Salaried) Foster Parents
-tags: retention
+tags: ["retention", "play"]
 ---
 
 Many children in institutions could be thriving in a dedicated family setting. Requirements that foster parents have a separate source of income and employment means that willing and experienced homes cannot provide the full-time care that some children need. Professional, or salaried, foster parents are an emerging answer to this challenge.{.t-large}

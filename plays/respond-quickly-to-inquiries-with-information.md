@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Respond quickly to inquiries with more information
-tags: inquiry-management
+tags: ["inquiry-management", "play"]
 ---
 
 Filling out a form indicating interest in becoming a foster parent is a big step. When someone fills out an inquiry form, they might be ready to go right away, or they might need time and more information to think about making such a significant commitment. If too much time passes before they get a response, a potential caregiver may become discouraged, second guess themselves, or change their mind.{.t-large}

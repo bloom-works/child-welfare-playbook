@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Use the snowball method
-tags: finding-kin
+tags: ["finding-kin", "play"]
 ---
 
 When you connect with a youth’s kin, make it a point to always ask them if they know of other potential kin, whether they may be current connections to the child or family members that they haven’t yet met.{.t-large}

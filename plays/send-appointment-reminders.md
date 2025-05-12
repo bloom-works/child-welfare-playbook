@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Send appointment reminders
-tags: ["licensing", "inquiry-management"]
+tags: ["licensing", "inquiry-management", "play"]
 ---
 
 Home study and inspection appointments are often scheduled for families without their input and with confirmation. As a result, families can miss critical appointments which delays the licensing process and creates unnecessary frustration.{.t-large}

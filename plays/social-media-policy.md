@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Social Media Policy and Practice Guidance
-tags: ["finding-kin", "recruitment"]
+tags: ["finding-kin", "recruitment", "play"]
 ---
 
 The best social media policies in child welfare enable staff to take advantage of its many benefits while protecting the privacy of children, families, and employees.{.t-large}

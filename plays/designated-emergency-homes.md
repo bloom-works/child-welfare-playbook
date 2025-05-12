@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Designate some homes specifically for emergency placements
-tags: emergency-placements
+tags: ["emergency-placements", "play"]
 ---
 Some foster homes are particularly well-suited to supporting emergency placement for short stays, which can give overtaxed placement desks enough time to find kinship placements or a well-matched general licensed family.{.t-large}
 

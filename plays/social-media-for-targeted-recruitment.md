@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Use social media for targeted foster family recruitment
-tags: recruitment
+tags: ["recruitment", "play"]
 ---
 
 Create and regularly update social media presences for your agency, so community members can learn more about foster parenting and how to support the foster youth in their community. Radio ads, billboards, television commercials, and other offline media can help spread awareness of the need for more foster families, but a regular cadence of social media posts can raise awareness with even more community members.{.t-large}

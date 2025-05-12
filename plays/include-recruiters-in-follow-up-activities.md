@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Include recruiters in follow-up activities
-tags: ["recruitment", "inquiry-management"]
+tags: ["recruitment", "inquiry-management", "play"]
 ---
 
 While separating duties can make your agency feel more efficient, being passed between staff members can be confusing and unpleasant for potential foster families, even causing them to back out of the process. Warm hand-offs and opportunities to stay connected with staff members with whom they have developed relationships can help keep potential foster families engaged and more likely to continue through the licensing process.{.t-large}

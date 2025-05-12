@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Track critical renewal dates on a calendar
-tags: ["licensing", "retention"]
+tags: ["licensing", "retention", "play"]
 ---
 
 Current CPR certification, training, pet vaccinations, and other requirements generally need to be renewed in order to renew a foster home license, but these specific renewal dates rarely line up with the overall foster home license renewal date.{.t-large}

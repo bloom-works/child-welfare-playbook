@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Test your communications with real kin
-tags: finding-kin
+tags: ["finding-kin", "play"]
 ---
 
 Your existing messages and forms may be scaring off or confusing potential kin placements and connections. Communications that look like legal notices, use government acronyms and jargon, or that aren’t translated may be discarded or overlooked. This is particularly important when sending notices to kin within 30 days of removal.{.t-large}

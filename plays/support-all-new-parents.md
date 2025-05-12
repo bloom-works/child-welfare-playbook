@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Support All New Parents
-tags: prevention
+tags: ["prevention", "play"]
 ---
 
 By the time child welfare is formally involved with a family, even for a screened-out report, there is an inherent element of coercion in offering “voluntary” services. Offering services to everyone with a new child is one point of engagement that can meet people when they may be most in need, without child welfare involvement. This support can be tiered based on the needs of each new parent, ranging from a supportive phone call to diapers to rental assistance, substance use treatment, or more.{.t-large}

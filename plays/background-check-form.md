@@ -2,7 +2,7 @@
 layout: layouts/play.njk
 templateEngineOverride: md,njk
 title: Complete background check forms at orientation
-tags: ["background-checks", "licensing"]
+tags: ["background-checks", "licensing", "play"]
 ---
 
 The process and timeframe for out-of-state abuse and neglect registry checks — commonly called Adam Walsh checks — vary quite a bit from state to state. To get foster families approved faster, start out-of-state background checks early.{.t-large}
