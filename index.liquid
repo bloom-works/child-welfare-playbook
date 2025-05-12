@@ -68,19 +68,19 @@ class: home
       <h2>Read our featured story</h2>
     </header>
 
-    {% for story in collections.stories %}
-      {% if story.data.featured %}
-{% include "components/story-card.liquid",
-  image: story.data.image,
-  type: story.data.type,
-  title: story.data.title,
-  description: story.data.description,
-  author: story.data.author,
-  date: story.date,
-  featured: story.data.featured
-%}
-      {% endif %}
-    {% endfor %}
+    {%- for story in collections.stories -%}
+      {%- if story.data.featured -%}
+        {%- include "components/story-card.liquid",
+          image: story.data.image,
+          type: story.data.type,
+          title: story.data.title,
+          description: story.data.description,
+          author: story.data.author,
+          date: story.date,
+          featured: story.data.featured
+        -%}
+      {%- endif -%}
+    {%- endfor -%}
   </div>
 </section>
 
