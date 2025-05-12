@@ -7,6 +7,7 @@
 
   const activeFilters = {};
 
+  // Select elements
   const searchButton = document.querySelector("#search-button");
   const resultsWrapper = document.querySelector("#search-results");
   const searchTabs = document.querySelectorAll(".search-tab");
@@ -16,27 +17,31 @@
 
   // Handle the search
 
+  // Handle each search
   const updateSearch = async (searchType) => {
 
+    // Get markup templates
     const noResultsTemplate = document.querySelector("#search-no-results");
     const resultTemplate = document.querySelector("#search-result");
 
-    const resultPane = document.createElement("div");
-
     const currentQuery = document.querySelector("#search-input").value;
 
+
+    // Conduct search
     const search = await pagefind.search(
       currentQuery, {
         filters: activeFilters
       }
     );
 
+
+    // Populate the search page with markup
+    const resultPane = document.createElement("div");
     const resultCount = search.results.length;
 
     if (resultCount < 1) {
       resultPane.innerHTML = noResultsTemplate.innerHTML;
     } else {
-      // Populate the search page with markup
 
       for (const i in search.results) {
         const thisResult = await search.results[i].data();
@@ -66,12 +71,14 @@
       })
     }
 
+    // Populate the number of results next to each topic filter
     if (searchType !== "topic") {
       for (const topic in search.filters.topics) {
         const button = topicFilterWrapper.querySelector(`[data-topic-filter="${topic}"]`);
         const parentLabel = button.parentElement;
         const counter = button.nextElementSibling.nextElementSibling;
 
+        // Hide topics if they have 0 search results
         if (search.filters.topics[topic] === 0) {
           parentLabel.hidden = true;
         } else {
@@ -84,12 +91,14 @@
     resultsWrapper.innerHTML = resultPane.innerHTML;
   }
 
+  // Handle new search queries
   searchButton.addEventListener('click', async (e) => {
     e.preventDefault();
     updateSearch("query");
   });
 
   topicFilters.forEach(input => {
+  // Handle updates to topic filters
 
     const inputTopic = input.dataset.topicFilter;
 
