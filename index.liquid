@@ -50,28 +50,15 @@ class: home
       <button class="button" data-type="secondary">More resources</button>
     </header>
     <div class="l-grid">
-      {% include "components/card.liquid",
-        type: "resource",
-        filetype: resources.heart-map.filetype,
-        title: resources.heart-map.title,
-        description: resources.heart-map.description,
-        url: resources.heart-map.url
-      %}
-      {% include "components/card.liquid",
-        type: "resource",
-        filetype: resources.michigan-relative-notification.filetype,
-        title: resources.michigan-relative-notification.title,
-        description: resources.michigan-relative-notification.description,
-        url: resources.michigan-relative-notification.url
-      %}
-      {% include "components/card.liquid",
-        type: "resource",
-        filetype: resources.social-media-policy.filetype,
-        title: resources.social-media-policy.title,
-        description: resources.social-media-policy.description,
-        url: resources.social-media-policy.url
-      %}
-    </div>
+      {%- for resource in collections.homeResources -%}
+        {%- include "components/card.liquid",
+          type: "resource",
+          filetype: resource.data.filetype,
+          title: resource.data.title,
+          description: resource.content,
+          url: resource.data.url
+        -%}
+      {%- endfor -%}
   </div>
 </section>
 

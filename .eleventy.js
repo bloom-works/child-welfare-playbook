@@ -75,10 +75,21 @@ export default async function(eleventyConfig) {
     });
   }
 
-
   // Stories
 
   eleventyConfig.addCollection("stories", (collection) =>
     collection.getFilteredByGlob("stories/*.md")
   );
+
+  // All resources
+  eleventyConfig.addCollection("resources", (collection) =>
+    collection.getFilteredByGlob("resources/*.md")
+  );
+
+  // Resources featured on homepage
+
+  eleventyConfig.addCollection("homeResources", (collection) =>
+    collection.getFilteredByTags("homepage", "resource")
+  );
+
 }
