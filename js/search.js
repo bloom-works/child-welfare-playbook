@@ -1,4 +1,4 @@
- window.addEventListener('DOMContentLoaded', async (e) => {
+window.addEventListener('DOMContentLoaded', async (e) => {
 
   // Initialize Pagefind
   const pagefind = await import("/pagefind/pagefind.js");
@@ -15,11 +15,8 @@
   const topicFilters = topicFilterWrapper.querySelectorAll("input");
   const loadMoreButton = document.querySelector("#search-load-more");
 
-  // Handle the search
-
   // Handle each search
   const updateSearch = async (searchType) => {
-
     // Get markup templates
     const noResultsTemplate = document.querySelector("#search-no-results");
     const resultTemplate = document.querySelector("#search-result");
@@ -60,7 +57,9 @@
     }
 
     if (searchType === "query") {
-      searchTabs.forEach(tab => {
+      // Populate the number of results next to each
+      // type filter (e.g. "Stories," "Resources," etc.)
+      for (const tab of searchTabs) {
         const counter = tab.querySelector("span");
         const type = tab.querySelector("input").dataset.typeFilter;
         if (type === "all") {
@@ -97,15 +96,15 @@
     updateSearch("query");
   });
 
-  topicFilters.forEach(input => {
   // Handle updates to topic filters
+  for (const input of topicFilters) {
 
     const inputTopic = input.dataset.topicFilter;
 
     input.addEventListener("input", (e) => {
       if (!input.checked) {
         if (activeFilters.topics.any.length === 1) {
-          delete activeFilters.topics;
+          activeFilters.topics = undefined;
         } else {
           const index = activeFilters.topics.any.indexOf(inputTopic);
           activeFilters.topics.any.splice(index,1);
@@ -119,14 +118,15 @@
       }
       updateSearch("topic");
     })
-  });
+  };
 
-  searchTabs.forEach(tab => {
+  // Handle updates to type filter
+  for (const tab of searchTabs) {
     tab.addEventListener('input', async (e) => {
       const currentType = e.target.dataset.typeFilter;
 
       if (currentType === "all") {
-        delete activeFilters["Page type"];
+        activeFilters["Page type"] = undefined;
       } else {
         activeFilters["Page type"] = currentType;
       }
@@ -134,6 +134,6 @@
       updateSearch("type");
     });
 
-  });
+  };
 
 });
