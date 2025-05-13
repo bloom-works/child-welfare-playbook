@@ -9,5 +9,79 @@
   <body>
     <!-- Include the script that builds the page and powers Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script type="module">
+
+      const Play = createClass({
+        render: function() {
+          const entry = this.props.entry;
+
+          return h('div', {},
+            h('div', { className: 'l-wrapper play-wrapper' },
+              h('div', { className: 'l-section' },
+                h('div', {"className": "l-stack"},
+                  h('h2', {}, entry.getIn(['data', 'title'])),
+                  this.props.widgetFor('body')
+                )
+              )
+            )
+          );
+        }
+      });
+
+      const Resource = createClass({
+        render: function() {
+          const entry = this.props.entry;
+
+          return h('div', {},
+            h('div', { className: 'page-banner', 'data-bg-color': 'dark' },
+              h('div', { className: 'l-wrapper'},
+                h('h1', {},
+                  h('a', { href: entry.getIn(["data", "url"]) },
+                    entry.getIn(['data', 'title'])
+                  )
+                ),
+                h('p', {}, entry.getIn(["data", "description"]))
+              )
+            ),
+            h('div', { className: 'l-wrapper' },
+              h('div', { className: 'l-section' },
+                h('div', {"className": "l-stack"},
+                  this.props.widgetFor('body')
+                )
+              )
+            )
+          );
+        }
+      });
+
+      const Story = createClass({
+        render: function() {
+          const entry = this.props.entry;
+          const image = entry.getIn(['data', 'image']);
+          const bg = `/images/stories/` + this.props.getAsset(image).toString();
+
+          return h('div', {},
+            h('div', { className: 'page-banner', 'data-type': 'story', style: { '--bg-image': 'url("' + bg + '")'} },
+              h('div', { className: 'l-wrapper'},
+                h('h1', {}, entry.getIn(['data', 'title'])),
+              )
+            ),
+            h('div', { className: 'l-wrapper' },
+              h('div', { className: 'l-section' },
+                h('div', {"className": "l-stack"},
+                  this.props.widgetFor('body')
+                )
+              )
+            )
+          );
+        }
+      });
+
+
+      CMS.registerPreviewTemplate("plays", Play);
+      CMS.registerPreviewTemplate("resources", Resource);
+      CMS.registerPreviewTemplate("stories", Story);
+      CMS.registerPreviewStyle("../theme.css", { raw: false });
+    </script>
   </body>
 </html>
