@@ -11,12 +11,12 @@ home:
   features:
     whatsNew: "What's New"
     largeFeature:
-      content: Learn more about the new recommended standards, and how to take part in designing them.
+      content: A new rule published by the Administration for Children and Families allows agencies to adopt kin-specific approval or licensing standards for kinship foster family homes.
       image: ../images/features/feature-babies.png
-      title: New recommended standards for approving kinship caregivers
+      title: Recommended standards for kin-specific foster home approval
       imgAlt: full width feature image
       link: https://docs.google.com/document/d/1V30W6Ft_uEUpVIQ062wPh12HrYHNod0b43T25wrp190/edit?tab=t.0#heading=h.1y1hk6otg82o
-      linkText: Find out how
+      linkText: Learn more
       layout: lg
     mediumFeature:
       content:
@@ -58,10 +58,10 @@ home:
   topicSection:
     popularTopics: ''
     topics:
+      - finding-kin
       - recruitment
       - background-checks
       - extended-foster-care
       - foster-parent-licensing
-      - inquiry-management
       - family-finding
       - license-renewal
