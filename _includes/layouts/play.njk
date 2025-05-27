@@ -1,5 +1,8 @@
 ---
 layout: layouts/default.njk
+pagefind:
+  type: Play
+  image: /images/play.svg
 ---
 
 <div class="l-wrapper play-wrapper">
@@ -20,12 +23,4 @@ layout: layouts/default.njk
       {{ content | md | safe }}
 </div>
 </div>
-</div>
-
-<div hidden>
-  {%- for tag in tags -%}
-    <span data-pagefind-filter="topics">{{ topics[tag].title }}</span>
-  {%- endfor -%}
-  <span data-pagefind-filter="Page type">Play</span>
-  <span data-pagefind-meta="image">/images/play.svg</span>
 </div>

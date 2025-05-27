@@ -26,6 +26,18 @@
     </div>
     {% include "partials/footer.njk" %}
 
+    {% if pagefind %}
+      <div hidden>
+        {% if pagefind.type %}<span data-pagefind-filter="pageType">{{ pagefind.type }}</span>{% endif %}
+        {% if pagefind.image %}<span data-pagefind-meta="image">{{ pagefind.image }}</span>{% endif %}
+        {% if tags %}
+          {%- for tag in tags -%}
+            <span data-pagefind-filter="topics">{{ topics[tag].title }}</span>
+          {%- endfor -%}
+        {% endif %}
+      </div>
+    {% endif %}
+
     {% if class == "home" %}
       <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     {% endif %}

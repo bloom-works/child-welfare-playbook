@@ -1,5 +1,7 @@
 ---
 layout: layouts/default.njk
+pagefind:
+  type: Resource
 ---
 
 <div class="page-banner" data-bg-color="dark">
@@ -13,8 +15,4 @@ layout: layouts/default.njk
   <div class="l-section">
     {{ content | md | safe }}
   </div>
-</div>
-
-<div hidden>
-  <span data-pagefind-filter="Page type">Resource</span>
 </div>
