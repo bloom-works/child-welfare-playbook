@@ -9,16 +9,26 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
   // Select elements
   const searchButton = document.querySelector("#search-button");
+  const searchContent = document.querySelector(".search-content");
   const resultsWrapper = document.querySelector("#search-results");
-  const searchTabs = document.querySelectorAll(".search-tab");
+  const allFilters = document.querySelectorAll("#search-filters label");
+  const typeFilters = document.querySelectorAll("#search-type-filters label");
   const topicFilterWrapper = document.querySelector("#search-topic-filters");
-  const topicFilters = topicFilterWrapper.querySelectorAll("input");
+  const topicFilters = topicFilterWrapper.querySelectorAll("label");
   const loadMoreButton = document.querySelector("#search-load-more");
+  const resultCountText = document.querySelector("#search-result-count");
+  let allResultsCount = '';
+  let visibleResultsCount;
+
+  const pluralizeResultCount = resultCount => {
+    return (resultCount === 1) ? `${resultCount} result` : `${resultCount} results`;
+  };
 
   // Handle each search
   const updateSearch = async (searchType) => {
     // Get markup templates
     const noResultsTemplate = document.querySelector("#search-no-results");
+    const noMatchesTemplate = document.querySelector("#search-no-matches");
     const resultTemplate = document.querySelector("#search-result");
 
     const currentQuery = document.querySelector("#search-input").value;
@@ -28,14 +38,14 @@ window.addEventListener('DOMContentLoaded', async (e) => {
     // search is done
 
     const currentTopicFilter = activeFilters.topics;
-    const currentTypeFilter = activeFilters["Page type"];
+    const currentTypeFilter = activeFilters.pageType;
 
 
     // For accurate result count numbers,
     // always retrieve unfiltered results for new search terms
     if (searchType === "query") {
       activeFilters.topics = undefined;
-      activeFilters["Page type"] = undefined;
+      activeFilters.pageType = undefined;
     }
 
     // Conduct search
@@ -48,12 +58,27 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
     // Populate the search page with markup
     const resultPane = document.createElement("div");
-    const resultCount = search.results.length;
 
-    if (resultCount < 1) {
-      resultPane.innerHTML = noResultsTemplate.innerHTML;
+    if (searchType === "query") {
+      allResultsCount = search.results.length;
+      visibleResultsCount = allResultsCount;
     } else {
+      visibleResultsCount = search.results.length;
+    }
 
+    // Populate result count
+    if (allResultsCount < 1) {
+      resultPane.innerHTML = noResultsTemplate.innerHTML;
+    } else if (visibleResultsCount < 1) {
+      resultPane.innerHTML = noMatchesTemplate.innerHTML;
+    } else if (visibleResultsCount !== allResultsCount) {
+      resultCountText.innerHTML = `Showing ${visibleResultsCount} of ${pluralizeResultCount(allResultsCount)}`;
+    } else {
+      resultCountText.innerHTML = pluralizeResultCount(allResultsCount);
+    }
+
+    // Populate search results
+    if (visibleResultsCount >= 1) {
       for (const i in search.results) {
         const thisResult = await search.results[i].data();
 
@@ -70,46 +95,30 @@ window.addEventListener('DOMContentLoaded', async (e) => {
       }
     }
 
-    if (searchType === "query") {
-      // Populate the number of results next to each
-      // type filter (e.g. "Stories," "Resources," etc.)
-      for (const tab of searchTabs) {
-        const counter = tab.querySelector("span");
-        const type = tab.querySelector("input").dataset.typeFilter;
-        if (type === "all") {
-          counter.innerHTML = resultCount;
-        } else {
-          counter.innerHTML = search.filters["Page type"][type] || "0";
-        }
-      }
+    // Show the search content area
+    searchContent.hidden = false;
 
-      if (currentTopicFilter) {
-        activeFilters.topics = currentTopicFilter;
+    // Populate the number of results next to each
+    // type filter (e.g. "Stories," "Resources," etc.)
+    for (const filter of allFilters) {
+      const input = filter.querySelector("input");
+      const filterType = input.dataset.typeFilter ? "pageType" : "topics";
+      const counter = filter.querySelector(".search-counter");
+      const criteria = input.dataset.typeFilter || input.dataset.topicFilter;
+      const count = search.filters[filterType][criteria];
+      if (count && searchType === "query") {
+        counter.innerHTML = count;
+        filter.hidden = false;
+      } else {
       }
-
-      if (currentTypeFilter) {
-        activeFilters["Page type"] = currentTypeFilter;
-      }
-
-      // Bug to fix
-      updateSearch("type");
     }
 
-    // Populate the number of results next to each topic filter
-    if (searchType !== "topic") {
-      for (const topic in search.filters.topics) {
-        const button = topicFilterWrapper.querySelector(`[data-topic-filter="${topic}"]`);
-        const parentLabel = button.parentElement;
-        const counter = button.nextElementSibling.nextElementSibling;
+    if (currentTopicFilter) {
+      activeFilters.topics = currentTopicFilter;
+    }
 
-        // Hide topics if they have 0 search results
-        if (search.filters.topics[topic] === 0) {
-          parentLabel.hidden = true;
-        } else {
-          parentLabel.hidden = false;
-          counter.innerHTML = search.filters.topics[topic];
-        }
-      };
+    if (currentTypeFilter) {
+      activeFilters.pageType = currentTypeFilter;
     }
 
     resultsWrapper.innerHTML = resultPane.innerHTML;
@@ -121,44 +130,34 @@ window.addEventListener('DOMContentLoaded', async (e) => {
     updateSearch("query");
   });
 
-  // Handle updates to topic filters
-  for (const input of topicFilters) {
+  // Handle filter updates
+  for (const filter of allFilters) {
 
-    const inputTopic = input.dataset.topicFilter;
+    const input = filter.querySelector("input");
+    const criteria = input.dataset.typeFilter || input.dataset.topicFilter;
+    const filterType = input.dataset.typeFilter ? "pageType" : "topics";
 
-    input.addEventListener("input", (e) => {
+    input.addEventListener("change", (e) => {
+      if (!activeFilters[filterType]) {
+        activeFilters[filterType] = new Object();
+        activeFilters[filterType].any = new Array();
+      }
+
+
       if (!input.checked) {
-        if (activeFilters.topics.any.length === 1) {
-          activeFilters.topics = undefined;
+        if (activeFilters[filterType].any.length === 1) {
+          activeFilters[filterType] = undefined;
         } else {
-          const index = activeFilters.topics.any.indexOf(inputTopic);
-          activeFilters.topics.any.splice(index,1);
+          const index = activeFilters[filterType].any.indexOf(criteria);
+          activeFilters[filterType].any.splice(index,1);
         }
       } else {
-        if (!activeFilters.topics) {
-          activeFilters.topics = new Object();
-          activeFilters.topics.any = new Array();
-        }
-        activeFilters.topics.any.push(inputTopic);
+        activeFilters[filterType].any.push(criteria);
       }
-      updateSearch("topic");
+
+      console.log(activeFilters);
+      updateSearch("filter");
     })
-  };
-
-  // Handle updates to type filter
-  for (const tab of searchTabs) {
-    tab.addEventListener('input', async (e) => {
-      const currentType = e.target.dataset.typeFilter;
-
-      if (currentType === "all") {
-        activeFilters["Page type"] = undefined;
-      } else {
-        activeFilters["Page type"] = currentType;
-      }
-
-      updateSearch("type");
-    });
-
   };
 
 });
