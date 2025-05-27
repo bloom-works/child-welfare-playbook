@@ -3,6 +3,28 @@ layout: "layouts/content.njk"
 title: Search
 description: TK
 search: true
+pageTypes:
+  - id: strategy
+    filterName: Play
+    title: Strategies
+    iconName: strategy
+  - id: stories
+    filterName: Story
+    title: Stories
+    iconName: book-open
+  - id: resources
+    filterName: Resource
+    title: Resources
+    iconName: lightbulb-filament
+  - id: meetings
+    filterName: Meeting
+    title: Working group meetings
+    iconName: chats-circle
+  - id: other-pages
+    filterName: Page
+    title: Pages
+    iconName: cards-three
+
 ---
 
 <form id="search" class="search-form">
@@ -10,43 +32,18 @@ search: true
     <input type="text" placeholder="Search" id="search-input" class="search-input" />
     <input type="submit" id="search-button" class="button" value="Search" />
   </fieldset>
-
-<fieldset class="search-tab-wrapper l-cluster" id="search-filters" role="tablist">
-  <label for="topic-plays" class="search-tab">
-    <input type="radio" name="topic-filter" id="topic-plays" data-type-filter="all" checked>
-    {% icon "list-checks" %} All results
-    <span class="search-counter"></span>
-  </label>
-
-  <label for="topic-strategy" class="search-tab">
-    <input type="radio" name="topic-filter" id="topic-strategy" data-type-filter="Play">
-    {% icon 'strategy' %} Plays
-    <span class="search-counter"></span>
-  </label>
-
-  <label for="topic-stories" class="search-tab">
-    <input type="radio" name="topic-filter" id="topic-stories" data-type-filter="Story">
-    {% icon "book-open" %} Stories
-    <span class="search-counter"></span>
-  </label>
-
-  <label for="topic-resources" class="search-tab">
-    <input type="radio" name="topic-filter" id="topic-resources" data-type-filter="Resource">
-    {% icon "lightbulb-filament" %} Resources
-    <span class="search-counter"></span>
-  </label>
-
-  <label for="topic-meetings" class="search-tab">
-    <input type="radio" name="topic-filter" id="topic-meetings" data-type-filter="Meeting">
-    {% icon "chats-circle" %} Working group meetings
-    <span class="search-counter"></span>
-  </label>
-</fieldset>
 </form>
 
 <template id="search-no-results">
   <li class="search-result search-result-blank">{% icon "empty" %}
-  <span>No results</span>
+  <strong>No results</strong>
+  </li>
+</template>
+
+<template id="search-no-matches">
+  <li class="search-result search-result-blank">{% icon "empty" %}
+  <strong>No matching results.</strong>
+  <span>Adjust your filters or try a new search.</span>
   </li>
 </template>
 
@@ -59,19 +56,37 @@ search: true
   </li>
 </template>
 
-<div class="search-content">
-  <form id="search-topic-filters" class="search-topic-filters l-stack-basic">
-    <h4>Filter by topic</h4>
+<div class="search-content" hidden>
+  <form id="search-filters" class="search-filters l-stack-basic">
+    <h4 id="search-result-count"></h4>
+    <h5>Filter by type</h5>
+    <fieldset id="search-type-filters" class="l-stack-basic">
+  {%- for pageType in pageTypes -%}
+    <label for="type-{{ pageType.id }}" class="filter-label" hidden>
+      <span class="filter-label-name">
+        <input type="checkbox" name="type-filter" id="type-{{ pageType.id }}" data-type-filter="{{ pageType.filterName }}" {% if pageType.checked %}checked{% endif %}>
+        {% icon pageType.iconName %} {{ pageType.title }}
+      </span>
+      <span class="search-counter"></span>
+    </label>
+  {%- endfor -%}
+</fieldset>
+    <h5>Filter by topic</h5>
+    <fieldset id="search-topic-filters" class="l-stack-basic">
     {%- for i in topics.topics -%}
-      <label for="{{ topics[i].title | slugify }}" class="topic-filter-label" hidden>
-        <input type="checkbox" id="{{ topics[i].title | slugify }}" data-topic-filter="{{ topics[i].title }}" name="topic-filter">
-          <strong>{{ topics[i].title }}</strong>
+      {% assign topicIcon = topics[i].icon %}
+      <label for="{{ topics[i].title | slugify }}" class="filter-label" hidden>
+          <span class="filter-label-name">
+            <input type="checkbox" id="{{ topics[i].title | slugify }}" data-topic-filter="{{ topics[i].title }}" name="topic-filter">
+            {% icon topicIcon %}{{ topics[i].title }}
+          </span>
           <span class="search-counter">0</span>
       </label>
     {%- endfor -%}
+  </fieldset>
   </form>
-  <div id="search-results">
+  <div class="search-results-wrapper">
+    <div id="search-results"></div>
   </div>
-
 </div>
 <script type="module" src="/js/search.js"></script>
