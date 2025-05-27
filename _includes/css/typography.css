@@ -117,14 +117,24 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-size: var(--t-medium);
+  font-size: var(--font-3xl-size);
+  line-height: var(--font-3xl-leading);
   color: var(--c-accent);
-
   --l-stack-gap: calc(var(--t-paragraph) * 2);
 }
 
 h4, .h4 {
+  font-size: var(--font-xl-size);
+  line-height: var(--font-xl-leading);
   --l-stack-gap: calc(var(--t-paragraph) * 1.5);
+}
+
+h5, .h5 {
+  font-size: var(--font-base-size);
+  line-height: var(--font-base-leading);
+  text-transform: lowercase;
+  font-variant-caps: small-caps;
+  letter-spacing: 1%;
 }
 
 h4, .h4, h5, .h5, dt, h6, .h6 {
