@@ -3,5 +3,5 @@
 </span>
 
 <span data-nav-open>
-  {% icon 'hamburger' %}
+  {% icon 'list' %}
 </span>
