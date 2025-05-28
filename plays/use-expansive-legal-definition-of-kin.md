@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Use an expansive legal definition of kin
 tags: ["finding-kin", "relative-licensing-exceptions", "play"]

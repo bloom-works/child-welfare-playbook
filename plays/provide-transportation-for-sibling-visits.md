@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Provide transportation for sibling visits
 tags: ["sibling-connections", "play"]

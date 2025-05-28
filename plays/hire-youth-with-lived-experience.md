@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Hire youth with lived experience for roles at your agency
 tags: ["extended-foster-care", "play"]

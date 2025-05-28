@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Give families a dedicated licensor
 tags: ["licensing", "play"]

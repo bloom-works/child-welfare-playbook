@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Keep a schedule of when youth will age out
 tags: ["extended-foster-care", "play"]

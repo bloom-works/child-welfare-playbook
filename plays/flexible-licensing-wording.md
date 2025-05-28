@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 title: Describe foster parent licensing requirements with flexible wording
 tags: ["licensing", "relative-licensing-exceptions", "play"]
 ---

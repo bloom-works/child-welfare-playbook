@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Hire current foster parents to help train new foster parents
 tags: ["retention", "recruitment", "play"]

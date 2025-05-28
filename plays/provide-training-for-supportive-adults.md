@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Provide training for supportive adults
 tags: ["supportive-adult-connections", "play"]

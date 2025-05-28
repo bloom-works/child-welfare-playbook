@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Normalize making licensing exceptions for relatives
 tags: ["relative-licensing-exceptions", "play"]

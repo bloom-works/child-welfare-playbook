@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Encourage foster family support groups on social media
 tags: ["retention", "social-media", "play"]

@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Never stop looking for a placement that can take an entire separated sibling group
 tags: ["sibling-connections", "play"]

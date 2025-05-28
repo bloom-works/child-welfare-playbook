@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Provide safety inspection checklists ahead of time
 tags: ["licensing", "play"]

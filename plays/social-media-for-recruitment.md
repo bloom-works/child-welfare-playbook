@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Use social media for general foster family recruitment efforts
 tags: ["recruitment", "play"]

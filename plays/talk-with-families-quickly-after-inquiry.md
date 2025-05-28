@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Talk with families as soon as possible when they submit an inquiry
 tags: ["recruitment", "inquiry-management", "play"]

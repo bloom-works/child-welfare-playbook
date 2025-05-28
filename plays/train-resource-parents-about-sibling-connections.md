@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Include the importance of sibling connections in resource parent training
 tags: ["sibling-connections", "licensing", "play"]

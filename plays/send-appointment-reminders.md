@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Send appointment reminders
 tags: ["licensing", "inquiry-management", "play"]

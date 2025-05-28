@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Quickly Offer Specific Concrete Goods in Initial Engagements
 tags: ["prevention", "play"]

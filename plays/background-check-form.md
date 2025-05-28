@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Complete background check forms at orientation
 tags: ["background-checks", "licensing", "play"]

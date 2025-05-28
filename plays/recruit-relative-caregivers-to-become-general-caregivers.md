@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Recruit relative caregivers to become general caregivers
 tags: ["recruitment", "relative-licensing-exceptions", "play"]

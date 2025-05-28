@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Don’t close inquiries
 tags: ["inquiry-management", "recruitment", "play"]

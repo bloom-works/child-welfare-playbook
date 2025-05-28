@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Register your phone number so it does not display as unknown
 tags: ["prevention", "play"]

@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Provide financial bonuses to foster families for recruitment referrals
 tags: ["recruitment", "retention", "play"]

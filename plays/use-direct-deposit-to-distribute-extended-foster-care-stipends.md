@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Use direct deposit to distribute extended foster care stipends
 tags: ["extended-foster-care", "play"]

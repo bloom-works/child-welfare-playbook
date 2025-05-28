@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Social Media Policy and Practice Guidance
 tags: ["finding-kin", "recruitment", "play"]

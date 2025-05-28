@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Involve kin prior to removal
 tags: ["finding-kin", "prevention", "play"]

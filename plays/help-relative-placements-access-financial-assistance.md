@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Help relative placements access financial assistance
 tags: ["relative-licensing-exceptions", "play"]

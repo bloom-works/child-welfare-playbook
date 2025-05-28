@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Maximize use of relative licensing exceptions
 tags: ["relative-licensing-exceptions", "play"]

@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Make sure supportive adults have a robust presence at planning meetings
 tags: ["supportive-adult-connections", "play"]

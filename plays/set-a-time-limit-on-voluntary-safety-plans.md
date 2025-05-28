@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Set a Time Limit on Voluntary Safety Plans
 tags: ["prevention", "play"]

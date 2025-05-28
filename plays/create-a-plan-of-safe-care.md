@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Create a Plan of Safe Care to Support New Parents and Their Infants
 tags: ["prevention", "play"]

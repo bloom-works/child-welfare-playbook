@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Track critical renewal dates on a calendar
 tags: ["licensing", "retention", "play"]

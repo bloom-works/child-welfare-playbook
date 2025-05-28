@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Remove barriers for contact with familiar adult siblings
 tags: ["sibling-connections", "play"]

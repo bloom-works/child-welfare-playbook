@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Protect youth privacy on social media
 tags: ["social-media", "licensing", "play"]

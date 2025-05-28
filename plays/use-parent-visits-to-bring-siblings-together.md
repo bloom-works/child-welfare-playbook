@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Use parent visits as another opportunity for bringing siblings together
 tags: ["sibling-connections", "play"]

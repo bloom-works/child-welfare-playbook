@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Set reminders to stay in touch with families who submit inquiries
 tags: ["recruitment", "inquiry-management", "play"]

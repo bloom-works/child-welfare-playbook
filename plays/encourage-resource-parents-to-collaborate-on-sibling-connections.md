@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Encourage resource parents of separated siblings to connect directly
 tags: ["sibling-connections", "play"]

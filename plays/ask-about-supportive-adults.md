@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Ask youth about their kin
 tags: ["supportive-adult-connections", "finding-kin", "play"]

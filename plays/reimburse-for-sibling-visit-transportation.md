@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Reimburse resource parents for providing transportation to sibling visits
 tags: ["sibling-connections", "play"]

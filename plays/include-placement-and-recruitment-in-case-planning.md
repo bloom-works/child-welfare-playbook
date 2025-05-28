@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Include placement and recruitment teams in regular case planning meetings
 tags: ["recruitment", "play"]

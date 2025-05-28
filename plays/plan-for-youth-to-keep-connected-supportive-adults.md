@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Make a plan to keep youth connected to their supportive adults
 tags: ["supportive-adult-connections", "play"]

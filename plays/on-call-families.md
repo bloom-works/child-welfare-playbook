@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Designate certain families to be on call after hours
 tags: ["emergency-placements", "play"]

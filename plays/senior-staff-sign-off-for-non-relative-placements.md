@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Require senior staff sign-off for non-relative placements
 tags: ["finding-kin", "play"]

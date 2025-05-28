@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Find alternatives to physical mail for sharing documents with youth
 tags: ["extended-foster-care", "play"]

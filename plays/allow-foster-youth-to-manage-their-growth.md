@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Allow foster youth to proactively manage their growth into adulthood
 tags: ["extended-foster-care", "play"]

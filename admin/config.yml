@@ -14,7 +14,7 @@ collections:
     create: true
     label_singular: "strategy"
     fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/play.njk" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/play.liquid" }
       - { label: "Template Engine", name: "templateEngineOverride", widget: "hidden", default: "md,njk" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Tags", name: "tags", widget: "select", multiple: true, options: ["background-checks", "emergency-placements", "extended-foster-care", "finding-kin", "inquiry-management", "licensing", "prevention", "recruitment", "relative-licensing-exceptions", "retention", "sibling-connections", "social-media", "supportive-adult-connections", "play", "resource", "story"], default: ["play"], hint: "Add your topics here"}

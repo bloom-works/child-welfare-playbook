@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Pay Kinship Caregivers Until They Get Licensed
 tags: ["relative-licensing-exceptions", "play"]

@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Raise Funds by Charging Service Providers Rent in a Community-Based Location
 tags: ["prevention", "play"]

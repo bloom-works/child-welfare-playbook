@@ -10,17 +10,17 @@ pagefind:
     {% icon 'strategy' %}
   </div>
 
-{%- set pagefindMetaTags -%}
+{%- capture pagefindMetaTags -%}
   {%- for tag in tags -%}
     {{ topics[tag].title }}
     {%- if not loop.last -%}, {% endif -%}
   {%- endfor -%}
-{%- endset -%}
+{%- endcapture -%}
 
 <div class="l-section">
 <div class="l-stack" data-pagefind-meta="topics:{{ pagefindMetaTags }}">
       <h2 data-pagefind-meta="title">{{ title }}</h2>
-      {{ content | md | safe }}
+      {{ content }}
 </div>
 </div>
 </div>

@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Designate some homes specifically for emergency placements
 tags: ["emergency-placements", "play"]

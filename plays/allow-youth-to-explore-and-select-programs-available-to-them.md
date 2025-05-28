@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Allow youth to explore and select programs available to them
 tags: ["extended-foster-care", "play"]

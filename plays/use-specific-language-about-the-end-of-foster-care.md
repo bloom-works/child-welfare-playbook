@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Use specific language about the end of foster care
 tags: ["extended-foster-care", "play"]

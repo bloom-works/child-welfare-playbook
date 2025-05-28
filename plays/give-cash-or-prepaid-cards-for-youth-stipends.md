@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Give cash or prepaid cards for youth stipends
 tags: ["extended-foster-care", "play"]

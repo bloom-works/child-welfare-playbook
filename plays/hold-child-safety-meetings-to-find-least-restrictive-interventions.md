@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Hold Child Safety Meetings to Find the Least Restrictive Interventions
 tags: ["prevention", "play"]

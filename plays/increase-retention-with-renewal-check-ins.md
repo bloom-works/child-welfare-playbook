@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Increase foster family retention with renewal check-ins
 tags: ["retention", "licensing", "play"]

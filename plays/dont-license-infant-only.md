@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Don’t license homes that are only interested in adopting infants
 tags: ["licensing", "recruitment", "play"]

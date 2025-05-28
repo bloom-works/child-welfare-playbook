@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Make it easy for families to take high-value training for renewals
 tags: ["licensing", "recruitment", "play"]

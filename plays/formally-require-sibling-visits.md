@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Have a formal policy requiring regular sibling contact
 tags: ["sibling-connections", "play"]

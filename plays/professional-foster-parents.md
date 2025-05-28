@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Professional (Salaried) Foster Parents
 tags: ["retention", "play"]

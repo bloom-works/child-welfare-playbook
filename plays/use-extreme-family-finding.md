@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Use Extreme Family Finding methods when necessary
 tags: ["finding-kin", "play"]

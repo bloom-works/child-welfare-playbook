@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Create life books for youth in care
 tags: ["supportive-adult-connections", "finding-kin", "play"]

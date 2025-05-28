@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Track detailed referral information for new inquiries
 tags: ["recruitment", "inquiry-management", "play"]

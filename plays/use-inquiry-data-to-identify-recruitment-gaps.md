@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Use inquiry data to identify recruitment gaps
 tags: ["recruitment", "play"]

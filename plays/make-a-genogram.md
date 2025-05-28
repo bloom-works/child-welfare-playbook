@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Make a genogram
 tags: ["finding-kin", "supportive-adult-connections", "play"]

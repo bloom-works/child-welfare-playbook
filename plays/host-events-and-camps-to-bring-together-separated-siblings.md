@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Host events and camps to bring together separated siblings
 tags: ["sibling-connections", "play"]

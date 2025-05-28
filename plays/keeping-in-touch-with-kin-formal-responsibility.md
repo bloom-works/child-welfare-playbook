@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Make keeping in touch with kin a formal foster family responsibility
 tags: ["finding-kin", "supportive-adult-connections", "play"]

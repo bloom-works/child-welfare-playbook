@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Evaluate Referral Sources for Bias
 tags: ["prevention", "play"]

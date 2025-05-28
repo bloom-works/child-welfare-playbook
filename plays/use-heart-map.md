@@ -1,5 +1,5 @@
 ---
-layout: layouts/play.njk
+layout: layouts/play.liquid
 templateEngineOverride: md,njk
 title: Use a Heart Map to identify a youth’s important relationships
 tags: ["finding-kin", "supportive-adult-connections", "play"]
