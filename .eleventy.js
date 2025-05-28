@@ -84,8 +84,12 @@ export default async function(eleventyConfig) {
 
   // All resources
   eleventyConfig.addCollection("resources", (collection) =>
-    collection.getFilteredByGlob("resources/*.md")
+      collection.getFilteredByGlob("resources/*.md")
   );
+
+  eleventyConfig.addFilter("find", function find(collection = [], title = "") {
+    return collection.find(item => item.data.title === title);
+  });
 
   // Resources featured on homepage
 

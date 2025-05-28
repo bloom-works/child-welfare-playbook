@@ -23,4 +23,19 @@ pagefind:
       {{ content }}
 </div>
 </div>
+
+  <h3>Resources</h3>
+  <div class="l-grid">
+    {% for relatedResource in relatedResources %}
+      {% assign targetResource = collections.resources | find: relatedResource %}
+
+      {%- include "components/card.liquid",
+        type: "resource",
+        filetype: targetResource.data.filetype,
+        title: targetResource.data.title,
+        description: targetResource.content,
+        url: targetResource.data.url
+      -%}
+    {% endfor %}
+  </div>
 </div>
