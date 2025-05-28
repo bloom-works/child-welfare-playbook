@@ -11,13 +11,13 @@ window.addEventListener('DOMContentLoaded', async (e) => {
   const searchButton = document.querySelector("#search-button");
   const searchContent = document.querySelector(".search-content");
   const resultsWrapper = document.querySelector("#search-results");
+  const allResultsCounter = document.querySelector(`label[for="type-all"] .search-counter`);
+
   const allFilters = document.querySelectorAll("#search-filters label");
-  const typeFilters = document.querySelectorAll("#search-type-filters label");
-  const topicFilterWrapper = document.querySelector("#search-topic-filters");
-  const topicFilters = topicFilterWrapper.querySelectorAll("label");
-  const loadMoreButton = document.querySelector("#search-load-more");
+  const typeFilters = document.querySelectorAll ("#search-type-filters label");
+  const topicFilters = document.querySelectorAll("#search-topic-filters label");
   const resultCountText = document.querySelector("#search-result-count");
-  let allResultsCount = '';
+  let allResultsCount = 0;
   let visibleResultsCount;
 
   const pluralizeResultCount = resultCount => {
@@ -62,9 +62,11 @@ window.addEventListener('DOMContentLoaded', async (e) => {
     if (searchType === "query") {
       allResultsCount = search.results.length;
       visibleResultsCount = allResultsCount;
+      allResultsCounter.innerHTML = allResultsCount;
     } else {
       visibleResultsCount = search.results.length;
     }
+
 
     // Populate result count
     if (allResultsCount < 1) {
@@ -109,7 +111,6 @@ window.addEventListener('DOMContentLoaded', async (e) => {
       if (count && searchType === "query") {
         counter.innerHTML = count;
         filter.hidden = false;
-      } else {
       }
     }
 
@@ -130,34 +131,46 @@ window.addEventListener('DOMContentLoaded', async (e) => {
     updateSearch("query");
   });
 
-  // Handle filter updates
-  for (const filter of allFilters) {
+  // Handle updates to topic filters
+  for (const filter of topicFilters) {
 
     const input = filter.querySelector("input");
-    const criteria = input.dataset.typeFilter || input.dataset.topicFilter;
-    const filterType = input.dataset.typeFilter ? "pageType" : "topics";
+    const criteria = input.dataset.topicFilter;
 
     input.addEventListener("change", (e) => {
-      if (!activeFilters[filterType]) {
-        activeFilters[filterType] = new Object();
-        activeFilters[filterType].any = new Array();
+      if (!activeFilters.topics) {
+        activeFilters.topics = new Object();
+        activeFilters.topics.any = new Array();
       }
-
-
       if (!input.checked) {
-        if (activeFilters[filterType].any.length === 1) {
-          activeFilters[filterType] = undefined;
+        if (activeFilters.topics.any.length === 1) {
+          activeFilters.topics = undefined;
         } else {
-          const index = activeFilters[filterType].any.indexOf(criteria);
-          activeFilters[filterType].any.splice(index,1);
+          const index = activeFilters.topics.any.indexOf(criteria);
+          activeFilters.topics.any.splice(index,1);
         }
       } else {
-        activeFilters[filterType].any.push(criteria);
+
+        activeFilters.topics.any.push(criteria);
+      }
+      updateSearch("topic");
+    })
+  };
+
+  // Handle updates to type filter
+  for (const tab of typeFilters) {
+    tab.addEventListener('change', async (e) => {
+      const currentType = e.target.dataset.typeFilter;
+
+      if (currentType === "all") {
+        activeFilters.pageType = undefined;
+      } else {
+        activeFilters.pageType = currentType;
       }
 
-      console.log(activeFilters);
-      updateSearch("filter");
-    })
+      updateSearch("type");
+    });
+
   };
 
 });

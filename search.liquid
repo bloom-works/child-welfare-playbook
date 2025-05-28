@@ -4,6 +4,11 @@ title: Search
 description: TK
 search: true
 pageTypes:
+  - id: all
+    filterName: all
+    title: All results
+    iconName: list-checks
+    checked: true
   - id: strategy
     filterName: Play
     title: Strategies
@@ -57,35 +62,35 @@ pageTypes:
 </template>
 
 <div class="search-content" hidden>
-  <form id="search-filters" class="search-filters l-stack-basic">
-    <h4 id="search-result-count"></h4>
-    <h5>Filter by type</h5>
-    <fieldset id="search-type-filters" class="l-stack-basic">
-  {%- for pageType in pageTypes -%}
-    <label for="type-{{ pageType.id }}" class="filter-label" hidden>
-      <span class="filter-label-name">
-        <input type="checkbox" name="type-filter" id="type-{{ pageType.id }}" data-type-filter="{{ pageType.filterName }}" {% if pageType.checked %}checked{% endif %}>
-        {% icon pageType.iconName %} {{ pageType.title }}
-      </span>
-      <span class="search-counter"></span>
-    </label>
-  {%- endfor -%}
-</fieldset>
-    <h5>Filter by topic</h5>
-    <fieldset id="search-topic-filters" class="l-stack-basic">
-    {%- for i in topics.topics -%}
-      {% assign topicIcon = topics[i].icon %}
-      <label for="{{ topics[i].title | slugify }}" class="filter-label" hidden>
+  <form id="search-filters" class="search-filters">
+    <fieldset class="search-type-filters l-cluster" id="search-type-filters">
+      {%- for type in pageTypes -%}
+        <label for="type-{{ type.id }}"{% unless type.id == "all" %} hidden{% endunless %}>
+          <span class='filter-label-name'>
+            <input type="radio" name="type-filter" id="type-{{ type.id }}" data-type-filter="{{ type.filterName }}"{% if type.checked %} checked{% endif %}>
+            {% icon type.iconName %} {{ type.title }}
+          </span>
+          <span class="search-counter"></span>
+        </label>
+      {%- endfor -%}
+    </fieldset>
+    <fieldset id="search-topic-filters" class="search-topic-filters l-stack-basic">
+      <h4>Filter by topic</h4>
+      {%- for i in topics.topics -%}
+        {% assign topicFilterIcon = topics[i].icon %}
+        <label for="{{ topics[i].title | slugify }}" class="filter-label" hidden>
           <span class="filter-label-name">
             <input type="checkbox" id="{{ topics[i].title | slugify }}" data-topic-filter="{{ topics[i].title }}" name="topic-filter">
-            {% icon topicIcon %}{{ topics[i].title }}
+            {% icon topicFilterIcon %}{{ topics[i].title }}
           </span>
-          <span class="search-counter">0</span>
-      </label>
-    {%- endfor -%}
-  </fieldset>
+            <span class="search-counter">0</span>
+        </label>
+      {%- endfor -%}
+    </fieldset>
   </form>
+
   <div class="search-results-wrapper">
+    <h4 id="search-result-count"></h4>
     <div id="search-results"></div>
   </div>
 </div>
