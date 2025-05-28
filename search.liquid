@@ -3,6 +3,8 @@ layout: "layouts/content.njk"
 title: Search
 description: TK
 search: true
+tags:
+  - noTopic
 pageTypes:
   - id: all
     filterName: all
@@ -65,12 +67,12 @@ pageTypes:
   <form id="search-filters" class="search-filters">
     <fieldset class="search-type-filters l-cluster" id="search-type-filters">
       {%- for type in pageTypes -%}
-        <label for="type-{{ type.id }}"{% unless type.id == "all" %} hidden{% endunless %}>
+        <label for="type-{{ type.id }}" {% if type.id == "all" %}data-all-results="true"{% else %}hidden{% endif %}>
           <span class='filter-label-name'>
             <input type="radio" name="type-filter" id="type-{{ type.id }}" data-type-filter="{{ type.filterName }}"{% if type.checked %} checked{% endif %}>
             {% icon type.iconName %} {{ type.title }}
           </span>
-          <span class="search-counter"></span>
+          <span class="search-counter"{% if type.id == "all" %} data-counter-all{% endif %}></span>
         </label>
       {%- endfor -%}
     </fieldset>
@@ -86,6 +88,13 @@ pageTypes:
             <span class="search-counter">0</span>
         </label>
       {%- endfor -%}
+        <label for="no-topic" class="filter-label" hidden>
+            <span class="filter-label-name">
+              <input type="checkbox" id="no-topic" data-topic-filter="noTopic" name="topic-filter">
+              {% icon 'prohibit' %}No topic
+            </span>
+              <span class="search-counter">0</span>
+          </label>
     </fieldset>
   </form>
 

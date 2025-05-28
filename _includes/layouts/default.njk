@@ -32,7 +32,9 @@
         {% if pagefind.image %}<span data-pagefind-meta="image">{{ pagefind.image }}</span>{% endif %}
         {% if tags %}
           {%- for tag in tags -%}
-            <span data-pagefind-filter="topics">{{ topics[tag].title }}</span>
+            <span data-pagefind-filter="topics">
+              {%- if tag == "noTopic" -%}noTopic{%- else -%}{{ topics[tag].title }}{%- endif -%}
+            </span>
           {%- endfor -%}
         {% endif %}
       </div>

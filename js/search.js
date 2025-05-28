@@ -11,8 +11,11 @@ window.addEventListener('DOMContentLoaded', async (e) => {
   const searchButton = document.querySelector("#search-button");
   const searchContent = document.querySelector(".search-content");
   const resultsWrapper = document.querySelector("#search-results");
+
+  const allResultsInput = document.querySelector(`label[for="type-all"] input`);
   const allResultsCounter = document.querySelector(`label[for="type-all"] .search-counter`);
 
+  const filterWrapper = document.querySelector("#search-filters");
   const allFilters = document.querySelectorAll("#search-filters label");
   const typeFilters = document.querySelectorAll ("#search-type-filters label");
   const topicFilters = document.querySelectorAll("#search-topic-filters label");
@@ -25,7 +28,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
   };
 
   // Handle each search
-  const updateSearch = async (searchType) => {
+  const updateSearch = async (searchType, target) => {
     // Get markup templates
     const noResultsTemplate = document.querySelector("#search-no-results");
     const noMatchesTemplate = document.querySelector("#search-no-matches");
@@ -55,6 +58,9 @@ window.addEventListener('DOMContentLoaded', async (e) => {
       }
     );
 
+    console.log(search.filters);
+    console.log(activeFilters);
+
 
     // Populate the search page with markup
     const resultPane = document.createElement("div");
@@ -62,21 +68,26 @@ window.addEventListener('DOMContentLoaded', async (e) => {
     if (searchType === "query") {
       allResultsCount = search.results.length;
       visibleResultsCount = allResultsCount;
-      allResultsCounter.innerHTML = allResultsCount;
     } else {
       visibleResultsCount = search.results.length;
     }
 
-
-    // Populate result count
     if (allResultsCount < 1) {
+      resultCountText.hidden = true;
+      filterWrapper.hidden = true;
       resultPane.innerHTML = noResultsTemplate.innerHTML;
-    } else if (visibleResultsCount < 1) {
-      resultPane.innerHTML = noMatchesTemplate.innerHTML;
-    } else if (visibleResultsCount !== allResultsCount) {
-      resultCountText.innerHTML = `Showing ${visibleResultsCount} of ${pluralizeResultCount(allResultsCount)}`;
     } else {
-      resultCountText.innerHTML = pluralizeResultCount(allResultsCount);
+      filterWrapper.hidden = false;
+      if (visibleResultsCount < 1) {
+        resultCountText.hidden = true;
+        resultPane.innerHTML = noMatchesTemplate.innerHTML;
+      } else if (visibleResultsCount !== allResultsCount) {
+        resultCountText.hidden = false;
+        resultCountText.innerHTML = `Showing ${visibleResultsCount} of ${pluralizeResultCount(allResultsCount)}`;
+      } else {
+        resultCountText.hidden = false;
+        resultCountText.innerHTML = pluralizeResultCount(allResultsCount);
+      }
     }
 
     // Populate search results
@@ -100,17 +111,28 @@ window.addEventListener('DOMContentLoaded', async (e) => {
     // Show the search content area
     searchContent.hidden = false;
 
-    // Populate the number of results next to each
-    // type filter (e.g. "Stories," "Resources," etc.)
+    // Populate the result counts next to each filter
     for (const filter of allFilters) {
       const input = filter.querySelector("input");
       const filterType = input.dataset.typeFilter ? "pageType" : "topics";
       const counter = filter.querySelector(".search-counter");
+      const isAllResults = filter.dataset.allResults;
       const criteria = input.dataset.typeFilter || input.dataset.topicFilter;
       const count = search.filters[filterType][criteria];
-      if (count && searchType === "query") {
-        counter.innerHTML = count;
-        filter.hidden = false;
+
+      if (searchType === "query" || (searchType === "type" && input.dataset.topicFilter)) {
+        if (isAllResults) {
+          counter.innerHTML = allResultsCount;
+        } else {
+          counter.innerHTML = count;
+        }
+        if (count || isAllResults) {
+          filter.hidden = false;
+        } else if (!count && input.checked) {
+          filter.hidden = false;
+        } else {
+          filter.hidden = true;
+        }
       }
     }
 
@@ -128,6 +150,12 @@ window.addEventListener('DOMContentLoaded', async (e) => {
   // Handle new search queries
   searchButton.addEventListener('click', async (e) => {
     e.preventDefault();
+    allResultsInput.checked = true;
+
+    for (const filter of topicFilters) {
+      filter.querySelector("input").checked = false;
+    }
+
     updateSearch("query");
   });
 
@@ -168,7 +196,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
         activeFilters.pageType = currentType;
       }
 
-      updateSearch("type");
+      updateSearch("type", currentType);
     });
 
   };
