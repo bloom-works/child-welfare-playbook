@@ -5,6 +5,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
   const filters = await pagefind.filters();
   await pagefind.init();
 
+  const pageTypes = ["Play", "Story", "Resource", "Meeting", "Page"]
+
   const activeFilters = {};
 
   // Select elements
@@ -22,6 +24,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
   const resultCountText = document.querySelector("#search-result-count");
   let allResultsCount = 0;
   let visibleResultsCount;
+
+  let otherSearchCounts = {};
 
   const pluralizeResultCount = resultCount => {
     return (resultCount === 1) ? `${resultCount} result` : `${resultCount} results`;
@@ -58,9 +62,49 @@ window.addEventListener('DOMContentLoaded', async (e) => {
       }
     );
 
-    console.log(search.filters);
-    console.log(activeFilters);
+    if (searchType === "query") {
+      otherSearchCounts.all = search.filters.topics;
 
+      otherSearchCounts.Play = await pagefind.search(
+        currentQuery, {
+          filters: {
+            pageType: "Play"
+          }
+        }
+      );
+
+      otherSearchCounts.Story = await pagefind.search(
+        currentQuery, {
+          filters: {
+            pageType: "Story"
+          }
+        }
+      );
+
+      otherSearchCounts.Resource = await pagefind.search(
+        currentQuery, {
+          filters: {
+            pageType: "Resource"
+          }
+        }
+      );
+
+      otherSearchCounts.Meeting = await pagefind.search(
+        currentQuery, {
+          filters: {
+            pageType: "Meeting"
+          }
+        }
+      );
+
+      otherSearchCounts.Page = await pagefind.search(
+        currentQuery, {
+          filters: {
+            pageType: "Page"
+          }
+        }
+      );
+    }
 
     // Populate the search page with markup
     const resultPane = document.createElement("div");
@@ -118,7 +162,18 @@ window.addEventListener('DOMContentLoaded', async (e) => {
       const counter = filter.querySelector(".search-counter");
       const isAllResults = filter.dataset.allResults;
       const criteria = input.dataset.typeFilter || input.dataset.topicFilter;
-      const count = search.filters[filterType][criteria];
+      const currentCount = search.filters[filterType][criteria];
+      let count;
+
+      if (searchType === "type" && input.dataset.topicFilter) {
+        if (target === "all") {
+          count = otherSearchCounts.all[criteria];
+        } else {
+          count = otherSearchCounts[target].filters.topics[criteria];
+        }
+      } else {
+        count = currentCount;
+      }
 
       if (searchType === "query" || (searchType === "type" && input.dataset.topicFilter)) {
         if (isAllResults) {
