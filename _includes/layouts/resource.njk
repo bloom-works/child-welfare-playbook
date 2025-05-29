@@ -1,0 +1,20 @@
+---
+layout: layouts/default.njk
+pagefind:
+  type: Resource
+tags:
+  - noTopic
+---
+
+<div class="page-banner" data-bg-color="dark">
+  <div class="l-wrapper">
+    <h1><a href="{{ url }}">{{ title }}</a></h1>
+    {% if description %}<p>{{ description }}</p>{% endif %}
+  </div>
+</div>
+
+<div class="l-wrapper">
+  <div class="l-section">
+    {{ content | md | safe }}
+  </div>
+</div>

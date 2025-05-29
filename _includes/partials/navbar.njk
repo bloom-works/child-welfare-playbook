@@ -1,0 +1,33 @@
+<header class="nav">
+  <nav class="l-wrapper">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/images/logo.svg" alt="Child Welfare Playbook logo" />
+      </a>
+      <button class="nav-hamburger" aria-expanded="false" id="nav-button" aria-controls="mobile-menu">
+        <span class="sr-only">Open main menu</span>
+        <span data-nav-closed>
+  {% icon 'x' %}
+</span>
+
+<span data-nav-open>
+  {% icon 'list' %}
+</span>
+      </button>
+      <div class="nav-mobile-menu" aria-hidden="true" id="mobile-menu">
+        <ul>
+          {% for link in navigation.items %}
+          <li>
+            <a href="{{ link.url }}">
+              {{ link.text }}
+              {% if link.icon %}
+              {{ link.icon | safe }}
+              {% endif %}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

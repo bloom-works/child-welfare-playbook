@@ -1,0 +1,7 @@
+<span data-nav-closed>
+  {% icon 'x' %}
+</span>
+
+<span data-nav-open>
+  {% icon 'list' %}
+</span>

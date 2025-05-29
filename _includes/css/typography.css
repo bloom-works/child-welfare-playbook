@@ -1,0 +1,240 @@
+/* Set maximum width of all prose elements to typographic measure */
+
+* {
+  max-inline-size: var(--t-measure);
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+footer,
+figure,
+iframe {
+  max-inline-size: unset;
+}
+
+/* Responsive font sizing
+   (See https://css-tricks.com/simplified-fluid-typography/ for a detailed explanation)
+*/
+
+:root {
+  font-size: clamp(1rem, calc(-1rem + 4vw), 1.125rem);
+}
+
+/* Base style */
+
+html {
+  line-height: var(--t-leading);
+  scroll-behavior: smooth;
+}
+
+body,
+input,
+select,
+button {
+  font-size: var(--base-font-size);
+  line-height: var(--base-leading);
+  font-family: var(--font-primary);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--c-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--c-bg);
+}
+
+/* Set bold weight according to imported font */
+
+b, strong {
+  font-weight: var(--t-bold);
+}
+
+/* Heading styles */
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: var(--font-bold);
+  color: var(--c-headline);
+  margin-inline: 0;
+  margin-block-end: var(--t-paragraph);
+  inline-size: fit-content;
+  padding: 0;
+}
+
+h1, h2, h3,
+.h1, .h2, .h3 {
+  font-family: var(--font-secondary);
+}
+
+h4, h5, h6,
+.h4, .h5, .h6 {
+  font-family: var(--font-primary);
+}
+
+a {
+  text-decoration-color: rgb(var(--c-link-text-rgb, var(--c-accent-dark-rgb)) / 60%);
+  color: var(--c-link-text, var(--c-accent-text));
+  text-decoration-thickness: 0.0625em;
+  text-underline-offset: 0.15em;
+  text-decoration-skip-ink: all;
+}
+
+h1 a, h3 a, h4 a, h5 a, h6 a,
+.h1 a, .h3 a, .h4 a, .h5 a, .h6 a {
+  text-decoration-thickness: 1px;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  text-wrap: balance;
+}
+
+h1, .h1 {
+  font-size: var(--font-5xl-size);
+  line-height: var(--font-5xl-leading);
+  margin-block-end: 0.5em;
+}
+
+h2, .h2 {
+  font-size: var(--font-4xl-size);
+  line-height: var(--font-4xl-leading);
+  text-decoration: underline;
+  text-decoration-color: var(--c-orange);
+  text-underline-offset: 1rem;
+  text-decoration-thickness: 4px;
+  --l-stack-gap: calc(var(--t-paragraph) * 3);
+}
+
+:is(h2, .h2) + * {
+  --l-stack-gap: calc(var(--t-paragraph) * 2);
+}
+
+h3, .h3 {
+  font-size: var(--font-3xl-size);
+  line-height: var(--font-3xl-leading);
+  color: var(--c-accent);
+  --l-stack-gap: calc(var(--t-paragraph) * 2);
+}
+
+h4, .h4 {
+  font-size: var(--font-xl-size);
+  line-height: var(--font-xl-leading);
+  --l-stack-gap: calc(var(--t-paragraph) * 1.5);
+}
+
+h5, .h5 {
+  font-size: var(--font-base-size);
+  line-height: var(--font-base-leading);
+  text-transform: lowercase;
+  font-variant-caps: small-caps;
+  letter-spacing: 1%;
+}
+
+h4, .h4, h5, .h5, dt, h6, .h6 {
+  font-size: var(--t-base);
+}
+
+h5, .h5, dt, h6, .h6 {
+  color: var(--c-accent);
+}
+
+h6, .h6 {
+  font-weight: var(--t-normal);
+}
+
+.subhead {
+  font-size: var(--t-small);
+  color: var(--c-secondary);
+}
+
+.t-large {
+  font-size: var(--font-xl-size);
+  line-height: var(--font-xl-leading);
+}
+
+/* Lists */
+
+dt {
+  margin-block-end: 0.25em;
+}
+
+ul,
+ol {
+  padding-inline-start: min(10vw, 2.5rem);
+}
+
+ul li,
+ol li {
+  padding-inline-start: 0.5rem;
+  margin-block-end: calc(var(--t-leading-em) / 2);
+}
+
+ol li li {
+  list-style-type: lower-alpha;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-block-start: calc(var(--t-leading-em) / 2);
+}
+
+ol li li li {
+  list-style-type: lower-roman;
+}
+
+ul li:last-child,
+ol li:last-child {
+  margin-block-end: 0;
+}
+
+/* Other elements */
+
+blockquote {
+  border-inline-start: 0.5rem solid var(--c-accent);
+  padding-inline-start: var(--t-paragraph);
+  color: var(--c-headline);
+}
+
+figcaption {
+  color: var(--c-base);
+  font-size: var(--t-small);
+}
+
+blockquote + figcaption {
+  margin-block-start: var(--t-paragraph);
+}
+
+hr {
+  --hr-margin: calc(var(--font-base-leading) * 2);
+
+  border: 0;
+  border-block-start: 1px solid var(--c-accent-light);
+  color: inherit;
+  margin-block-end: var(--hr-margin);
+  inline-size: 100%;
+}
+
+hr, hr + * {
+  --l-stack-gap: var(--hr-margin);
+}
+
+time {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+mark {
+  background: var(--c-yellow);
+  color: var(--c-brown);
+  padding-inline: 0.25rem;
+  border-radius: 4px;
+}

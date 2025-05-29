@@ -1,0 +1,31 @@
+---
+layout: "layouts/content.njk"
+title: Plays
+templateEngineOverride: md,njk
+description: The Child Welfare Playbook provides strategies (or “plays”) to help connect children to families, reduce time in foster care, and improve outcomes. Each play includes how to run it, examples of it in action, and related resources.
+pagefind:
+  type: Page
+tags:
+  - noTopic
+---
+
+<div class="plays-list-wrapper l-stack-basic">
+{% for section in topics.topics %}
+
+<div class="plays-list" id="{{ section }}">
+  <div class="play-list-meta">
+    {% if topics[section].icon %} {% icon topics[section].icon %}{% endif %}
+
+    <h2>{{ topics[section].title }}</h2>
+
+    <p>{{ topics[section].description }}</p>
+  </div>
+
+{% for play in collections[section + '-plays'] %}
+- [{{ play.data.title }}]({{ play.url }}){.play-card}
+{% endfor %}
+{.l-stack-basic}
+</div>
+
+{% endfor %}
+</div>

@@ -1,0 +1,99 @@
+---
+layout: layouts/default
+title: Child welfare playbook
+class: home
+tags: ["noTopic"]
+pagefind:
+  type: Page
+---
+
+<section class="home-banner">
+  <div class="l-wrapper">
+    <h1>The Child Welfare Playbook is a collection of practical strategies to strengthen child welfare systems and practices.</h1>
+  </div>
+  <img src="/images/banners/baby.png" alt="A young African-American child hugging her father. Her eyes are closed with a content expression." />
+</section>
+
+<section class="l-section">
+  <div class="l-wrapper">
+    <header class="home-header">
+      <h2>Explore topics</h2>
+      <button class="button" data-type="secondary">More topics</button>
+    </header>
+    <div class="l-grid">
+      {% include "components/card.liquid",
+        type: "topic",
+        icon: topics.extended-foster-care.icon,
+        title: topics.extended-foster-care.title,
+        description: topics.extended-foster-care.description,
+        url: "/plays#extended-foster-care"
+      %}
+      {% include "components/card.liquid",
+        type: "topic",
+        icon: topics.licensing.icon,
+        title: topics.licensing.title,
+        description: topics.licensing.description,
+        url: "/plays#licensing"
+      %}
+      {% include "components/card.liquid",
+        type: "topic",
+        icon: topics.sibling-connections.icon,
+        title: topics.sibling-connections.title,
+        description: topics.sibling-connections.description,
+        url: "/plays#sibling-connections"
+      %}
+    </div>
+  </div>
+</section>
+
+<section class="l-section">
+  <div class="l-wrapper">
+    <header class="home-header">
+      <h2>Get resources</h2>
+      <button class="button" data-type="secondary">More resources</button>
+    </header>
+    <div class="l-grid">
+      {%- for resource in collections.homeResources -%}
+        {%- include "components/card.liquid",
+          type: "resource",
+          filetype: resource.data.filetype,
+          title: resource.data.title,
+          description: resource.content,
+          url: resource.data.url
+        -%}
+      {%- endfor -%}
+  </div>
+</section>
+
+<section class="l-section">
+  <div class="l-wrapper">
+    <header class="home-header">
+      <h2>Read our featured story</h2>
+    </header>
+
+    {%- for story in collections.stories -%}
+      {%- if story.data.featured -%}
+        {%- include "components/story-card.liquid",
+          image: story.data.image,
+          type: story.data.type,
+          title: story.data.title,
+          description: story.data.description,
+          author: story.data.author,
+          date: story.date,
+          featured: story.data.featured
+        -%}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+<section class="home-submit">
+  <img src="images/heros/mission-fam-bg.png" alt="" />
+  <div class="l-wrapper">
+    <div class="home-submit-inner">
+      <h2>Submit ideas</h2>
+      <p class="t-large">You can contribute to the Child Welfare Playbook by submitting an idea for a play, resource, or story.</p>
+      <p class="t-large">Email your idea to <a href="mailto:updates@childwelfareplaybook.com">updates@childwelfareplaybook.com</a>.</p>
+    </div>
+  </div>
+</section>

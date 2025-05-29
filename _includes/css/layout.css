@@ -1,0 +1,193 @@
+/* Outer containers */
+
+.l-container,
+.l-section,
+.l-frame,
+.l-grid {
+  max-inline-size: unset;
+}
+
+.l-container {
+  padding: 3rem;
+}
+
+.l-wrapper,
+.l-wrapper-text {
+  inline-size: var(--w-container);
+  margin: 0 auto;
+  container-type: inline-size;
+}
+
+.l-wrapper {
+  max-inline-size: var(--w-max);
+}
+
+.l-wrapper-text {
+  max-inline-size: var(--t-measure);
+}
+
+/* Horizontal centering */
+
+.l-center {
+  margin-inline: auto;
+}
+
+/*
+.l-frame: Media wrapper with an intrinsic aspect ratio.
+
+Customize the aspect ratio by overriding var(--l-frame-width)
+and var(--l-frame-height) within specific components.
+*/
+
+.l-frame {
+  --l-frame-width: 16;
+  --l-frame-height: 9;
+
+  aspect-ratio: var(--l-frame-width) / var(--l-frame-height);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.l-frame > img,
+.l-frame > iframe {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+/*
+.l-grid: A grid wrapper that automatically tries to
+size columns according to the typographic measure.
+
+Customize the gutters by overriding var(--g-column-gap)
+within specific components.
+*/
+
+.l-grid {
+  --grid-col-width: calc(var(--t-measure) / 3);
+  --grid-gap: var(--g-column-gap);
+  display: grid;
+  flex-wrap: wrap;
+  gap: var(--grid-gap);
+}
+
+@supports (width: Min(30rem, 100%)) {
+  .l-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--grid-col-width), 100%), 1fr));
+  }
+}
+
+.l-grid > * {
+  margin-block-end: var(--font-base-leading);
+}
+
+/*
+## For vertical layouts (like multi-paragraph blocks of prose:)
+
+.l-stack: All children of this element (including nested children)
+is spaced equally apart from each other.
+
+.l-stack-basic: All *direct* descendants of this element (e.g. one level deep)
+are spaced equally apart from each other.
+
+You can customize the exact amount of spacing by overriding var(--l-stack-gap)
+within specific components.
+*/
+
+
+.l-stack-basic,
+.l-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.l-stack-basic > * {
+  margin-block: 0;
+}
+
+.l-stack-basic > * + * {
+  margin-block-start: var(--l-stack-gap, var(--t-paragraph));
+}
+
+.l-stack * {
+  margin-block: 0;
+}
+
+.l-stack * + * {
+  margin-block-start: var(--l-stack-gap, var(--t-paragraph));
+}
+
+/*
+## For horizontal layouts (like rows of links):
+
+All direct descendants of .l-cluster are spaced equally apart from
+each other.
+
+You can customize the exact amount of spacing by overriding
+var(--stack-layout-gap) within specific components.
+*/
+
+.l-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--l-cluster-gap, var(--g-column-gap));
+}
+
+/* Padded sections */
+
+.l-section {
+  padding-block: var(--section-padding);
+  margin-block: var(--section-margin);
+}
+
+/* For sidebar layouts (like the TOC and main content)
+   The first direct descendant of .l-sidebar will serve as
+   the smallest column. */
+
+.l-sidebar {
+  --l-sidebar-content-width: 61.8%;
+  --l-sidebar-width: 15rem;
+  --l-sidebar-gap: var(--g-column-gap);
+
+  max-inline-size: var(--w-max);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--l-sidebar-gap);
+}
+
+.l-sidebar > * {
+  margin-inline: auto;
+}
+
+.l-sidebar > :first-child {
+  flex-basis: var(--l-sidebar-width);
+  flex-grow: 1;
+  max-inline-size: unset;
+}
+
+.l-sidebar > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: var(--l-sidebar-content-width);
+  max-inline-size: var(--w-content-max);
+}
+
+/* Creating a sticky footer */
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100dvh;
+  display: grid;
+
+  /* 4 rows for:
+     - Site navigation
+     - Page headers
+     - #content
+     - Site footer
+   */
+  grid-template-rows: auto 1fr auto;
+}

@@ -1,0 +1,41 @@
+---
+layout: layouts/default.njk
+pagefind:
+  type: Play
+  image: /images/play.svg
+---
+
+<div class="l-wrapper play-wrapper">
+  <div class="page-icon" role="presentation">
+    {% icon 'strategy' %}
+  </div>
+
+{%- capture pagefindMetaTags -%}
+  {%- for tag in tags -%}
+    {{ topics[tag].title }}
+    {%- if not loop.last -%}, {% endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+<div class="l-section">
+<div class="l-stack" data-pagefind-meta="topics:{{ pagefindMetaTags }}">
+      <h2 data-pagefind-meta="title">{{ title }}</h2>
+      {{ content }}
+</div>
+</div>
+
+  <h3>Resources</h3>
+  <div class="l-grid">
+    {% for relatedResource in relatedResources %}
+      {% assign targetResource = collections.resources | find: relatedResource %}
+
+      {%- include "components/card.liquid",
+        type: "resource",
+        filetype: targetResource.data.filetype,
+        title: targetResource.data.title,
+        description: targetResource.content,
+        url: targetResource.data.url
+      -%}
+    {% endfor %}
+  </div>
+</div>

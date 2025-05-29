@@ -1,0 +1,27 @@
+/* Doris Day Foundation component on Prevention pages */
+
+
+.doris-day {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.doris-day-logo,
+.doris-day-logo img {
+    inline-size: 10rem;
+    flex: none;
+    margin: 0;
+}
+
+.doris-day p {
+    inline-size: max(30ch, calc(100% - 12rem));
+    font-size: 0.875em;
+}
+
+.doris-day p,
+.doris-day a {
+    font-weight: bold;
+}

@@ -1,0 +1,164 @@
+.card {
+  --border-width: 0.1875rem;
+  --inner-radius: calc(var(--radius-lg) - var(--border-width));
+  border-radius: var(--radius-lg);
+  border: var(--border-width) solid var(--c-brown);
+  color: var(--c-brown);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-decoration: none;
+  position: relative;
+}
+
+.card {
+  transition: scale 0.1s ease-out;
+}
+
+:is(.card, .play-card):is(:focus, :hover) {
+  scale: 1.03;
+}
+
+:is(.card, .play-card):active {
+  scale: 1.01;
+}
+
+.card svg {
+  inline-size: 1.5em;
+  block-size: 1.5em;
+  display: block;
+}
+
+.card-header {
+  background: var(--c-yellow);
+  gap: 0.5rem;
+}
+
+.card-header svg {
+  inline-size: 1.5em;
+  block-size: 1.5em;
+}
+
+.card > * {
+  padding: 0.5rem 1rem;
+  inline-size: 100%;
+  margin: 0;
+}
+
+.card-header,
+.card-cta {
+  display: flex;
+  font-weight: var(--font-bold);
+  align-items: center;
+}
+
+[data-type="topic"] .card-cta {
+  background: #fcf5e8;
+}
+
+@keyframes topic-arrow {
+  from {
+    transform: translateX(0rem);
+  }
+  to {
+    transform: translateX(0.25rem);
+  }
+}
+
+@keyframes download-arrow-initial {
+  from {
+    transform: translateY(0rem);
+  }
+  to {
+    transform: translateY(-0.0625rem);
+  }
+}
+
+@keyframes download-arrow {
+  from {
+    transform: translateY(--0.0625rem);
+  }
+  to {
+    transform: translateY(0.0625rem);
+  }
+}
+
+
+.card:hover .card-topic-arrow {
+  animation: topic-arrow 0.5s cubic-bezier(0.61, 1, 0.88, 1) infinite alternate;
+}
+
+.card:hover .card-download-arrow {
+  animation-name: download-arrow-initial, download-arrow;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+  animation-iteration-count: 1, infinite;
+  animation-direction: normal, alternate;
+}
+
+
+[data-type="resource"] .card-header {
+  background: var(--c-brown);
+  color: #fff;
+}
+
+[data-type="resource"] .card-cta {
+  background: #f1e3db;
+}
+
+.card-header {
+  border-start-start-radius: var(--inner-radius);
+  border-start-end-radius: var(--inner-radius);
+}
+
+.card-body,
+.card-cta {
+  font-size: var(--font-sm-size);
+  line-height: var(--font-sm-leading);
+}
+
+.card-body {
+  background: #fff;
+  font-weight: var(--font-normal);
+  text-align: left;
+  flex: 1;
+  padding-block: 0.75rem;
+}
+
+.card-cta {
+  padding-block: 0.5rem;
+  border-end-start-radius: var(--inner-radius);
+  border-end-end-radius: var(--inner-radius);
+  color: var(--c-brown);
+  gap: 0.375rem;
+}
+
+.card-download {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-download :last-child {
+  position: absolute;
+  inset: 0;
+}
+
+/* Play card */
+
+.play-card {
+  padding: 1rem 2rem;
+  display: block;
+  border: 0.25rem solid var(--c-orange);
+  border-radius: var(--radius-lg);
+  position: relative;
+  font-weight: var(--font-bold);
+  text-decoration: none;
+  transition: scale 0.1s ease-out,
+              background 50ms ease-out,
+              color 50ms ease-out;
+}
+
+.play-card:is(:hover, :focus) {
+  background: var(--c-orange);
+  color: #fff;
+}

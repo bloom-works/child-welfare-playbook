@@ -1,0 +1,39 @@
+---
+layout: "layouts/content.njk"
+title: Stories
+description: Stories show how agencies are putting plays into action, solving common challenges in child welfare, and developing new strategies. Browse case studies, research reports, and other posts that provide more detail about our work.
+pagefind:
+  type: Page
+tags: ["noTopic"]
+---
+
+
+
+<div class="l-stack-basic story-list-wrapper">
+{% for story in collections.stories %}
+{% if story.data.featured %}
+  {%- include "components/story-card.liquid",
+    image: story.data.image,
+    type: story.data.type,
+    title: story.data.title,
+    description: story.data.description,
+    author: story.data.author,
+    date: story.date,
+    featured: story.data.featured
+  -%}
+{% endif %}
+{% endfor %}
+
+{% for story in collections.stories %}
+{% if story.data.featured != true %}
+  {%- include "components/story-card.liquid",
+    image: story.data.image,
+    type: story.data.type,
+    title: story.data.title,
+    description: story.data.description,
+    author: story.data.author,
+    date: story.date
+  -%}
+{% endif %}
+{% endfor %}
+</div>

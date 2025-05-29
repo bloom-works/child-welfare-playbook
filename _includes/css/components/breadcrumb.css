@@ -1,0 +1,50 @@
+.breadcrumb-wrapper {
+    padding-inline: 2rem;
+    margin-inline: auto;
+    display: none;
+}
+
+.breadcrumb {
+    display: flex;
+    padding-block: 2rem;
+}
+
+.breadcrumb ol {
+    display: inline-flex;
+    align-items: center;
+}
+
+.breadcrumb ol > :not([hidden]) ~ :not([hidden]) {
+    margin-inline-start: 0.25rem;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.breadcrumb li a {
+    color: var(--c-navy);
+    font-weight: var(--font-medium);
+}
+
+.breadcrumb li a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb li:first-of-type {
+    display: inline-flex;
+    gap: 0;
+}
+
+@media (min-width: 48rem)  {
+    .breadcrumb-wrapper {
+        display: block;
+        padding-inline: 5%;
+    }
+
+    .breadcrumb ol > :not([hidden]) ~ :not([hidden]) {
+        margin-inline-start: 0.75rem;
+    }
+}

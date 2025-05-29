@@ -1,0 +1,9 @@
+---
+title: Michigan's relative notification form
+filetype: pdf
+url: https://www.michigan.gov/mdhhs/-/media/Project/Websites/mdhhs/Doing-Business-with-MDHHS/Contract-and-Subrecipient-Resources/Foster-Care-Forms/DHS-0990.dot?rev=39bab7cbc17e41ea86e7d14669a0b732&hash=658359B04B5A81E4195C8614CDBBEED5
+layout: "layouts/resource.njk"
+tags: ["resource", "homepage"]
+---
+
+A form that asks kin to commit to staying in touch with youth even if they can’t provide placement.

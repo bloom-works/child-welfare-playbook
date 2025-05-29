@@ -1,0 +1,25 @@
+{% if icon %}
+  {% assign cardIcon = icon %}
+{% elsif type == "resource" %}
+  {% if filetype == "pdf" %}
+    {% assign cardIcon = "file-pdf" %}
+  {% elsif filetype == "doc" %}
+    {% assign cardIcon = "file-doc" %}
+  {% endif %}
+{% endif %}
+
+<a href="{{ url }}" class="card" data-type="{{ type }}">
+  <h3 class="card-header h5">{% if cardIcon %}{% icon cardIcon %}{% endif %}{{ title }}</h3>
+  <p class="card-body">{{ description }}</p>
+  <p class="card-cta">
+    {%- if type == 'resource' -%}
+      <span class="card-download">
+        {% icon 'download-simple-arrow', 'card-download-arrow' %}
+        {% icon 'download-simple-box' %}
+      </span>
+      Download
+    {%- else -%}
+      Browse plays {% icon 'arrow-right', 'card-topic-arrow' %}
+    {%- endif -%}
+  </p>
+</a>

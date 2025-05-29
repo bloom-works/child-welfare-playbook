@@ -1,110 +1,100 @@
-const fs = require('fs');
-const path = require("path");
-const yaml = require("js-yaml");
-const { DateTime } = require("luxon");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const htmlmin = require("html-minifier");
-const markdownIt = require("markdown-it");
-const markdownItAttrs = require("markdown-it-attrs");
-const markdownItOptions = {
-  html: true,
-  breaks: true,
-  linkify: true
+import yaml from "js-yaml";
+import markdownIt from "markdown-it";
+import markdownLibrary from "./markdown.js";
+import svgSprite from "eleventy-plugin-svg-sprite";
+import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
+import dateFilters from './filters/dateFilters.js'
+
+
+const alphaSort = (a, b) => {
+  if (a.data.title < b.data.title) {
+    return -1;
+  } else if (a.data.title > b.data.title) {
+    return 1;
+  } else {
+    return 0;
+  }
 };
 
-module.exports = function (eleventyConfig) {
-  // Disable automatic use of your .gitignore
-  eleventyConfig.setUseGitIgnore(false);
+const topicList = [
+  "background-checks",
+  "emergency-placements",
+  "extended-foster-care",
+  "finding-kin",
+  "inquiry management",
+  "licensing",
+  "prevention",
+  "recruitment",
+  "relative-licensing-exceptions",
+  "retention",
+  "sibling-connections",
+  "social-media",
+  "supportive-adult-connections"
+];
 
-  // Merge data instead of overriding
-  eleventyConfig.setDataDeepMerge(true);
+export default async function(eleventyConfig) {
+  eleventyConfig.addPlugin(eleventyAutoCacheBuster);
 
-  // human readable date
-  eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
-      "dd LLL yyyy"
-    );
-  });
+  eleventyConfig.addPassthroughCopy("./images/");
+  eleventyConfig.addPassthroughCopy("./js/");
+  eleventyConfig.addPassthroughCopy("./admin/");
 
-  // Syntax Highlighting for Code blocks
-  eleventyConfig.addPlugin(syntaxHighlight);
-
-  // To Support .yaml Extension in _data
-  // You may remove this if you can use JSON
-  eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
   eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
 
-  const blogPosts = require('glob').sync('./src/_posts/blog/*.md');
-  const matter = require('gray-matter');
-  const markdownIt = require('markdown-it');
-  const md = new markdownIt();
+  const md = markdownIt({
+    html: true,
+    breaks: false,
+    linkify: true,
+  });
 
-  eleventyConfig.addCollection("blog", function(collectionApi) {
-    return blogPosts.map(file => {
-      const content = fs.readFileSync(file, 'utf8');
-      const { data, content: markdownContent } = matter(content);
-      const htmlContent = md.render(markdownContent);
-      return {
-        ...data,
-        content: htmlContent,
-        fileSlug: path.basename(file, path.extname(file))
-      };
+  eleventyConfig.setLibrary('md', markdownLibrary);
+
+  eleventyConfig.addNunjucksFilter("md", (markdownString) =>
+    md.render(markdownString),
+    );
+
+  eleventyConfig.addPlugin(svgSprite, {
+    path: "./icons", // relative path to SVG directory
+    svgShortcode: "icon"
+  });
+
+  // Human-readable dates
+
+  Object.keys(dateFilters).forEach(filterName => {
+      eleventyConfig.addFilter(filterName, dateFilters[filterName])
+  })
+
+  // All plays sorted alphabetically
+
+  eleventyConfig.addCollection("playsAlpha", (collection) =>
+    collection.getFilteredByGlob("plays/*.md").sort(alphaSort)
+  );
+
+  for (let topic in topicList) {
+    eleventyConfig.addCollection(`${topicList[topic]}-plays`, function (collectionsApi) {
+      return collectionsApi.getFilteredByTags('play', `${topicList[topic]}`).sort(alphaSort);
     });
+  }
+
+  // Stories
+
+  eleventyConfig.addCollection("stories", (collection) =>
+    collection.getFilteredByGlob("stories/*.md")
+  );
+
+  // All resources
+  eleventyConfig.addCollection("resources", (collection) =>
+      collection.getFilteredByGlob("resources/*.md")
+  );
+
+  eleventyConfig.addFilter("find", function find(collection = [], title = "") {
+    return collection.find(item => item.data.title === title);
   });
 
-  // Copy Static Files to /_Site
-  eleventyConfig.addPassthroughCopy({
-    "./src/admin/config.yml": "./admin/config.yml",
-    "./node_modules/alpinejs/dist/cdn.min.js": "./static/js/alpine.js",
-    "./node_modules/prismjs/themes/prism-tomorrow.css":
-      "./static/css/prism-tomorrow.css",
-  });
+  // Resources featured on homepage
 
-  // Copy Image Folder to /_site
-  eleventyConfig.addPassthroughCopy("./src/static/assets");
-  eleventyConfig.addPassthroughCopy("./src/static/img");
-  eleventyConfig.addPassthroughCopy("./src/images");
+  eleventyConfig.addCollection("homeResources", (collection) =>
+    collection.getFilteredByTags("homepage", "resource")
+  );
 
-  // Copy favicon to route of /_site
-  eleventyConfig.addPassthroughCopy("./src/favicon.ico");
-  eleventyConfig.addPassthroughCopy("./src/favicon-180.png");
-  eleventyConfig.addPassthroughCopy("./src/favicon-192.png");
-  eleventyConfig.addPassthroughCopy("./src/favicon-512.png");
-  eleventyConfig.addPassthroughCopy("./src/favicon.svg");
-  eleventyConfig.addPassthroughCopy("./src/manifest.webmanifest");
-
-
-  eleventyConfig.addNunjucksFilter("markdown", function(markdownString) {
-    const md = new markdownIt(markdownItOptions).use(markdownItAttrs);
-    return md.render(markdownString);
-  });
-
-  eleventyConfig.addShortcode("svg", function(iconPath) {
-    iconPath = String(iconPath);
-    return fs.readFileSync(path.join(__dirname, iconPath));
-  });
-
-  // Minify HTML
-  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-    // Eleventy 1.0+: use this.inputPath and this.outputPath instead
-    if (outputPath.endsWith(".html")) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-      });
-      return minified;
-    }
-
-    return content;
-  });
-
-  // Let Eleventy transform HTML files as nunjucks
-  // So that we can use .html instead of .njk
-  return {
-    dir: {
-      input: "src",
-    },
-    htmlTemplateEngine: "njk",
-  };
-};
+}

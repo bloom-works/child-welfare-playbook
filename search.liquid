@@ -1,0 +1,106 @@
+---
+layout: "layouts/content.njk"
+title: Search
+description: TK
+search: true
+tags:
+  - noTopic
+pageTypes:
+  - id: all
+    filterName: all
+    title: All results
+    iconName: list-checks
+    checked: true
+  - id: strategy
+    filterName: Play
+    title: Strategies
+    iconName: strategy
+  - id: stories
+    filterName: Story
+    title: Stories
+    iconName: book-open
+  - id: resources
+    filterName: Resource
+    title: Resources
+    iconName: lightbulb-filament
+  - id: meetings
+    filterName: Meeting
+    title: Working group meetings
+    iconName: chats-circle
+  - id: other-pages
+    filterName: Page
+    title: Pages
+    iconName: cards-three
+
+---
+
+<form id="search" class="search-form">
+  <fieldset class="search-input-wrapper">
+    <input type="text" placeholder="Search" id="search-input" class="search-input" />
+    <input type="submit" id="search-button" class="button" value="Search" />
+  </fieldset>
+</form>
+
+<template id="search-no-results">
+  <li class="search-result search-result-blank">{% icon "empty" %}
+  <strong>No results</strong>
+  </li>
+</template>
+
+<template id="search-no-matches">
+  <li class="search-result search-result-blank">{% icon "empty" %}
+  <strong>No matching results.</strong>
+  <span>Adjust your filters or try a new search.</span>
+  </li>
+</template>
+
+<template id="search-result">
+  <li class="search-result">
+    <a href="#" class="l-stack-basic">
+      <h3></h3>
+      <p></p>
+    </a>
+  </li>
+</template>
+
+<div class="search-content" hidden>
+  <form id="search-filters" class="search-filters">
+    <fieldset class="search-type-filters l-cluster" id="search-type-filters">
+      {%- for type in pageTypes -%}
+        <label for="type-{{ type.id }}" {% if type.id == "all" %}data-all-results="true"{% else %}hidden{% endif %}>
+          <span class='filter-label-name'>
+            <input type="radio" name="type-filter" id="type-{{ type.id }}" data-type-filter="{{ type.filterName }}"{% if type.checked %} checked{% endif %}>
+            {% icon type.iconName %} {{ type.title }}
+          </span>
+          <span class="search-counter"{% if type.id == "all" %} data-counter-all{% endif %}></span>
+        </label>
+      {%- endfor -%}
+    </fieldset>
+    <fieldset id="search-topic-filters" class="search-topic-filters l-stack-basic">
+      <h4>Filter by topic</h4>
+      {%- for i in topics.topics -%}
+        {% assign topicFilterIcon = topics[i].icon %}
+        <label for="{{ topics[i].title | slugify }}" class="filter-label" hidden>
+          <span class="filter-label-name">
+            <input type="checkbox" id="{{ topics[i].title | slugify }}" data-topic-filter="{{ topics[i].title }}" name="topic-filter">
+            {% icon topicFilterIcon %}{{ topics[i].title }}
+          </span>
+            <span class="search-counter">0</span>
+        </label>
+      {%- endfor -%}
+        <label for="no-topic" class="filter-label" hidden>
+            <span class="filter-label-name">
+              <input type="checkbox" id="no-topic" data-topic-filter="noTopic" name="topic-filter">
+              {% icon 'prohibit' %}No topic
+            </span>
+              <span class="search-counter">0</span>
+          </label>
+    </fieldset>
+  </form>
+
+  <div class="search-results-wrapper">
+    <h4 id="search-result-count"></h4>
+    <div id="search-results"></div>
+  </div>
+</div>
+<script type="module" src="/js/search.js"></script>

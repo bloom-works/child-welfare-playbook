@@ -1,0 +1,130 @@
+/* Top navbar */
+
+.nav {
+  border-block-end: 1px solid #fff;
+  background: var(--c-yellow);
+  padding-block: 1.5rem;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.nav-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo img {
+  height: 2.38rem;
+  margin-inline-end: 0.75rem;
+}
+
+[data-nav-open] {
+  display: none;
+}
+
+.nav:has([aria-hidden]) [data-nav-closed] {
+  display: none;
+}
+
+.nav:has([aria-hidden]) [data-nav-open] {
+  display: block;
+}
+
+.nav-hamburger {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  margin-block-start: 0.25rem;
+  background: transparent;
+  border-radius: var(--radius-lg);
+  display: inline-flex;
+  align-items: center;
+  color: var(--c-base);
+  font-size: var(--font-sm-size);
+  line-height: var(--font-sm-leading);
+}
+
+.nav-hamburger svg {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+}
+
+.nav-hamburger {
+
+}
+
+.nav-hamburger:hover {
+  background: #fff;
+  color: var(--c-primary);
+}
+
+.nav-hamburger:focus {
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.nav-mobile-menu {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  font-weight: var(--font-bold);
+  margin-block-start: 1rem;
+  font-size: var(--font-xl-size);
+  line-height: var(--font-xl-leading);
+}
+
+.nav-mobile-menu a {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-lg-size);
+  line-height: var(--font-lg-leading);
+  padding: 0.5rem 1rem;
+  gap: 0.5rem;
+}
+
+.nav-mobile-menu a:hover {
+  color: var(--c-blue-500);
+  background: var(--c-gray-200);
+}
+
+@media (min-width: 1024px) {
+  .nav-mobile-menu {
+    display: flex;
+    inline-size: auto;
+    order: 1;
+    margin-inline-start: auto;
+  }
+
+  .nav-mobile-menu ul {
+    flex-direction: row;
+    margin-block-start: 0;
+  }
+
+  .nav-mobile-menu ul > :not([hidden]) ~ :not([hidden]) {
+    margin-inline-start: 1rem;
+  }
+
+  .nav-hamburger {
+    order: 2;
+    display: none;
+  }
+}

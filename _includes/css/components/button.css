@@ -1,0 +1,21 @@
+.button {
+    border-radius: var(--radius-lg);
+    background: var(--c-orange);
+    color: #fff;
+    font-weight: var(--font-bold);
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+}
+
+.button:hover,
+.button:focus {
+    background-color: #fff;
+    color: var(--c-orange);
+}
+
+.button[data-type="secondary"] {
+  background: #fff;
+  border: 0.25rem solid var(--c-orange);
+  color: var(--base);
+}
