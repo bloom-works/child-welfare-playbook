@@ -193,7 +193,7 @@
 }
 
 .search-topic-filters label::before {
-  border-radius: 50%;
+  border-radius: var(--radius-lg);
   border: 3px solid var(--c-brown);
 }
 
@@ -222,4 +222,15 @@
 .topic-filter-label:has(:checked) .search-counter {
   color: #fff;
   background: var(--c-brown);
+}
+
+#load-more-button {
+  border: 3px solid var(--c-gray-200);
+  background: #fff;
+  inline-size: 100%;
+  max-inline-size: unset;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-lg);
+  margin-block-start: var(--t-paragraph);
+  font-weight: var(--font-bold);
 }
