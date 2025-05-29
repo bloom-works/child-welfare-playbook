@@ -109,10 +109,10 @@
   display: flex;
   --l-cluster-gap: var(--t-paragraph);
   inline-size: 100%;
-  max-inline-size: unset;
+  max-inline-size: 100%;
   position: absolute;
   inset-block-start: 0;
-  inset-inline-start: 0;
+  inset-inline: 0;
 }
 
 .search-type-filters label {
@@ -120,6 +120,7 @@
   background: transparent;
   padding-block: 0.75rem;
   display: flex;
+  white-space: nowrap;
   gap: 0.5rem;
   opacity: 0.7;
 }
@@ -127,6 +128,7 @@
 .search-type-filters svg {
   inline-size: 1.5rem;
   aspect-ratio: 1 / 1;
+  flex-shrink: none
 }
 
 .search-type-filters label:has(:checked) {
