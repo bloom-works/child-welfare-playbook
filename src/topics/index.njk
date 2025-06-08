@@ -28,22 +28,16 @@ title: Topics
             </ol>
         </nav>
     </div>
-    <div class="md:block mx-auto px-8 md:px-[5%] py-8 md:py-0 mb-12 md:mb-24">
-    <form class="flex">
-        <input class="placeholder-black border-b-2 border-black w-full p-4" type="text" x-model="search" placeholder="Search Topics...">
-        <button class="font-sans bg-gray-900 text-base font-bold px-12 rounded-r-lg" @click="searchTopics">Search</button>
-    </form>
-    </div>
     <div class="md:block mx-auto px-8 md:px-[5%] mb-24">
     <div>
         <ul class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xxl:grid-cols-5 gap-4">
             <template x-for="topic in filteredTopics" :key="topic.title">
                 <li class="flex">
-                    <a class="rounded-lg overflow-hidden bg-gray-200 group text-[21px] text-navy hover:bg-yellow hover:underline w-full bg-[#F4B413] block text-center font-bold flex flex-col" :href="'/topics/' + topic.title">
-                        <div class="h-[120px] flex items-center justify-center">
+                    <a class="rounded-lg overflow-hidden bg-gray-200 group text-[16px] text-navy hover:bg-yellow hover:underline w-full bg-[#F4B413] block text-center font-bold flex flex-col" :href="'/topics/' + topic.title">
+                        <div class="h-[50px] flex items-center justify-center">
                             <img :src="topic.image.split(/^\/?src/).join('')" role="presentation" />
                         </div>
-                        <div class="rounded-b-lg flex-1 p-8 bg-yellow" x-text="topic.hero.title"></div>
+                        <div class="rounded-b-lg flex-1 p-2 bg-yellow flex items-center justify-center" x-text="topic.hero.title"></div>
                     </a>
                 </li>
             </template>
