@@ -12,6 +12,6 @@ This first stage of work focused on describing the different configurations of w
 
 [This summary](https://drive.google.com/file/d/1PmvOqPPrKlP52_g5hs3cTiqNwsh52gWV/view?usp=drive_link) lays out the 5 key components identified, along with the lessons warmlines shared with them. Bloom Works has also created a visual [component map](https://drive.google.com/file/d/1X8Y1pVvRdDiCD_P9iPnUwNUEdRoYgA1d/view?usp=drive_link), to understand the details and tooling important for each component. 
 
-On July 10, 2025, the Prevention Collaborative hosted a session where Bloom Works presented their findings and Casey Family Programs and Chapin Hall contributed thoughts from their work on the service connection ecosystem. [You can watch the recording here.](#)
+On July 10, 2025, the Prevention Collaborative hosted a session where Bloom Works presented their findings and Casey Family Programs and Chapin Hall contributed thoughts from their work on the service connection ecosystem. [You can watch the recording here.](https://drive.google.com/file/d/14c8A4ioOcqfgahoNwNgUVn2mIFPl9mQa/view)
 
-If you have thoughts or questions send us a message at [prevention@bloomworks.digital](mailto:prevention@bloomworks.digital). 
+If you have thoughts or questions, you can message the Bloom Works team at [prevention@bloomworks.digital](mailto:prevention@bloomworks.digital). 
