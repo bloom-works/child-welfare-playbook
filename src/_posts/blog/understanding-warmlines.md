@@ -10,7 +10,7 @@ From April to June 2025, the Bloom Works Prevention Learning Collaborative team,
 
 This first stage of work focused on describing the different configurations of warmlines, their audiences, key features, and components. Bloom Works mapped 15 warmlines from across the country and spoke with 31 leadership and staff responsible for the design, development, operations, and fielding phone calls. They also asked participants what they had learned while setting up warmlines. 
 
-[This summary](https://drive.google.com/file/d/1PmvOqPPrKlP52_g5hs3cTiqNwsh52gWV/view?usp=drive_link) lays out the 5 key components identified, along with the lessons warmlines shared with them. Bloom Works has also created a visual [component map](https://drive.google.com/file/d/1X8Y1pVvRdDiCD_P9iPnUwNUEdRoYgA1d/view?usp=drive_link), to understand the details and tooling important for each component. 
+[This summary](https://drive.google.com/file/d/1TrnWBsz3mpheUx__vRNsvYSTxQ8jgzSd/view) lays out the 5 key components identified, along with the lessons warmlines shared with them. Bloom Works has also created a visual [component map](https://drive.google.com/file/d/1X8Y1pVvRdDiCD_P9iPnUwNUEdRoYgA1d/view?usp=drive_link), to understand the details and tooling important for each component. 
 
 On July 10, 2025, the Prevention Collaborative hosted a session where Bloom Works presented their findings and Casey Family Programs and Chapin Hall contributed thoughts from their work on the service connection ecosystem. [You can watch the recording here.](https://drive.google.com/file/d/14c8A4ioOcqfgahoNwNgUVn2mIFPl9mQa/view)
 
